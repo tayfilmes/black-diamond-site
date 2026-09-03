@@ -1,0 +1,5 @@
+app/node_modules/
+app/dist/
+black-diamond-dist.zip
+.DS_Store
+Thumbs.db
