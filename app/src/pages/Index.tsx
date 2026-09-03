@@ -2,6 +2,7 @@ import { useState } from "react";
 import {
   ArrowRight,
   Building2,
+  ChevronDown,
   ChevronRight,
   Flame,
   HardHat,
@@ -17,6 +18,7 @@ const navLinks = [
   { label: "Sobre", href: "#sobre" },
   { label: "Áreas de Atuação", href: "#areas" },
   { label: "Como Funciona", href: "#processo" },
+  { label: "FAQ", href: "#faq" },
   { label: "Contato", href: "#contato" },
 ];
 
@@ -70,6 +72,39 @@ const steps = [
   },
 ];
 
+const faqs = [
+  {
+    question: "Preciso ter experiência internacional para participar?",
+    answer:
+      "Não. Avaliamos seu perfil técnico e sua experiência no setor — engenharia, óleo e gás, infraestrutura ou energia — independentemente de você já ter trabalhado fora do país.",
+  },
+  {
+    question: "Como funciona a legalização para trabalhar na Venezuela?",
+    answer:
+      "Nossa equipe orienta e acompanha toda a parte documental: vistos, licenças de trabalho e conformidade contratual internacional, para que sua atuação no país esteja sempre dentro da lei.",
+  },
+  {
+    question: "O pagamento é realmente feito em dólar?",
+    answer:
+      "Sim. Os projetos que direcionamos seguem a prática do setor de óleo, gás e infraestrutura na região, com remuneração em dólar conforme o contrato de cada oportunidade.",
+  },
+  {
+    question: "Quais áreas profissionais vocês atendem?",
+    answer:
+      "Engenharia e obras rodoviárias, infraestrutura operacional, extração e produção petrolífera, e energia e redes elétricas — sempre buscando compatibilidade entre o seu perfil técnico e os projetos ativos.",
+  },
+  {
+    question: "Quanto tempo leva do cadastro até a mobilização?",
+    answer:
+      "O prazo varia conforme seu perfil e a disponibilidade de vagas ativas no momento. Assim que você envia o formulário, nossa equipe já inicia a avaliação e mantém contato em cada etapa.",
+  },
+  {
+    question: "A avaliação inicial tem algum custo?",
+    answer:
+      "A avaliação de perfil é gratuita. Qualquer custo relacionado a documentação ou mobilização é informado de forma transparente antes de qualquer etapa seguir adiante.",
+  },
+];
+
 const fieldClass =
   "w-full rounded-md border border-input bg-surface px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/70 outline-none transition-colors focus:border-primary focus:ring-2 focus:ring-ring/30";
 
@@ -104,7 +139,7 @@ export default function Index() {
             href="#contato"
             className="btn-ruby hidden items-center gap-2 rounded-md px-5 py-2.5 text-sm font-semibold sm:inline-flex"
           >
-            Falar com Consultor
+            Falar com a Black Diamond
             <ChevronRight className="h-4 w-4" />
           </a>
         </div>
@@ -144,7 +179,7 @@ export default function Index() {
                   className="btn-ruby inline-flex items-center gap-3 rounded-md px-7 py-4 text-base font-bold uppercase tracking-wide"
                 >
                   <MessageCircle className="h-5 w-5" />
-                  Falar com a Equipe Black Diamond
+                  Falar com a Black Diamond
                 </a>
                 <a
                   href="#areas"
@@ -223,6 +258,27 @@ export default function Index() {
                   <h3 className="mt-4 text-lg font-bold">{step.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{step.text}</p>
                 </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section id="faq" className="py-24">
+          <div className="mx-auto max-w-4xl px-5 lg:px-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Dúvidas</p>
+            <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
+              Perguntas Frequentes
+            </h2>
+            <div className="mt-12 space-y-4">
+              {faqs.map((faq) => (
+                <details key={faq.question} className="card-industrial group rounded-xl p-6 sm:p-7">
+                  <summary className="flex cursor-pointer items-center justify-between gap-4 text-base font-bold">
+                    {faq.question}
+                    <ChevronDown className="h-5 w-5 shrink-0 text-primary transition-transform duration-200 group-open:rotate-180" />
+                  </summary>
+                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{faq.answer}</p>
+                </details>
               ))}
             </div>
           </div>

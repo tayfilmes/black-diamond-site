@@ -130,6 +130,14 @@
   .success-msg{display:none;text-align:center;font-size:.875rem;font-weight:500;color:var(--primary);margin-top:.25rem}
   .success-msg.show{display:block}
 
+  .faq-list{margin-top:3rem;display:flex;flex-direction:column;gap:1rem}
+  .faq-item{padding:1.5rem 1.75rem}
+  .faq-item summary{display:flex;list-style:none;cursor:pointer;align-items:center;justify-content:space-between;gap:1rem;font-weight:700;font-size:1rem}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-chevron{color:var(--primary);transition:transform .2s ease}
+  .faq-item[open] .faq-chevron{transform:rotate(90deg)}
+  .faq-item p{margin-top:1rem;font-size:.875rem;line-height:1.6;color:var(--muted-foreground)}
+
   footer{border-top:1px solid var(--border);background:oklch(0.185 0 0 / .6);padding-block:3rem}
   .footer-wrap{display:flex;flex-direction:column;gap:1.5rem;font-size:.875rem;color:var(--muted-foreground)}
   @media(min-width:1024px){.footer-wrap{flex-direction:row;align-items:center;justify-content:space-between}}
@@ -165,10 +173,11 @@
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="#areas">Áreas de Atuação</a></li>
         <li><a href="#processo">Como Funciona</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
     </nav>
-    <a href="#contato" class="btn btn-ruby btn-header">Falar com Consultor <svg class="icon"><use href="#i-chevron-right"/></svg></a>
+    <a href="#contato" class="btn btn-ruby btn-header">Falar com a Black Diamond <svg class="icon"><use href="#i-chevron-right"/></svg></a>
   </div>
 </header>
 
@@ -182,7 +191,7 @@
         <h1>A Venezuela Está Sendo Reconstruída. <span class="accent">Trabalhe Legalizado</span> <span class="text-accent-blue">e Ganhe em Dólar</span></h1>
         <p class="lead">O país vive uma nova realidade: obras de infraestrutura, energia e petróleo avançam e a demanda por profissionais qualificados nunca foi tão grande. Conectamos você a essas oportunidades com consultoria completa, suporte documental e garantias em cada etapa do processo.</p>
         <div class="cta-row">
-          <a href="#contato" class="btn btn-ruby"><svg class="icon"><use href="#i-chat"/></svg> Falar com a Equipe Black Diamond</a>
+          <a href="#contato" class="btn btn-ruby"><svg class="icon"><use href="#i-chat"/></svg> Falar com a Black Diamond</a>
           <a href="#areas" class="btn btn-outline">Áreas de Atuação <svg class="icon"><use href="#i-arrow-right"/></svg></a>
         </div>
       </div>
@@ -253,6 +262,51 @@
           <h3>Apoio de Mobilização</h3>
           <p>Orientação sobre logística de deslocamento, integração e instalação.</p>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="container" style="max-width:56rem">
+      <p class="eyebrow">Dúvidas</p>
+      <h2 class="section-title">Perguntas Frequentes</h2>
+      <div class="faq-list">
+        <details class="card faq-item">
+          <summary>Preciso ter experiência internacional para participar?
+            <svg class="icon faq-chevron"><use href="#i-chevron-right"/></svg>
+          </summary>
+          <p>Não. Avaliamos seu perfil técnico e sua experiência no setor — engenharia, óleo e gás, infraestrutura ou energia — independentemente de você já ter trabalhado fora do país.</p>
+        </details>
+        <details class="card faq-item">
+          <summary>Como funciona a legalização para trabalhar na Venezuela?
+            <svg class="icon faq-chevron"><use href="#i-chevron-right"/></svg>
+          </summary>
+          <p>Nossa equipe orienta e acompanha toda a parte documental: vistos, licenças de trabalho e conformidade contratual internacional, para que sua atuação no país esteja sempre dentro da lei.</p>
+        </details>
+        <details class="card faq-item">
+          <summary>O pagamento é realmente feito em dólar?
+            <svg class="icon faq-chevron"><use href="#i-chevron-right"/></svg>
+          </summary>
+          <p>Sim. Os projetos que direcionamos seguem a prática do setor de óleo, gás e infraestrutura na região, com remuneração em dólar conforme o contrato de cada oportunidade.</p>
+        </details>
+        <details class="card faq-item">
+          <summary>Quais áreas profissionais vocês atendem?
+            <svg class="icon faq-chevron"><use href="#i-chevron-right"/></svg>
+          </summary>
+          <p>Engenharia e obras rodoviárias, infraestrutura operacional, extração e produção petrolífera, e energia e redes elétricas — sempre buscando compatibilidade entre o seu perfil técnico e os projetos ativos.</p>
+        </details>
+        <details class="card faq-item">
+          <summary>Quanto tempo leva do cadastro até a mobilização?
+            <svg class="icon faq-chevron"><use href="#i-chevron-right"/></svg>
+          </summary>
+          <p>O prazo varia conforme seu perfil e a disponibilidade de vagas ativas no momento. Assim que você envia o formulário, nossa equipe já inicia a avaliação e mantém contato em cada etapa.</p>
+        </details>
+        <details class="card faq-item">
+          <summary>A avaliação inicial tem algum custo?
+            <svg class="icon faq-chevron"><use href="#i-chevron-right"/></svg>
+          </summary>
+          <p>A avaliação de perfil é gratuita. Qualquer custo relacionado a documentação ou mobilização é informado de forma transparente antes de qualquer etapa seguir adiante.</p>
+        </details>
       </div>
     </div>
   </section>
