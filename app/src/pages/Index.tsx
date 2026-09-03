@@ -25,25 +25,25 @@ const navLinks = [
 const areas = [
   {
     icon: HardHat,
-    title: "Engenharia & Obras Rodoviárias",
+    title: ["Engenharia &", "Obras Rodoviárias"],
     text: "Suporte e consultoria para projetos de logística, malha viária e acessos a campos de extração.",
     accent: "red" as const,
   },
   {
     icon: Building2,
-    title: "Infraestrutura Operacional & Loteamentos",
+    title: ["Infraestrutura Operacional &", "Loteamentos"],
     text: "Estruturação de bases operacionais, alojamentos técnicos e loteamentos industriais.",
     accent: "blue" as const,
   },
   {
     icon: Flame,
-    title: "Extração & Produção Petrolífera",
+    title: ["Extração &", "Produção Petrolífera"],
     text: "Conexão e direcionamento para funções ligadas à perfuração, refino, manutenção e suporte de campo.",
     accent: "red" as const,
   },
   {
     icon: Zap,
-    title: "Energia & Redes Elétricas",
+    title: ["Energia &", "Redes Elétricas"],
     text: "Projetos e contratação para suporte à rede elétrica, usinas e infraestrutura de suporte aos poços.",
     accent: "blue" as const,
   },
@@ -109,7 +109,25 @@ const fieldClass =
   "w-full rounded-md border border-input bg-surface px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/70 outline-none transition-colors focus:border-primary focus:ring-2 focus:ring-ring/30";
 
 export default function Index() {
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    setStatus("sending");
+    try {
+      const res = await fetch("/enviar.php", { method: "POST", body: new FormData(form) });
+      const data = await res.json();
+      if (data.ok) {
+        setStatus("sent");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  }
 
   return (
     <div className="min-h-screen bg-background">
@@ -224,7 +242,7 @@ export default function Index() {
             </h2>
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {areas.map((area) => (
-                <article key={area.title} className="card-industrial rounded-xl p-7">
+                <article key={area.title.join(" ")} className="card-industrial rounded-xl p-7 text-center">
                   <div
                     className={`inline-flex h-12 w-12 items-center justify-center rounded-md ${
                       area.accent === "blue"
@@ -234,8 +252,14 @@ export default function Index() {
                   >
                     <area.icon className="h-6 w-6" />
                   </div>
-                  <h3 className="mt-6 text-lg font-bold leading-snug">{area.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{area.text}</p>
+                  <h3 className="mt-6 min-h-[3.25rem] text-lg font-bold leading-snug">
+                    {area.title.map((line) => (
+                      <span key={line} className="block">
+                        {line}
+                      </span>
+                    ))}
+                  </h3>
+                  <p className="mt-3 text-justify text-sm leading-relaxed text-muted-foreground">{area.text}</p>
                 </article>
               ))}
             </div>
@@ -314,12 +338,13 @@ export default function Index() {
 
             <form
               className="card-industrial rounded-xl p-7 sm:p-9"
-              onSubmit={(e) => {
-                e.preventDefault();
-                setSent(true);
-              }}
+              onSubmit={handleSubmit}
             >
               <div className="grid gap-5">
+                <div className="absolute -left-[9999px]" aria-hidden="true">
+                  <label htmlFor="website">Não preencher</label>
+                  <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+                </div>
                 <div>
                   <label htmlFor="nome" className="mb-2 block text-sm font-medium">
                     Nome Completo
@@ -369,14 +394,20 @@ export default function Index() {
                 </div>
                 <button
                   type="submit"
-                  className="btn-ruby mt-2 inline-flex w-full items-center justify-center gap-2 rounded-md px-6 py-4 text-sm font-bold uppercase tracking-wide"
+                  disabled={status === "sending"}
+                  className="btn-ruby mt-2 inline-flex w-full items-center justify-center gap-2 rounded-md px-6 py-4 text-sm font-bold uppercase tracking-wide disabled:opacity-60"
                 >
-                  Solicitar Avaliação de Perfil
+                  {status === "sending" ? "Enviando..." : "Solicitar Avaliação de Perfil"}
                   <ArrowRight className="h-4 w-4" />
                 </button>
-                {sent && (
+                {status === "sent" && (
                   <p className="text-center text-sm font-medium text-primary" role="status">
                     Solicitação registrada. Nossa equipe entrará em contato.
+                  </p>
+                )}
+                {status === "error" && (
+                  <p className="text-center text-sm font-medium text-accent-blue" role="status">
+                    Não foi possível enviar agora. Tente novamente ou fale pelo WhatsApp/e-mail acima.
                   </p>
                 )}
               </div>
