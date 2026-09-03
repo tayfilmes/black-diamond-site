@@ -134,10 +134,20 @@ export default function Index() {
       <div className="fixed inset-x-0 top-0 z-[60] h-1 flag-stripe" />
       <header className="fixed inset-x-0 top-1 z-50 border-b border-border bg-background/85 backdrop-blur-md">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-4 lg:px-8">
-          <a href="#top" className="font-display text-sm font-extrabold uppercase leading-tight tracking-[0.18em]">
-            Black Diamond <span className="text-primary">Corporation</span>
-            <span className="block text-[0.65rem] font-semibold tracking-[0.4em] text-muted-foreground">
-              Services
+          <a
+            href="#top"
+            className="inline-flex items-center gap-2.5 font-display text-sm font-extrabold uppercase leading-tight tracking-[0.18em]"
+          >
+            <svg width="30" height="30" viewBox="0 0 32 32" className="shrink-0 rounded-md" aria-hidden="true">
+              <rect width="32" height="32" rx="6" fill="#0c0c0c" />
+              <path d="M16 5 L26 12 L22 27 L10 27 L6 12 Z" fill="#c0392b" />
+              <path d="M16 5 L21 12 L16 27 L11 12 Z" fill="#e2574c" />
+            </svg>
+            <span>
+              Black Diamond <span className="text-primary">Corporation</span>
+              <span className="block text-[0.65rem] font-semibold tracking-[0.4em] text-muted-foreground">
+                Services
+              </span>
             </span>
           </a>
 

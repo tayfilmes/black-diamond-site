@@ -41,7 +41,8 @@
 
   header.site-header{position:fixed;inset-inline:0;top:4px;z-index:50;border-bottom:1px solid var(--border);background:oklch(0.145 0 0 / 0.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
   .header-inner{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding-block:1rem}
-  .logo{font-family:Montserrat,sans-serif;font-size:.875rem;font-weight:800;text-transform:uppercase;letter-spacing:.18em;line-height:1.2;text-decoration:none}
+  .logo{display:inline-flex;align-items:center;gap:.6rem;font-family:Montserrat,sans-serif;font-size:.875rem;font-weight:800;text-transform:uppercase;letter-spacing:.18em;line-height:1.2;text-decoration:none}
+  .logo-icon{flex-shrink:0;border-radius:.35rem}
   .logo .accent{color:var(--primary)}
   .logo small{display:block;font-size:.65rem;font-weight:600;letter-spacing:.4em;color:var(--muted-foreground)}
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border-radius:.375rem;font-weight:700;text-decoration:none;cursor:pointer;border:none;font-family:inherit}
@@ -91,7 +92,14 @@
 <div class="flag-stripe"></div>
 <header class="site-header">
   <div class="container header-inner">
-    <a href="index.html" class="logo">Black Diamond <span class="accent">Corporation</span><small>Services</small></a>
+    <a href="index.html" class="logo">
+      <svg class="logo-icon" width="30" height="30" viewBox="0 0 32 32" aria-hidden="true">
+        <rect width="32" height="32" rx="6" fill="#0c0c0c"/>
+        <path d="M16 5 L26 12 L22 27 L10 27 L6 12 Z" fill="#c0392b"/>
+        <path d="M16 5 L21 12 L16 27 L11 12 Z" fill="#e2574c"/>
+      </svg>
+      <span>Black Diamond <span class="accent">Corporation</span><small>Services</small></span>
+    </a>
     <a href="index.html#contato" class="btn btn-ruby btn-header">Falar com a Black Diamond</a>
   </div>
 </header>
