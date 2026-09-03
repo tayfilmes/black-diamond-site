@@ -299,7 +299,7 @@ export default function Index() {
               <ul className="mt-8 space-y-4 text-sm text-muted-foreground">
                 <li className="flex items-center gap-3">
                   <Mail className="h-4 w-4 text-primary" />
-                  contato@blackdiamondcs.com
+                  contato@blackdiamondcorpservices.com
                 </li>
                 <li className="flex items-center gap-3">
                   <Phone className="h-4 w-4 text-primary" />
