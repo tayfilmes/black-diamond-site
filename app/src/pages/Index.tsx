@@ -220,6 +220,13 @@ export default function Index() {
               </div>
             </div>
           </div>
+          <a
+            href="#sobre"
+            aria-label="Rolar para ver mais"
+            className="scroll-hint absolute inset-x-0 bottom-7 mx-auto w-fit text-muted-foreground/75 transition-colors hover:text-muted-foreground"
+          >
+            <ChevronDown className="h-6 w-6" />
+          </a>
         </section>
 
         {/* SOBRE */}

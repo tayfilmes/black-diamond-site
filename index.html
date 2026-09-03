@@ -84,6 +84,10 @@
   .cta-row{margin-top:2.25rem;display:flex;flex-wrap:wrap;align-items:center;gap:1rem}
   .cta-row .btn-ruby{padding:1rem 1.75rem;font-size:1rem;text-transform:uppercase;letter-spacing:.02em}
   .cta-row .icon{width:1.1em;height:1.1em}
+  .scroll-hint{position:absolute;left:50%;bottom:1.75rem;transform:translateX(-50%);color:var(--muted-foreground);opacity:.75;display:inline-flex;animation:scrollBounce 1.8s ease-in-out infinite;transition:opacity .2s}
+  .scroll-hint:hover{opacity:1}
+  @keyframes scrollBounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+  @media(prefers-reduced-motion:reduce){.scroll-hint{animation:none}}
 
   section{padding-block:6rem}
   .section-bordered{border-block:1px solid var(--border);background:oklch(0.185 0 0 / .4)}
@@ -208,6 +212,9 @@
         </div>
       </div>
     </div>
+    <a href="#sobre" class="scroll-hint" aria-label="Rolar para ver mais">
+      <svg class="icon" width="26" height="26" style="transform:rotate(90deg)"><use href="#i-chevron-right"/></svg>
+    </a>
   </section>
 
   <section id="sobre" class="section-bordered">
