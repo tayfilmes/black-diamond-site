@@ -8,7 +8,7 @@
 <meta property="og:title" content="Black Diamond Corporation Services | Infraestrutura e Petróleo" />
 <meta property="og:description" content="Consultoria completa e com garantias para engenheiros e profissionais técnicos que querem atuar na reconstrução da Venezuela, com tudo legalizado e remuneração em dólar." />
 <meta property="og:type" content="website" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230c0c0c'/%3E%3Cpath d='M16 5 L26 12 L22 27 L10 27 L6 12 Z' fill='%23c0392b'/%3E%3Cpath d='M16 5 L21 12 L16 27 L11 12 Z' fill='%23e2574c'/%3E%3C/svg%3E" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='4 6 26 23'%3E%3Cpath d='M11 27 L19 27 L15 15 Z' fill='%23B22234'/%3E%3Ccircle cx='24' cy='11' r='3' fill='%23B22234'/%3E%3Cline x1='6' y1='19' x2='24' y2='11' stroke='%23B22234' stroke-width='2.2' stroke-linecap='round'/%3E%3Cline x1='6' y1='19' x2='6' y2='25' stroke='%23B22234' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet" />
@@ -50,7 +50,8 @@
   header.site-header{position:fixed;inset-inline:0;top:4px;z-index:50;border-bottom:1px solid var(--border);background:oklch(0.145 0 0 / 0.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
   .header-inner{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding-block:1rem}
   .logo{display:inline-flex;align-items:center;gap:.6rem;font-family:Montserrat,sans-serif;font-size:.875rem;font-weight:800;text-transform:uppercase;letter-spacing:.18em;line-height:1.2;text-decoration:none}
-  .logo-icon{flex-shrink:0;border-radius:.35rem}
+  .logo-icon{flex-shrink:0}
+  .footer-brand{display:inline-flex;align-items:center;gap:.5rem}
   .logo .accent{color:var(--primary)}
   .logo small{display:block;font-size:.65rem;font-weight:600;letter-spacing:.4em;color:var(--muted-foreground)}
   .nav-links{display:none;gap:2rem;list-style:none;margin:0;padding:0}
@@ -171,10 +172,11 @@
 <header class="site-header">
   <div class="container header-inner">
     <a href="#top" class="logo">
-      <svg class="logo-icon" width="30" height="30" viewBox="0 0 32 32" aria-hidden="true">
-        <rect width="32" height="32" rx="6" fill="#0c0c0c"/>
-        <path d="M16 5 L26 12 L22 27 L10 27 L6 12 Z" fill="#c0392b"/>
-        <path d="M16 5 L21 12 L16 27 L11 12 Z" fill="#e2574c"/>
+      <svg class="logo-icon" width="30" height="30" viewBox="4 6 26 23" aria-hidden="true">
+        <path d="M11 27 L19 27 L15 15 Z" fill="#B22234"/>
+        <circle cx="24" cy="11" r="3" fill="#B22234"/>
+        <line x1="6" y1="19" x2="24" y2="11" stroke="#B22234" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="6" y1="19" x2="6" y2="25" stroke="#B22234" stroke-width="2" stroke-linecap="round"/>
       </svg>
       <span>Black Diamond <span class="accent">Corporation</span><small>Services</small></span>
     </a>
@@ -385,7 +387,15 @@
 <footer>
   <div class="container footer-wrap">
     <div>
-      <p class="footer-brand">Black Diamond <span class="accent" style="color:var(--primary)">Corporation</span> Services</p>
+      <p class="footer-brand">
+        <svg class="logo-icon" width="20" height="20" viewBox="4 6 26 23" aria-hidden="true">
+          <path d="M11 27 L19 27 L15 15 Z" fill="#B22234"/>
+          <circle cx="24" cy="11" r="3" fill="#B22234"/>
+          <line x1="6" y1="19" x2="24" y2="11" stroke="#B22234" stroke-width="2.2" stroke-linecap="round"/>
+          <line x1="6" y1="19" x2="6" y2="25" stroke="#B22234" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        Black Diamond <span class="accent" style="color:var(--primary)">Corporation</span> Services
+      </p>
       <p class="footer-copy">© Black Diamond Corporation Services – Todos os direitos reservados.</p>
       <p class="footer-disclaimer">Isenção de responsabilidade sobre trâmites migratórios e contratações de terceiros.</p>
     </div>

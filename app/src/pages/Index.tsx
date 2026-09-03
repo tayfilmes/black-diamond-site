@@ -138,10 +138,11 @@ export default function Index() {
             href="#top"
             className="inline-flex items-center gap-2.5 font-display text-sm font-extrabold uppercase leading-tight tracking-[0.18em]"
           >
-            <svg width="30" height="30" viewBox="0 0 32 32" className="shrink-0 rounded-md" aria-hidden="true">
-              <rect width="32" height="32" rx="6" fill="#0c0c0c" />
-              <path d="M16 5 L26 12 L22 27 L10 27 L6 12 Z" fill="#c0392b" />
-              <path d="M16 5 L21 12 L16 27 L11 12 Z" fill="#e2574c" />
+            <svg width="30" height="30" viewBox="4 6 26 23" className="shrink-0" aria-hidden="true">
+              <path d="M11 27 L19 27 L15 15 Z" fill="#B22234" />
+              <circle cx="24" cy="11" r="3" fill="#B22234" />
+              <line x1="6" y1="19" x2="24" y2="11" stroke="#B22234" strokeWidth="2.2" strokeLinecap="round" />
+              <line x1="6" y1="19" x2="6" y2="25" stroke="#B22234" strokeWidth="2" strokeLinecap="round" />
             </svg>
             <span>
               Black Diamond <span className="text-primary">Corporation</span>
@@ -429,7 +430,13 @@ export default function Index() {
       <footer className="border-t border-border bg-surface/60 py-12">
         <div className="mx-auto flex max-w-7xl flex-col gap-6 px-5 text-sm text-muted-foreground lg:flex-row lg:items-center lg:justify-between lg:px-8">
           <div>
-            <p className="font-display text-xs font-extrabold uppercase tracking-[0.2em] text-foreground">
+            <p className="flex items-center gap-2 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-foreground">
+              <svg width="20" height="20" viewBox="4 6 26 23" className="shrink-0" aria-hidden="true">
+                <path d="M11 27 L19 27 L15 15 Z" fill="#B22234" />
+                <circle cx="24" cy="11" r="3" fill="#B22234" />
+                <line x1="6" y1="19" x2="24" y2="11" stroke="#B22234" strokeWidth="2.2" strokeLinecap="round" />
+                <line x1="6" y1="19" x2="6" y2="25" stroke="#B22234" strokeWidth="2" strokeLinecap="round" />
+              </svg>
               Black Diamond <span className="text-primary">Corporation</span> Services
             </p>
             <p className="mt-3">© Black Diamond Corporation Services – Todos os direitos reservados.</p>
