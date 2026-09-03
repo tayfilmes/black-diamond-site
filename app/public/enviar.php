@@ -7,6 +7,13 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
+require __DIR__ . '/lib/PHPMailer/Exception.php';
+require __DIR__ . '/lib/PHPMailer/PHPMailer.php';
+require __DIR__ . '/lib/PHPMailer/SMTP.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception as PHPMailerException;
+
 function clean_field($value) {
     $value = trim((string) ($value ?? ''));
     return str_replace(["\r", "\n"], ' ', $value);
@@ -36,8 +43,16 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit;
 }
 
+$configPath = __DIR__ . '/smtp-config.php';
+if (!file_exists($configPath)) {
+    http_response_code(500);
+    echo json_encode(['ok' => false, 'error' => 'config_missing']);
+    exit;
+}
+$config = require $configPath;
+
 $to = 'contato@blackdiamondcorpservices.com';
-$subject = '=?UTF-8?B?' . base64_encode('Nova solicitação de avaliação de perfil - ' . $nome) . '?=';
+$subject = 'Nova solicitação de avaliação de perfil - ' . $nome;
 
 $body = "Nova solicitação de avaliação de perfil recebida pelo site:\n\n"
       . "Nome completo: {$nome}\n"
@@ -46,18 +61,29 @@ $body = "Nova solicitação de avaliação de perfil recebida pelo site:\n\n"
       . "Área de atuação: {$area}\n"
       . "Anos de experiência: {$experiencia}\n";
 
-$headers = [
-    'From: Site Black Diamond <no-reply@blackdiamondcorpservices.com>',
-    'Reply-To: ' . $email,
-    'MIME-Version: 1.0',
-    'Content-Type: text/plain; charset=UTF-8',
-];
+$mail = new PHPMailer(true);
 
-$sent = mail($to, $subject, $body, implode("\r\n", $headers));
+try {
+    $mail->isSMTP();
+    $mail->Host = $config['host'];
+    $mail->SMTPAuth = true;
+    $mail->Username = $config['username'];
+    $mail->Password = $config['password'];
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    $mail->Port = $config['port'];
+    $mail->CharSet = 'UTF-8';
 
-if ($sent) {
+    $mail->setFrom($config['from'], $config['from_name']);
+    $mail->addAddress($to);
+    $mail->addReplyTo($email, $nome);
+
+    $mail->Subject = $subject;
+    $mail->Body = $body;
+    $mail->isHTML(false);
+
+    $mail->send();
     echo json_encode(['ok' => true]);
-} else {
+} catch (PHPMailerException $e) {
     http_response_code(500);
     echo json_encode(['ok' => false, 'error' => 'send_failed']);
 }

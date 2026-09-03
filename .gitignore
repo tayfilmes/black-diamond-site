@@ -3,3 +3,5 @@ app/dist/
 black-diamond-dist.zip
 .DS_Store
 Thumbs.db
+smtp-config.php
+app/public/smtp-config.php
