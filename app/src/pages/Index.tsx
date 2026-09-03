@@ -225,7 +225,7 @@ export default function Index() {
             aria-label="Rolar para ver mais"
             className="scroll-hint absolute inset-x-0 bottom-7 mx-auto w-fit text-muted-foreground/75 transition-colors hover:text-muted-foreground"
           >
-            <ChevronDown className="h-6 w-6" />
+            <ChevronDown className="h-9 w-9" />
           </a>
         </section>
 
@@ -277,7 +277,7 @@ export default function Index() {
                       </span>
                     ))}
                   </h3>
-                  <p className="mt-3 text-justify text-sm leading-relaxed text-muted-foreground">{area.text}</p>
+                  <p className="mt-3 text-left text-sm leading-relaxed text-muted-foreground">{area.text}</p>
                 </article>
               ))}
             </div>
