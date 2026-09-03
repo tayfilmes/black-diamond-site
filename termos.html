@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Termos de Uso | Black Diamond Corporation Services</title>
+<meta name="description" content="Termos de Uso da Black Diamond Corporation Services: condições de uso do site e da consultoria, e isenções de responsabilidade sobre processos de terceiros." />
+<meta name="robots" content="noindex" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230c0c0c'/%3E%3Cpath d='M16 5 L26 12 L22 27 L10 27 L6 12 Z' fill='%23c0392b'/%3E%3Cpath d='M16 5 L21 12 L16 27 L11 12 Z' fill='%23e2574c'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --radius: .5rem;
+    --background: oklch(0.145 0 0);
+    --foreground: oklch(0.98 0 0);
+    --surface: oklch(0.185 0 0);
+    --card: oklch(0.19 0 0);
+    --primary: oklch(0.56 0.222 26.5);
+    --primary-foreground: oklch(0.99 0 0);
+    --accent-blue: oklch(0.55 0.19 258);
+    --accent-blue-foreground: oklch(0.99 0 0);
+    --muted-foreground: oklch(0.72 0 0);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 14%);
+    --gradient-red: linear-gradient(135deg, oklch(0.56 0.222 26.5), oklch(0.44 0.19 24));
+    --shadow-elegant: 0 24px 60px -24px oklch(0 0 0 / 0.85);
+    --shadow-glow: 0 0 0 1px oklch(0.56 0.222 26.5 / 0.35), 0 18px 40px -18px oklch(0.56 0.222 26.5 / 0.55);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--background);color:var(--foreground);font-family:Inter,ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  h1,h2{font-family:Montserrat,ui-sans-serif,system-ui,sans-serif;margin:0}
+  p{margin:0}
+  a{color:inherit}
+  .icon{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+  .flag-stripe{position:fixed;inset-inline:0;top:0;z-index:60;height:4px;background-image:linear-gradient(to right,var(--primary) 0%,var(--primary) 33.33%,oklch(0.98 0 0) 33.33%,oklch(0.98 0 0) 66.66%,var(--accent-blue) 66.66%,var(--accent-blue) 100%)}
+
+  .container{max-width:1280px;margin-inline:auto;padding-inline:1.25rem}
+  @media(min-width:1024px){.container{padding-inline:2rem}}
+
+  header.site-header{position:fixed;inset-inline:0;top:4px;z-index:50;border-bottom:1px solid var(--border);background:oklch(0.145 0 0 / 0.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding-block:1rem}
+  .logo{font-family:Montserrat,sans-serif;font-size:.875rem;font-weight:800;text-transform:uppercase;letter-spacing:.18em;line-height:1.2;text-decoration:none}
+  .logo .accent{color:var(--primary)}
+  .logo small{display:block;font-size:.65rem;font-weight:600;letter-spacing:.4em;color:var(--muted-foreground)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border-radius:.375rem;font-weight:700;text-decoration:none;cursor:pointer;border:none;font-family:inherit}
+  .btn-ruby{background-image:var(--gradient-red);color:var(--primary-foreground);box-shadow:var(--shadow-glow);transition:transform .2s ease, filter .2s ease}
+  .btn-ruby:hover{filter:brightness(1.12);transform:translateY(-2px)}
+  .btn-header{display:none;padding:.625rem 1.25rem;font-size:.875rem}
+  @media(min-width:640px){.btn-header{display:inline-flex}}
+
+  main{padding-top:0}
+  .legal-section{padding-block:8rem 6rem}
+  .legal-wrap{max-width:52rem;margin-inline:auto}
+  .eyebrow{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.3em;color:var(--primary)}
+  .legal-wrap h1{margin-top:1rem;font-size:2rem;font-weight:800;letter-spacing:-0.02em}
+  @media(min-width:640px){.legal-wrap h1{font-size:2.5rem}}
+  .updated{margin-top:.75rem;font-size:.875rem;color:var(--muted-foreground)}
+
+  .card{background:var(--card);border:1px solid var(--border);box-shadow:var(--shadow-elegant);border-radius:.75rem}
+  .legal-content{margin-top:2.5rem;padding:2rem;display:flex;flex-direction:column;gap:1.75rem}
+  @media(min-width:640px){.legal-content{padding:2.75rem}}
+  .legal-content h2{font-size:1.125rem;font-weight:700;margin-bottom:.75rem}
+  .legal-content p{font-size:.9375rem;line-height:1.7;color:var(--muted-foreground)}
+  .legal-content ul{margin:0;padding-left:1.25rem;display:flex;flex-direction:column;gap:.5rem}
+  .legal-content li{font-size:.9375rem;line-height:1.7;color:var(--muted-foreground)}
+  .legal-content strong{color:var(--foreground);font-weight:600}
+  .legal-content a{color:var(--primary);text-decoration:underline}
+
+  .back-link{display:inline-flex;align-items:center;gap:.5rem;margin-top:2.5rem;font-size:.875rem;font-weight:600;color:var(--primary);text-decoration:none}
+  .back-link:hover{filter:brightness(1.15)}
+  .back-link .icon{transform:rotate(180deg)}
+
+  footer{border-top:1px solid var(--border);background:oklch(0.185 0 0 / .6);padding-block:3rem}
+  .footer-wrap{display:flex;flex-direction:column;gap:1.5rem;font-size:.875rem;color:var(--muted-foreground)}
+  @media(min-width:1024px){.footer-wrap{flex-direction:row;align-items:center;justify-content:space-between}}
+  .footer-brand{font-family:Montserrat,sans-serif;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.2em;color:var(--foreground)}
+  .footer-copy{margin-top:.75rem}
+  .footer-nav{display:flex;gap:1.5rem;list-style:none;margin:0;padding:0}
+  .footer-nav a{text-decoration:none;transition:color .2s}
+  .footer-nav a:hover{color:var(--primary)}
+</style>
+</head>
+<body>
+
+<svg style="display:none">
+  <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
+</svg>
+
+<div class="flag-stripe"></div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">Black Diamond <span class="accent">Corporation</span><small>Services</small></a>
+    <a href="index.html#contato" class="btn btn-ruby btn-header">Falar com a Black Diamond</a>
+  </div>
+</header>
+
+<main>
+  <section class="legal-section">
+    <div class="container legal-wrap">
+      <p class="eyebrow">Termos</p>
+      <h1>Termos de Uso</h1>
+      <p class="updated">Última atualização: setembro de 2026</p>
+
+      <div class="card legal-content">
+        <div>
+          <h2>1. Aceitação dos termos</h2>
+          <p>Ao acessar e utilizar este site, você concorda com os termos e condições descritos a seguir. Caso não concorde, recomendamos que não utilize o site ou os serviços aqui descritos.</p>
+        </div>
+
+        <div>
+          <h2>2. Sobre o serviço</h2>
+          <p>A <strong>Black Diamond Corporation Services</strong> atua como consultoria estratégica, oferecendo avaliação de perfil técnico, orientação documental/regulatória e conexão de profissionais a oportunidades ativas nos setores de óleo, gás, infraestrutura e energia na Venezuela.</p>
+          <p><strong>Importante:</strong> a Black Diamond não é uma agência de emprego, não garante contratação, remuneração específica, concessão de vistos ou qualquer resultado de processos migratórios ou contratuais com terceiros. Nosso papel é de intermediação, orientação e suporte durante o processo.</p>
+        </div>
+
+        <div>
+          <h2>3. Isenção de responsabilidade</h2>
+          <p>A empresa não se responsabiliza por:</p>
+          <ul>
+            <li>Decisões de contratação tomadas por terceiros (empregadores, contratantes ou projetos);</li>
+            <li>Atrasos, indeferimentos ou exigências de órgãos públicos relacionados a vistos, licenças ou documentação migratória;</li>
+            <li>Condições de trabalho, pagamento ou cumprimento contratual por parte de terceiros contratantes.</li>
+          </ul>
+          <p>Recomendamos que cada profissional avalie de forma independente os riscos e condições de qualquer oportunidade antes de aceitar deslocamento ou contratação internacional.</p>
+        </div>
+
+        <div>
+          <h2>4. Uso do site</h2>
+          <p>Você concorda em utilizar este site apenas para fins lícitos e em fornecer informações verdadeiras e atualizadas ao preencher o formulário de contato.</p>
+        </div>
+
+        <div>
+          <h2>5. Propriedade intelectual</h2>
+          <p>Todo o conteúdo deste site (textos, marca, layout e identidade visual) pertence à Black Diamond Corporation Services e não pode ser reproduzido sem autorização prévia.</p>
+        </div>
+
+        <div>
+          <h2>6. Alterações</h2>
+          <p>Estes Termos de Uso podem ser atualizados a qualquer momento, sem aviso prévio. A versão vigente estará sempre disponível nesta página.</p>
+        </div>
+
+        <div>
+          <h2>7. Legislação aplicável</h2>
+          <p>Estes termos são regidos pelas leis da República Federativa do Brasil, sem prejuízo de eventuais disposições aplicáveis nos países onde os serviços de conexão são prestados.</p>
+        </div>
+
+        <div>
+          <h2>8. Contato</h2>
+          <p>Em caso de dúvidas sobre estes Termos de Uso, entre em contato pelo e-mail <a href="mailto:contato@blackdiamondcs.com">contato@blackdiamondcs.com</a>.</p>
+        </div>
+      </div>
+
+      <a href="index.html" class="back-link"><svg class="icon"><use href="#i-chevron-right"/></svg> Voltar para o site</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-wrap">
+    <div>
+      <p class="footer-brand">Black Diamond <span style="color:var(--primary)">Corporation</span> Services</p>
+      <p class="footer-copy">© Black Diamond Corporation Services – Todos os direitos reservados.</p>
+    </div>
+    <ul class="footer-nav">
+      <li><a href="privacidade.html">Políticas de Privacidade</a></li>
+      <li><a href="termos.html">Termos de Uso</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -397,10 +397,10 @@ export default function Index() {
             </p>
           </div>
           <nav className="flex gap-6">
-            <a href="#sobre" className="transition-colors hover:text-primary">
+            <a href="/privacidade.html" className="transition-colors hover:text-primary">
               Políticas de Privacidade
             </a>
-            <a href="#sobre" className="transition-colors hover:text-primary">
+            <a href="/termos.html" className="transition-colors hover:text-primary">
               Termos de Uso
             </a>
           </nav>
