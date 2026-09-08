@@ -23,6 +23,8 @@
     --primary-foreground: oklch(0.99 0 0);
     --accent-blue: oklch(0.55 0.19 258);
     --accent-blue-foreground: oklch(0.99 0 0);
+    --accent-green: oklch(0.64 0.14 148);
+    --accent-green-foreground: oklch(0.99 0 0);
     --muted-foreground: oklch(0.72 0 0);
     --border: oklch(1 0 0 / 10%);
     --input: oklch(1 0 0 / 14%);
@@ -43,6 +45,7 @@
   img{max-width:100%;display:block}
   .icon{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
   .text-accent-blue{color:var(--accent-blue)}
+  .text-accent-green{color:var(--accent-green)}
   .flag-stripe{position:fixed;inset-inline:0;top:0;z-index:60;height:4px;background-image:linear-gradient(to right,var(--primary) 0%,var(--primary) 33.33%,oklch(0.98 0 0) 33.33%,oklch(0.98 0 0) 66.66%,var(--accent-blue) 66.66%,var(--accent-blue) 100%)}
 
   .container{max-width:1280px;margin-inline:auto;padding-inline:1.25rem}
@@ -81,7 +84,6 @@
   .hero h1{margin-top:1.5rem;font-size:2.25rem;font-weight:800;line-height:1.08;letter-spacing:-0.02em}
   @media(min-width:640px){.hero h1{font-size:3rem}}
   @media(min-width:1024px){.hero h1{font-size:3.75rem}}
-  .hero h1 .accent{color:var(--primary)}
   .hero .lead{margin-top:1.5rem;max-width:42rem;font-size:1rem;line-height:1.6;color:var(--muted-foreground)}
   @media(min-width:640px){.hero .lead{font-size:1.125rem}}
   .cta-row{margin-top:2.25rem;display:flex;flex-wrap:wrap;align-items:center;gap:1rem}
@@ -207,7 +209,7 @@
     <div class="container hero-content">
       <div class="hero-inner">
         <span class="badge"><svg class="icon text-accent-blue"><use href="#i-shield"/></svg> Reconstrução Nacional em Curso</span>
-        <h1>A Venezuela Está Sendo Reconstruída. <span class="accent">Trabalhe Legalizado</span> <span class="text-accent-blue">e Ganhe em Dólar</span></h1>
+        <h1>A Venezuela Está Sendo Reconstruída. <span class="text-accent-blue">Trabalhe Legalizado</span> <span class="text-accent-green">e Ganhe em Dólar</span></h1>
         <p class="lead">O país vive uma nova realidade: obras de infraestrutura, energia e petróleo avançam e a demanda por profissionais qualificados nunca foi tão grande. Conectamos você a essas oportunidades com consultoria completa, suporte documental e garantias em cada etapa do processo.</p>
         <div class="cta-row">
           <a href="#contato" class="btn btn-blue"><svg class="icon"><use href="#i-chat"/></svg> Falar com a Black Diamond</a>
