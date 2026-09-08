@@ -27,25 +27,21 @@ const areas = [
     icon: HardHat,
     title: ["Engenharia &", "Obras Rodoviárias"],
     text: "Suporte e consultoria para projetos de logística, malha viária e acessos a campos de extração.",
-    accent: "red" as const,
   },
   {
     icon: Building2,
     title: ["Infraestrutura Operacional &", "Loteamentos"],
     text: "Estruturação de bases operacionais, alojamentos técnicos e loteamentos industriais.",
-    accent: "blue" as const,
   },
   {
     icon: Flame,
     title: ["Extração &", "Produção Petrolífera"],
     text: "Conexão e direcionamento para funções ligadas à perfuração, refino, manutenção e suporte de campo.",
-    accent: "red" as const,
   },
   {
     icon: Zap,
     title: ["Energia &", "Redes Elétricas"],
     text: "Projetos e contratação para suporte à rede elétrica, usinas e infraestrutura de suporte aos poços.",
-    accent: "blue" as const,
   },
 ];
 
@@ -106,7 +102,7 @@ const faqs = [
 ];
 
 const fieldClass =
-  "w-full rounded-md border border-input bg-surface px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/70 outline-none transition-colors focus:border-primary focus:ring-2 focus:ring-ring/30";
+  "w-full rounded-md border border-input bg-surface px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/70 outline-none transition-colors focus:border-accent-blue focus:ring-2 focus:ring-ring/30";
 
 export default function Index() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
@@ -145,7 +141,7 @@ export default function Index() {
               <line x1="6" y1="19" x2="6" y2="25" stroke="#B22234" strokeWidth="2" strokeLinecap="round" />
             </svg>
             <span>
-              Black Diamond <span className="text-primary">Corporation</span>
+              Black Diamond <span className="text-accent-blue">Corporation</span>
               <span className="block text-[0.65rem] font-semibold tracking-[0.4em] text-muted-foreground">
                 Services
               </span>
@@ -205,14 +201,14 @@ export default function Index() {
               <div className="mt-9 flex flex-wrap items-center gap-4">
                 <a
                   href="#contato"
-                  className="btn-ruby inline-flex items-center gap-3 rounded-md px-7 py-4 text-base font-bold uppercase tracking-wide"
+                  className="btn-blue inline-flex items-center gap-3 rounded-md px-7 py-4 text-base font-bold uppercase tracking-wide"
                 >
                   <MessageCircle className="h-5 w-5" />
                   Falar com a Black Diamond
                 </a>
                 <a
                   href="#areas"
-                  className="inline-flex items-center gap-2 rounded-md border border-border px-6 py-4 text-sm font-semibold text-foreground transition-colors hover:border-primary hover:text-primary"
+                  className="inline-flex items-center gap-2 rounded-md border border-border px-6 py-4 text-sm font-semibold text-foreground transition-colors hover:border-accent-blue hover:text-accent-blue"
                 >
                   Áreas de Atuação
                   <ArrowRight className="h-4 w-4" />
@@ -232,7 +228,7 @@ export default function Index() {
         {/* SOBRE */}
         <section id="sobre" className="border-y border-border bg-surface/40 py-24">
           <div className="mx-auto max-w-5xl px-5 lg:px-8">
-            <p className="text-center text-xs font-semibold uppercase tracking-[0.3em] text-primary">
+            <p className="text-center text-xs font-semibold uppercase tracking-[0.3em] text-accent-blue">
               Autoridade
             </p>
             <h2 className="mt-4 text-center text-3xl font-bold tracking-tight sm:text-4xl">
@@ -254,20 +250,14 @@ export default function Index() {
         {/* ÁREAS */}
         <section id="areas" className="py-24">
           <div className="mx-auto max-w-7xl px-5 lg:px-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Setores</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-accent-blue">Setores</p>
             <h2 className="mt-4 max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">
               Áreas de Atuação
             </h2>
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {areas.map((area) => (
                 <article key={area.title.join(" ")} className="card-industrial rounded-xl p-7 text-center">
-                  <div
-                    className={`inline-flex h-12 w-12 items-center justify-center rounded-md ${
-                      area.accent === "blue"
-                        ? "bg-accent-blue/12 text-accent-blue"
-                        : "bg-primary/12 text-primary"
-                    }`}
-                  >
+                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-md bg-accent-blue/12 text-accent-blue">
                     <area.icon className="h-6 w-6" />
                   </div>
                   <h3 className="mt-6 min-h-[3.25rem] text-lg font-bold leading-snug">
@@ -287,14 +277,14 @@ export default function Index() {
         {/* PROCESSO */}
         <section id="processo" className="border-y border-border bg-surface/40 py-24">
           <div className="mx-auto max-w-7xl px-5 lg:px-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Processo</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-accent-blue">Processo</p>
             <h2 className="mt-4 max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">
               O fluxo da consultoria
             </h2>
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {steps.map((step) => (
                 <article key={step.number} className="card-industrial relative rounded-xl p-7">
-                  <span className="font-display text-4xl font-extrabold text-primary/25">
+                  <span className="font-display text-4xl font-extrabold text-accent-blue/25">
                     {step.number}
                   </span>
                   <h3 className="mt-4 text-lg font-bold">{step.title}</h3>
@@ -308,7 +298,7 @@ export default function Index() {
         {/* FAQ */}
         <section id="faq" className="py-24">
           <div className="mx-auto max-w-4xl px-5 lg:px-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Dúvidas</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-accent-blue">Dúvidas</p>
             <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
               Perguntas Frequentes
             </h2>
@@ -317,7 +307,7 @@ export default function Index() {
                 <details key={faq.question} className="card-industrial group rounded-xl p-6 sm:p-7">
                   <summary className="flex cursor-pointer items-center justify-between gap-4 text-base font-bold">
                     {faq.question}
-                    <ChevronDown className="h-5 w-5 shrink-0 text-primary transition-transform duration-200 group-open:rotate-180" />
+                    <ChevronDown className="h-5 w-5 shrink-0 text-accent-blue transition-transform duration-200 group-open:rotate-180" />
                   </summary>
                   <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{faq.answer}</p>
                 </details>
@@ -330,7 +320,7 @@ export default function Index() {
         <section id="contato" className="py-24">
           <div className="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[1fr_1.1fr] lg:px-8">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Contato</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-accent-blue">Contato</p>
               <h2 className="mt-4 text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
                 Inicie seu processo de avaliação com a Black Diamond
               </h2>
@@ -340,15 +330,15 @@ export default function Index() {
               </p>
               <ul className="mt-8 space-y-4 text-sm text-muted-foreground">
                 <li className="flex items-center gap-3">
-                  <Mail className="h-4 w-4 text-primary" />
+                  <Mail className="h-4 w-4 text-accent-blue" />
                   contato@blackdiamondcorpservices.com
                 </li>
                 <li className="flex items-center gap-3">
-                  <Phone className="h-4 w-4 text-primary" />
+                  <Phone className="h-4 w-4 text-accent-blue" />
                   Atendimento comercial em horário estendido
                 </li>
                 <li className="flex items-center gap-3">
-                  <ShieldCheck className="h-4 w-4 text-primary" />
+                  <ShieldCheck className="h-4 w-4 text-accent-blue" />
                   Dados tratados com confidencialidade
                 </li>
               </ul>
@@ -413,18 +403,18 @@ export default function Index() {
                 <button
                   type="submit"
                   disabled={status === "sending"}
-                  className="btn-ruby mt-2 inline-flex w-full items-center justify-center gap-2 rounded-md px-6 py-4 text-sm font-bold uppercase tracking-wide disabled:opacity-60"
+                  className="btn-blue mt-2 inline-flex w-full items-center justify-center gap-2 rounded-md px-6 py-4 text-sm font-bold uppercase tracking-wide disabled:opacity-60"
                 >
                   {status === "sending" ? "Enviando..." : "Solicitar Avaliação de Perfil"}
                   <ArrowRight className="h-4 w-4" />
                 </button>
                 {status === "sent" && (
-                  <p className="text-center text-sm font-medium text-primary" role="status">
+                  <p className="text-center text-sm font-medium text-accent-blue" role="status">
                     Solicitação registrada. Nossa equipe entrará em contato.
                   </p>
                 )}
                 {status === "error" && (
-                  <p className="text-center text-sm font-medium text-accent-blue" role="status">
+                  <p className="text-center text-sm font-medium text-primary" role="status">
                     Não foi possível enviar agora. Tente novamente ou fale pelo WhatsApp/e-mail acima.
                   </p>
                 )}
@@ -439,12 +429,12 @@ export default function Index() {
           <div>
             <p className="flex items-center gap-2 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-foreground">
               <svg width="20" height="20" viewBox="4 6 26 23" className="shrink-0" aria-hidden="true">
-                <path d="M11 27 L19 27 L15 15 Z" fill="#B22234" />
-                <circle cx="24" cy="11" r="3" fill="#B22234" />
-                <line x1="6" y1="19" x2="24" y2="11" stroke="#B22234" strokeWidth="2.2" strokeLinecap="round" />
-                <line x1="6" y1="19" x2="6" y2="25" stroke="#B22234" strokeWidth="2" strokeLinecap="round" />
+                <path d="M11 27 L19 27 L15 15 Z" fill="var(--accent-blue)" />
+                <circle cx="24" cy="11" r="3" fill="var(--accent-blue)" />
+                <line x1="6" y1="19" x2="24" y2="11" stroke="var(--accent-blue)" strokeWidth="2.2" strokeLinecap="round" />
+                <line x1="6" y1="19" x2="6" y2="25" stroke="var(--accent-blue)" strokeWidth="2" strokeLinecap="round" />
               </svg>
-              Black Diamond <span className="text-primary">Corporation</span> Services
+              Black Diamond <span className="text-accent-blue">Corporation</span> Services
             </p>
             <p className="mt-3">© Black Diamond Corporation Services – Todos os direitos reservados.</p>
             <p className="mt-2 text-xs leading-relaxed text-muted-foreground/70">
@@ -452,10 +442,10 @@ export default function Index() {
             </p>
           </div>
           <nav className="flex gap-6">
-            <a href="/privacidade.html" className="transition-colors hover:text-primary">
+            <a href="/privacidade.html" className="transition-colors hover:text-accent-blue">
               Políticas de Privacidade
             </a>
-            <a href="/termos.html" className="transition-colors hover:text-primary">
+            <a href="/termos.html" className="transition-colors hover:text-accent-blue">
               Termos de Uso
             </a>
           </nav>

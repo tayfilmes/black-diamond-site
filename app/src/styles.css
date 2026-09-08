@@ -92,7 +92,7 @@
   --destructive-foreground: oklch(0.98 0 0);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 14%);
-  --ring: oklch(0.56 0.222 26.5);
+  --ring: oklch(0.55 0.19 258);
   --gradient-hero: linear-gradient(
     120deg,
     oklch(0.12 0 0 / 0.96) 0%,
@@ -103,6 +103,7 @@
   --gradient-blue: linear-gradient(135deg, oklch(0.55 0.19 258), oklch(0.42 0.16 258));
   --shadow-elegant: 0 24px 60px -24px oklch(0 0 0 / 0.85);
   --shadow-glow: 0 0 0 1px oklch(0.56 0.222 26.5 / 0.35), 0 18px 40px -18px oklch(0.56 0.222 26.5 / 0.55);
+  --shadow-glow-blue: 0 0 0 1px oklch(0.55 0.19 258 / 0.35), 0 18px 40px -18px oklch(0.55 0.19 258 / 0.55);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -145,6 +146,17 @@
   }
 }
 
+@utility btn-blue {
+  background-image: var(--gradient-blue);
+  color: var(--accent-blue-foreground);
+  box-shadow: var(--shadow-glow-blue);
+  transition: transform 0.2s ease, filter 0.2s ease;
+  &:hover {
+    filter: brightness(1.12);
+    transform: translateY(-2px);
+  }
+}
+
 @utility card-industrial {
   background-color: var(--card);
   border: 1px solid var(--border);
@@ -152,8 +164,8 @@
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
   &:hover {
     transform: translateY(-4px);
-    border-color: oklch(0.56 0.222 26.5 / 0.5);
-    box-shadow: var(--shadow-glow);
+    border-color: oklch(0.55 0.19 258 / 0.5);
+    box-shadow: var(--shadow-glow-blue);
   }
 }
 
