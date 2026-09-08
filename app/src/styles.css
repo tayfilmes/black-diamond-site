@@ -225,3 +225,38 @@
   }
 }
 
+.timeline-plane {
+  left: 0;
+  opacity: 0;
+}
+
+.timeline-plane.is-flying {
+  animation: plane-fly 8s linear infinite;
+}
+
+@keyframes plane-fly {
+  0% {
+    left: 0%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    left: 100%;
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline-plane.is-flying {
+    animation: none;
+    opacity: 1;
+    left: 50%;
+  }
+}
+

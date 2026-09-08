@@ -339,11 +339,19 @@ export default function Index() {
             {areas.map((area) => {
               const tint = area.accent === "red" ? "oklch(0.56 0.222 26.5 / .55)" : "oklch(0.55 0.19 258 / .55)";
               return (
-                <div
-                  key={area.title.join(" ")}
-                  className="flex-1 bg-cover bg-center"
-                  style={{ backgroundImage: `linear-gradient(${tint}, ${tint}), url(${area.photo})` }}
-                />
+                <div key={area.title.join(" ")} className="relative flex-1 overflow-hidden">
+                  <div
+                    className="absolute bg-cover bg-center"
+                    style={{
+                      top: "-5%",
+                      bottom: "-5%",
+                      left: "-30%",
+                      right: "-30%",
+                      transform: "skewX(9deg)",
+                      backgroundImage: `linear-gradient(${tint}, ${tint}), url(${area.photo})`,
+                    }}
+                  />
+                </div>
               );
             })}
           </div>
@@ -424,9 +432,8 @@ export default function Index() {
               </div>
               <div
                 aria-hidden="true"
-                className="absolute top-1/2 h-6 w-6 text-white transition-[left] duration-[6000ms] ease-linear motion-reduce:transition-none"
+                className={`timeline-plane absolute top-1/2 h-6 w-6 text-white ${timelineInView ? "is-flying" : ""}`}
                 style={{
-                  left: timelineInView ? "100%" : "0%",
                   transform: "translate(-50%, -50%) rotate(90deg)",
                   filter: "drop-shadow(0 1px 4px oklch(0 0 0 / .6))",
                 }}
