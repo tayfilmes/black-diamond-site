@@ -47,8 +47,6 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-accent-blue: var(--accent-blue);
   --color-accent-blue-foreground: var(--accent-blue-foreground);
-  --color-accent-green: var(--accent-green);
-  --color-accent-green-foreground: var(--accent-green-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
@@ -90,8 +88,6 @@
   --accent-foreground: oklch(0.99 0 0);
   --accent-blue: oklch(0.55 0.19 258);
   --accent-blue-foreground: oklch(0.99 0 0);
-  --accent-green: oklch(0.64 0.14 148);
-  --accent-green-foreground: oklch(0.99 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.98 0 0);
   --border: oklch(1 0 0 / 10%);

@@ -189,8 +189,7 @@ export default function Index() {
               </span>
               <h1 className="mt-6 text-4xl font-extrabold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
                 A Venezuela Está Sendo Reconstruída.{" "}
-                <span className="text-accent-blue">Trabalhe Legalizado</span>{" "}
-                <span className="text-accent-green">e Ganhe em Dólar</span>
+                <span className="text-accent-blue">Trabalhe Legalizado</span> e Ganhe em Dólar
               </h1>
               <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
                 O país vive uma nova realidade: obras de infraestrutura, energia e petróleo avançam
