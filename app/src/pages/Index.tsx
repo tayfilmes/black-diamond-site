@@ -444,9 +444,14 @@ export default function Index() {
               </div>
             </div>
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
-              {steps.map((step) => (
+              {steps.map((step, i) => (
                 <article key={step.number} className="card-industrial relative rounded-xl p-7">
-                  <span className="font-display text-4xl font-extrabold text-accent-blue/25">
+                  <span
+                    className={`font-display inline-block text-4xl font-extrabold text-accent-blue ${
+                      timelineInView ? "step-pulse" : ""
+                    }`}
+                    style={timelineInView ? { animationDelay: `${(i + 1) * 1.2}s` } : undefined}
+                  >
                     {step.number}
                   </span>
                   <h3 className="mt-4 text-lg font-bold">{step.title}</h3>

@@ -260,3 +260,26 @@
   }
 }
 
+.step-pulse {
+  animation: step-pulse 8s linear infinite;
+}
+
+@keyframes step-pulse {
+  0%,
+  10%,
+  100% {
+    transform: scale(1);
+    text-shadow: none;
+  }
+  4% {
+    transform: scale(1.2);
+    text-shadow: 0 0 16px oklch(0.55 0.19 258 / 0.9);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .step-pulse {
+    animation: none;
+  }
+}
+
