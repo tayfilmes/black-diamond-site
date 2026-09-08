@@ -29,23 +29,27 @@ const areas = [
     icon: HardHat,
     title: ["Engenharia &", "Obras Rodoviárias"],
     text: "Suporte e consultoria para projetos de logística, malha viária e acessos a campos de extração.",
+    accent: "red",
   },
   {
     icon: Building2,
     title: ["Infraestrutura Operacional &", "Loteamentos"],
     text: "Estruturação de bases operacionais, alojamentos técnicos e loteamentos industriais.",
+    accent: "blue",
   },
   {
     icon: Flame,
     title: ["Extração &", "Produção Petrolífera"],
     text: "Conexão e direcionamento para funções ligadas à perfuração, refino, manutenção e suporte de campo.",
+    accent: "red",
   },
   {
     icon: Zap,
     title: ["Energia &", "Redes Elétricas"],
     text: "Projetos e contratação para suporte à rede elétrica, usinas e infraestrutura de suporte aos poços.",
+    accent: "blue",
   },
-];
+] as const;
 
 const steps = [
   {
@@ -326,18 +330,38 @@ export default function Index() {
             </h2>
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {areas.map((area) => (
-                <article key={area.title.join(" ")} className="card-industrial rounded-xl p-7 text-center">
-                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-md bg-accent-blue/12 text-accent-blue">
-                    <area.icon className="h-6 w-6" />
+                <article
+                  key={area.title.join(" ")}
+                  className="card-industrial overflow-hidden rounded-xl text-center"
+                >
+                  <div
+                    className="relative flex h-[7.5rem] items-center justify-center"
+                    style={{
+                      clipPath: "polygon(0 0, 100% 0, 100% 68%, 0 100%)",
+                      backgroundImage: area.accent === "red" ? "var(--gradient-red)" : "var(--gradient-blue)",
+                    }}
+                  >
+                    <area.icon className="h-12 w-12" style={{ color: "oklch(1 0 0 / .3)" }} />
                   </div>
-                  <h3 className="mt-6 min-h-[3.25rem] text-lg font-bold leading-snug">
-                    {area.title.map((line) => (
-                      <span key={line} className="block">
-                        {line}
-                      </span>
-                    ))}
-                  </h3>
-                  <p className="mt-3 text-left text-sm leading-relaxed text-muted-foreground">{area.text}</p>
+                  <div className="px-7 pb-7 pt-3">
+                    <div
+                      className="relative z-10 -mt-7 inline-flex h-14 w-14 items-center justify-center rounded-full bg-card shadow-elegant"
+                      style={{ border: "3px solid var(--background)" }}
+                    >
+                      <area.icon
+                        className="h-6 w-6"
+                        style={{ color: area.accent === "red" ? "var(--primary)" : "var(--accent-blue)" }}
+                      />
+                    </div>
+                    <h3 className="mt-3 min-h-[3.25rem] text-lg font-bold leading-snug">
+                      {area.title.map((line) => (
+                        <span key={line} className="block">
+                          {line}
+                        </span>
+                      ))}
+                    </h3>
+                    <p className="mt-3 text-left text-sm leading-relaxed text-muted-foreground">{area.text}</p>
+                  </div>
                 </article>
               ))}
             </div>
