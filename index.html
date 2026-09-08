@@ -132,22 +132,17 @@
   .timeline-dot{width:.6rem;height:.6rem;border-radius:50%;background:var(--accent-blue);flex-shrink:0}
   .timeline-flag{width:2.25rem;height:1.5rem;border-radius:.2rem;overflow:hidden;box-shadow:0 0 0 2px var(--background);flex-shrink:0}
   .timeline-flag svg{width:100%;height:100%;display:block}
-  .timeline-plane{position:absolute;top:50%;left:0;width:1.6rem;height:1.6rem;color:var(--accent-blue);transform:translate(-50%,-50%);transition:left 2.4s cubic-bezier(.4,0,.2,1)}
+  .timeline-plane{position:absolute;top:50%;left:0;width:1.6rem;height:1.6rem;color:oklch(0.98 0 0);filter:drop-shadow(0 1px 4px oklch(0 0 0 / .6));transform:translate(-50%,-50%);transition:left 2.4s cubic-bezier(.4,0,.2,1)}
   .timeline-plane svg{width:100%;height:100%;fill:currentColor}
   .timeline-track.in-view .timeline-plane{left:100%}
   @media(prefers-reduced-motion:reduce){.timeline-plane{transition:none}}
   .area-card{padding:0;text-align:center;overflow:hidden}
-  .area-photo{position:relative;height:7.5rem;display:flex;align-items:center;justify-content:center;clip-path:polygon(0 0,100% 0,100% 68%,0 100%)}
+  .area-photo{position:relative;height:12rem;display:flex;align-items:flex-start;justify-content:flex-start;padding:1.5rem;clip-path:polygon(0 0,100% 0,100% 68%,0 100%)}
   .area-photo.is-red{background:var(--gradient-red)}
   .area-photo.is-blue{background:var(--gradient-blue)}
-  .area-photo .icon{width:3rem;height:3rem;color:oklch(1 0 0 / .3)}
-  .area-icon{display:inline-flex;height:3rem;width:3rem;align-items:center;justify-content:center;border-radius:.375rem;background:oklch(0.55 0.19 258 / .12);color:var(--accent-blue);font-size:1.5rem}
-  .area-icon-badge{position:relative;z-index:1;margin-top:-1.75rem;display:inline-flex;height:3.5rem;width:3.5rem;align-items:center;justify-content:center;border-radius:50%;background:var(--card);border:3px solid var(--background);box-shadow:var(--shadow-elegant)}
-  .area-icon-badge .icon{width:1.5rem;height:1.5rem}
-  .area-icon-badge.is-red .icon{color:var(--primary)}
-  .area-icon-badge.is-blue .icon{color:var(--accent-blue)}
-  .area-body{padding:.75rem 1.75rem 1.75rem}
-  .area-card h3{margin-top:.75rem;font-size:1.125rem;font-weight:700;line-height:1.4;min-height:3.25rem}
+  .area-photo .icon{width:2.5rem;height:2.5rem;color:oklch(1 0 0 / .85)}
+  .area-body{padding:1.5rem 1.75rem 1.75rem}
+  .area-card h3{margin-top:0;font-size:1.125rem;font-weight:700;line-height:1.4;min-height:3.25rem}
   .area-card p{margin-top:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted-foreground);text-align:left}
 
   .step-card{position:relative;padding:1.75rem}
@@ -230,7 +225,7 @@
         <li><a href="#contato">Contato</a></li>
       </ul>
     </nav>
-    <a href="#contato" class="btn btn-ruby btn-header">Falar com a Black Diamond <svg class="icon"><use href="#i-chevron-right"/></svg></a>
+    <a href="#contato" class="btn btn-blue btn-header">Falar com a Black Diamond <svg class="icon"><use href="#i-chevron-right"/></svg></a>
   </div>
 </header>
 
@@ -307,7 +302,6 @@
         <article class="card area-card">
           <div class="area-photo is-red"><svg class="icon"><use href="#i-hardhat"/></svg></div>
           <div class="area-body">
-            <div class="area-icon-badge is-red"><svg class="icon"><use href="#i-hardhat"/></svg></div>
             <h3>Engenharia &amp;<br>Obras Rodoviárias</h3>
             <p>Suporte e consultoria para projetos de logística, malha viária e acessos a campos de extração.</p>
           </div>
@@ -315,7 +309,6 @@
         <article class="card area-card">
           <div class="area-photo is-blue"><svg class="icon"><use href="#i-building"/></svg></div>
           <div class="area-body">
-            <div class="area-icon-badge is-blue"><svg class="icon"><use href="#i-building"/></svg></div>
             <h3>Infraestrutura Operacional &amp;<br>Loteamentos</h3>
             <p>Estruturação de bases operacionais, alojamentos técnicos e loteamentos industriais.</p>
           </div>
@@ -323,7 +316,6 @@
         <article class="card area-card">
           <div class="area-photo is-red"><svg class="icon"><use href="#i-flame"/></svg></div>
           <div class="area-body">
-            <div class="area-icon-badge is-red"><svg class="icon"><use href="#i-flame"/></svg></div>
             <h3>Extração &amp;<br>Produção Petrolífera</h3>
             <p>Conexão e direcionamento para funções ligadas à perfuração, refino, manutenção e suporte de campo.</p>
           </div>
@@ -331,7 +323,6 @@
         <article class="card area-card">
           <div class="area-photo is-blue"><svg class="icon"><use href="#i-zap"/></svg></div>
           <div class="area-body">
-            <div class="area-icon-badge is-blue"><svg class="icon"><use href="#i-zap"/></svg></div>
             <h3>Energia &amp;<br>Redes Elétricas</h3>
             <p>Projetos e contratação para suporte à rede elétrica, usinas e infraestrutura de suporte aos poços.</p>
           </div>

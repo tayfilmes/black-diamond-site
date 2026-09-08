@@ -193,7 +193,7 @@ export default function Index() {
 
           <a
             href="#contato"
-            className="btn-ruby hidden items-center gap-2 rounded-md px-5 py-2.5 text-sm font-semibold sm:inline-flex"
+            className="btn-blue hidden items-center gap-2 rounded-md px-5 py-2.5 text-sm font-semibold sm:inline-flex"
           >
             Falar com a Black Diamond
             <ChevronRight className="h-4 w-4" />
@@ -335,25 +335,16 @@ export default function Index() {
                   className="card-industrial overflow-hidden rounded-xl text-center"
                 >
                   <div
-                    className="relative flex h-[7.5rem] items-center justify-center"
+                    className="relative flex h-48 items-start justify-start p-6"
                     style={{
                       clipPath: "polygon(0 0, 100% 0, 100% 68%, 0 100%)",
                       backgroundImage: area.accent === "red" ? "var(--gradient-red)" : "var(--gradient-blue)",
                     }}
                   >
-                    <area.icon className="h-12 w-12" style={{ color: "oklch(1 0 0 / .3)" }} />
+                    <area.icon className="h-10 w-10" style={{ color: "oklch(1 0 0 / .85)" }} />
                   </div>
-                  <div className="px-7 pb-7 pt-3">
-                    <div
-                      className="relative z-10 -mt-7 inline-flex h-14 w-14 items-center justify-center rounded-full bg-card shadow-elegant"
-                      style={{ border: "3px solid var(--background)" }}
-                    >
-                      <area.icon
-                        className="h-6 w-6"
-                        style={{ color: area.accent === "red" ? "var(--primary)" : "var(--accent-blue)" }}
-                      />
-                    </div>
-                    <h3 className="mt-3 min-h-[3.25rem] text-lg font-bold leading-snug">
+                  <div className="px-7 pb-7 pt-6">
+                    <h3 className="min-h-[3.25rem] text-lg font-bold leading-snug">
                       {area.title.map((line) => (
                         <span key={line} className="block">
                           {line}
@@ -408,8 +399,11 @@ export default function Index() {
               </div>
               <div
                 aria-hidden="true"
-                className="absolute top-1/2 h-6 w-6 -translate-x-1/2 -translate-y-1/2 text-accent-blue transition-[left] duration-[2400ms] ease-in-out motion-reduce:transition-none"
-                style={{ left: timelineInView ? "100%" : "0%" }}
+                className="absolute top-1/2 h-6 w-6 -translate-x-1/2 -translate-y-1/2 text-white transition-[left] duration-[2400ms] ease-in-out motion-reduce:transition-none"
+                style={{
+                  left: timelineInView ? "100%" : "0%",
+                  filter: "drop-shadow(0 1px 4px oklch(0 0 0 / .6))",
+                }}
               >
                 <svg viewBox="0 0 24 24" className="h-full w-full fill-current">
                   <path d="M12 2 L14 9 L21 12 L14 12.5 L13 20 L15 22 L12 21 L9 22 L11 20 L10 12.5 L3 12 L10 9 Z" />
