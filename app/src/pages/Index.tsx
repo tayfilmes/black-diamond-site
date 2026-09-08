@@ -6,9 +6,11 @@ import {
   ChevronRight,
   Flame,
   HardHat,
+  Image,
   Mail,
   MessageCircle,
   Phone,
+  PlayCircle,
   ShieldCheck,
   Zap,
 } from "lucide-react";
@@ -267,6 +269,50 @@ export default function Index() {
                 para que sua experiência no país aconteça de forma segura, totalmente legalizada e
                 com remuneração em dólar.
               </p>
+            </div>
+          </div>
+
+          <div className="mx-auto mt-16 grid max-w-7xl gap-10 px-5 lg:grid-cols-[3fr_2fr] lg:items-start lg:px-8">
+            <div>
+              <h3 className="text-2xl font-bold">Conheça a Venezuela</h3>
+              <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+                Depois do forte terremoto que atingiu a região de Caracas em junho de 2026 e de uma
+                recente transição de governo, a Venezuela entrou em um intenso processo de
+                reconstrução. Esse novo momento tem gerado uma demanda real por infraestrutura,
+                energia e profissionais técnicos qualificados — e é exatamente aí que a Black
+                Diamond atua, conectando você a essas oportunidades com remuneração em dólar e
+                suporte completo em toda a parte legal.
+              </p>
+              <div className="mt-8 grid grid-cols-2 gap-5">
+                <div className="rounded-lg border border-border bg-card p-4">
+                  <span className="block text-xs uppercase tracking-wider text-muted-foreground">Capital</span>
+                  <span className="mt-1 block text-base font-semibold text-foreground">Caracas</span>
+                </div>
+                <div className="rounded-lg border border-border bg-card p-4">
+                  <span className="block text-xs uppercase tracking-wider text-muted-foreground">População</span>
+                  <span className="mt-1 block text-base font-semibold text-foreground">~28,6 milhões</span>
+                </div>
+                <div className="rounded-lg border border-border bg-card p-4">
+                  <span className="block text-xs uppercase tracking-wider text-muted-foreground">Fronteiras</span>
+                  <span className="mt-1 block text-base font-semibold text-foreground">Brasil, Colômbia e Guiana</span>
+                </div>
+                <div className="rounded-lg border border-border bg-card p-4">
+                  <span className="block text-xs uppercase tracking-wider text-muted-foreground">Moeda</span>
+                  <span className="mt-1 block text-base font-semibold text-foreground">Dólar americano</span>
+                </div>
+              </div>
+            </div>
+            <div className="grid gap-5">
+              <div className="flex min-h-44 flex-col items-center justify-center gap-3 rounded-xl border border-dashed border-border bg-surface p-6 text-center text-muted-foreground">
+                <Image className="h-8 w-8 opacity-60" />
+                <span className="text-xs leading-relaxed">
+                  Foto de um ponto turístico da Venezuela (a inserir)
+                </span>
+              </div>
+              <div className="flex min-h-44 flex-col items-center justify-center gap-3 rounded-xl border border-dashed border-border bg-surface p-6 text-center text-muted-foreground">
+                <PlayCircle className="h-8 w-8 opacity-60" />
+                <span className="text-xs leading-relaxed">Espaço reservado para vídeo</span>
+              </div>
             </div>
           </div>
         </section>
