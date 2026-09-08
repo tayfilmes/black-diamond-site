@@ -322,8 +322,22 @@ export default function Index() {
         </section>
 
         {/* ÁREAS */}
-        <section id="areas" className="py-24">
-          <div className="mx-auto max-w-7xl px-5 lg:px-8">
+        <section id="areas" className="relative overflow-hidden py-24">
+          <div
+            aria-hidden="true"
+            className="absolute -inset-16 z-0 flex"
+            style={{ transform: "skewX(-9deg)" }}
+          >
+            {areas.map((area) => (
+              <div
+                key={area.title.join(" ")}
+                className="flex-1"
+                style={{ backgroundImage: area.accent === "red" ? "var(--gradient-red)" : "var(--gradient-blue)" }}
+              />
+            ))}
+          </div>
+          <div aria-hidden="true" className="absolute inset-0 z-0" style={{ background: "oklch(0.1 0 0 / .58)" }} />
+          <div className="relative z-10 mx-auto max-w-7xl px-5 lg:px-8">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-accent-blue">Setores</p>
             <h2 className="mt-4 max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">
               Áreas de Atuação
@@ -332,27 +346,27 @@ export default function Index() {
               {areas.map((area) => (
                 <article
                   key={area.title.join(" ")}
-                  className="card-industrial overflow-hidden rounded-xl text-center"
+                  className="rounded-xl border p-7 text-center"
+                  style={{
+                    background: "oklch(0.1 0 0 / .55)",
+                    borderColor: "oklch(1 0 0 / .12)",
+                    backdropFilter: "blur(6px)",
+                  }}
                 >
                   <div
-                    className="relative flex h-48 items-start justify-start p-6"
-                    style={{
-                      clipPath: "polygon(0 0, 100% 0, 100% 68%, 0 100%)",
-                      backgroundImage: area.accent === "red" ? "var(--gradient-red)" : "var(--gradient-blue)",
-                    }}
+                    className="inline-flex h-12 w-12 items-center justify-center rounded-md text-white"
+                    style={{ background: "oklch(1 0 0 / .12)" }}
                   >
-                    <area.icon className="h-10 w-10" style={{ color: "oklch(1 0 0 / .85)" }} />
+                    <area.icon className="h-6 w-6" />
                   </div>
-                  <div className="px-7 pb-7 pt-6">
-                    <h3 className="min-h-[3.25rem] text-lg font-bold leading-snug">
-                      {area.title.map((line) => (
-                        <span key={line} className="block">
-                          {line}
-                        </span>
-                      ))}
-                    </h3>
-                    <p className="mt-3 text-left text-sm leading-relaxed text-muted-foreground">{area.text}</p>
-                  </div>
+                  <h3 className="mt-5 min-h-[3.25rem] text-lg font-bold leading-snug">
+                    {area.title.map((line) => (
+                      <span key={line} className="block">
+                        {line}
+                      </span>
+                    ))}
+                  </h3>
+                  <p className="mt-3 text-left text-sm leading-relaxed text-muted-foreground">{area.text}</p>
                 </article>
               ))}
             </div>
@@ -399,14 +413,15 @@ export default function Index() {
               </div>
               <div
                 aria-hidden="true"
-                className="absolute top-1/2 h-6 w-6 -translate-x-1/2 -translate-y-1/2 text-white transition-[left] duration-[2400ms] ease-in-out motion-reduce:transition-none"
+                className="absolute top-1/2 h-6 w-6 text-white transition-[left] duration-[6000ms] ease-linear motion-reduce:transition-none"
                 style={{
                   left: timelineInView ? "100%" : "0%",
+                  transform: "translate(-50%, -50%) rotate(90deg)",
                   filter: "drop-shadow(0 1px 4px oklch(0 0 0 / .6))",
                 }}
               >
                 <svg viewBox="0 0 24 24" className="h-full w-full fill-current">
-                  <path d="M12 2 L14 9 L21 12 L14 12.5 L13 20 L15 22 L12 21 L9 22 L11 20 L10 12.5 L3 12 L10 9 Z" />
+                  <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
                 </svg>
               </div>
             </div>

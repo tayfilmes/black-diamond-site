@@ -132,17 +132,21 @@
   .timeline-dot{width:.6rem;height:.6rem;border-radius:50%;background:var(--accent-blue);flex-shrink:0}
   .timeline-flag{width:2.25rem;height:1.5rem;border-radius:.2rem;overflow:hidden;box-shadow:0 0 0 2px var(--background);flex-shrink:0}
   .timeline-flag svg{width:100%;height:100%;display:block}
-  .timeline-plane{position:absolute;top:50%;left:0;width:1.6rem;height:1.6rem;color:oklch(0.98 0 0);filter:drop-shadow(0 1px 4px oklch(0 0 0 / .6));transform:translate(-50%,-50%);transition:left 2.4s cubic-bezier(.4,0,.2,1)}
+  .timeline-plane{position:absolute;top:50%;left:0;width:1.6rem;height:1.6rem;color:oklch(0.98 0 0);filter:drop-shadow(0 1px 4px oklch(0 0 0 / .6));transform:translate(-50%,-50%) rotate(90deg);transition:left 6s linear}
   .timeline-plane svg{width:100%;height:100%;fill:currentColor}
   .timeline-track.in-view .timeline-plane{left:100%}
   @media(prefers-reduced-motion:reduce){.timeline-plane{transition:none}}
-  .area-card{padding:0;text-align:center;overflow:hidden}
-  .area-photo{position:relative;height:12rem;display:flex;align-items:flex-start;justify-content:flex-start;padding:1.5rem;clip-path:polygon(0 0,100% 0,100% 68%,0 100%)}
-  .area-photo.is-red{background:var(--gradient-red)}
-  .area-photo.is-blue{background:var(--gradient-blue)}
-  .area-photo .icon{width:2.5rem;height:2.5rem;color:oklch(1 0 0 / .85)}
-  .area-body{padding:1.5rem 1.75rem 1.75rem}
-  .area-card h3{margin-top:0;font-size:1.125rem;font-weight:700;line-height:1.4;min-height:3.25rem}
+  .areas-section{position:relative;overflow:hidden}
+  .areas-photos{position:absolute;top:-4rem;bottom:-4rem;left:-4rem;right:-4rem;z-index:0;display:flex;transform:skewX(-9deg)}
+  .areas-photo{flex:1 1 0}
+  .areas-photo.is-red{background:var(--gradient-red)}
+  .areas-photo.is-blue{background:var(--gradient-blue)}
+  .areas-scrim{position:absolute;inset:0;z-index:0;background:oklch(0.1 0 0 / .58)}
+  .areas-section .container{position:relative;z-index:1}
+  .area-card{padding:1.75rem;text-align:center;background:oklch(0.1 0 0 / .55);backdrop-filter:blur(6px);border-color:oklch(1 0 0 / .12)}
+  .area-icon{display:inline-flex;height:3rem;width:3rem;align-items:center;justify-content:center;border-radius:.5rem;background:oklch(1 0 0 / .12);color:#fff}
+  .area-icon .icon{width:1.5rem;height:1.5rem}
+  .area-card h3{margin-top:1.25rem;font-size:1.125rem;font-weight:700;line-height:1.4;min-height:3.25rem}
   .area-card p{margin-top:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted-foreground);text-align:left}
 
   .step-card{position:relative;padding:1.75rem}
@@ -294,38 +298,37 @@
     </div>
   </section>
 
-  <section id="areas">
+  <section id="areas" class="areas-section">
+    <div class="areas-photos" aria-hidden="true">
+      <div class="areas-photo is-red"></div>
+      <div class="areas-photo is-blue"></div>
+      <div class="areas-photo is-red"></div>
+      <div class="areas-photo is-blue"></div>
+    </div>
+    <div class="areas-scrim" aria-hidden="true"></div>
     <div class="container">
       <p class="eyebrow">Setores</p>
       <h2 class="section-title">Áreas de Atuação</h2>
       <div class="grid-4">
         <article class="card area-card">
-          <div class="area-photo is-red"><svg class="icon"><use href="#i-hardhat"/></svg></div>
-          <div class="area-body">
-            <h3>Engenharia &amp;<br>Obras Rodoviárias</h3>
-            <p>Suporte e consultoria para projetos de logística, malha viária e acessos a campos de extração.</p>
-          </div>
+          <div class="area-icon"><svg class="icon"><use href="#i-hardhat"/></svg></div>
+          <h3>Engenharia &amp;<br>Obras Rodoviárias</h3>
+          <p>Suporte e consultoria para projetos de logística, malha viária e acessos a campos de extração.</p>
         </article>
         <article class="card area-card">
-          <div class="area-photo is-blue"><svg class="icon"><use href="#i-building"/></svg></div>
-          <div class="area-body">
-            <h3>Infraestrutura Operacional &amp;<br>Loteamentos</h3>
-            <p>Estruturação de bases operacionais, alojamentos técnicos e loteamentos industriais.</p>
-          </div>
+          <div class="area-icon"><svg class="icon"><use href="#i-building"/></svg></div>
+          <h3>Infraestrutura Operacional &amp;<br>Loteamentos</h3>
+          <p>Estruturação de bases operacionais, alojamentos técnicos e loteamentos industriais.</p>
         </article>
         <article class="card area-card">
-          <div class="area-photo is-red"><svg class="icon"><use href="#i-flame"/></svg></div>
-          <div class="area-body">
-            <h3>Extração &amp;<br>Produção Petrolífera</h3>
-            <p>Conexão e direcionamento para funções ligadas à perfuração, refino, manutenção e suporte de campo.</p>
-          </div>
+          <div class="area-icon"><svg class="icon"><use href="#i-flame"/></svg></div>
+          <h3>Extração &amp;<br>Produção Petrolífera</h3>
+          <p>Conexão e direcionamento para funções ligadas à perfuração, refino, manutenção e suporte de campo.</p>
         </article>
         <article class="card area-card">
-          <div class="area-photo is-blue"><svg class="icon"><use href="#i-zap"/></svg></div>
-          <div class="area-body">
-            <h3>Energia &amp;<br>Redes Elétricas</h3>
-            <p>Projetos e contratação para suporte à rede elétrica, usinas e infraestrutura de suporte aos poços.</p>
-          </div>
+          <div class="area-icon"><svg class="icon"><use href="#i-zap"/></svg></div>
+          <h3>Energia &amp;<br>Redes Elétricas</h3>
+          <p>Projetos e contratação para suporte à rede elétrica, usinas e infraestrutura de suporte aos poços.</p>
         </article>
       </div>
     </div>
@@ -348,7 +351,7 @@
           <svg viewBox="0 0 24 16"><rect width="24" height="5.33" fill="#FFCC00"/><rect y="5.33" width="24" height="5.33" fill="#00247D"/><rect y="10.66" width="24" height="5.34" fill="#CF142B"/></svg>
         </div>
         <div class="timeline-plane" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M12 2 L14 9 L21 12 L14 12.5 L13 20 L15 22 L12 21 L9 22 L11 20 L10 12.5 L3 12 L10 9 Z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
         </div>
       </div>
       <div class="grid-process">
