@@ -15,7 +15,7 @@ import {
   Zap,
 } from "lucide-react";
 import heroImage from "@/assets/hero-oilfield.jpg";
-import areaEngenharia from "@/assets/areas/engenharia.jpg";
+import areaEngenharia from "@/assets/areas/engenharia-v2.jpg";
 import areaInfraestrutura from "@/assets/areas/infraestrutura.jpg";
 import areaPetroleo from "@/assets/areas/petroleo.jpg";
 import areaEnergia from "@/assets/areas/energia.jpg";
