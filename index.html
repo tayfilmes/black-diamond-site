@@ -138,10 +138,8 @@
   @media(prefers-reduced-motion:reduce){.timeline-plane{transition:none}}
   .areas-section{position:relative;overflow:hidden}
   .areas-photos{position:absolute;top:-4rem;bottom:-4rem;left:-4rem;right:-4rem;z-index:0;display:flex;transform:skewX(-9deg)}
-  .areas-photo{flex:1 1 0}
-  .areas-photo.is-red{background:var(--gradient-red)}
-  .areas-photo.is-blue{background:var(--gradient-blue)}
-  .areas-scrim{position:absolute;inset:0;z-index:0;background:oklch(0.1 0 0 / .58)}
+  .areas-photo{flex:1 1 0;background-size:cover;background-position:center}
+  .areas-scrim{position:absolute;inset:0;z-index:0;background:oklch(0.08 0 0 / .5)}
   .areas-section .container{position:relative;z-index:1}
   .area-card{padding:1.75rem;text-align:center;background:oklch(0.1 0 0 / .55);backdrop-filter:blur(6px);border-color:oklch(1 0 0 / .12)}
   .area-icon{display:inline-flex;height:3rem;width:3rem;align-items:center;justify-content:center;border-radius:.5rem;background:oklch(1 0 0 / .12);color:#fff}
@@ -300,10 +298,10 @@
 
   <section id="areas" class="areas-section">
     <div class="areas-photos" aria-hidden="true">
-      <div class="areas-photo is-red"></div>
-      <div class="areas-photo is-blue"></div>
-      <div class="areas-photo is-red"></div>
-      <div class="areas-photo is-blue"></div>
+      <div class="areas-photo" style="background-image:linear-gradient(oklch(0.56 0.222 26.5 / .55),oklch(0.56 0.222 26.5 / .55)),url('assets/areas/engenharia.jpg')"></div>
+      <div class="areas-photo" style="background-image:linear-gradient(oklch(0.55 0.19 258 / .55),oklch(0.55 0.19 258 / .55)),url('assets/areas/infraestrutura.jpg')"></div>
+      <div class="areas-photo" style="background-image:linear-gradient(oklch(0.56 0.222 26.5 / .55),oklch(0.56 0.222 26.5 / .55)),url('assets/areas/petroleo.jpg')"></div>
+      <div class="areas-photo" style="background-image:linear-gradient(oklch(0.55 0.19 258 / .55),oklch(0.55 0.19 258 / .55)),url('assets/areas/energia.jpg')"></div>
     </div>
     <div class="areas-scrim" aria-hidden="true"></div>
     <div class="container">

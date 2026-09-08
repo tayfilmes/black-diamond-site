@@ -15,6 +15,10 @@ import {
   Zap,
 } from "lucide-react";
 import heroImage from "@/assets/hero-oilfield.jpg";
+import areaEngenharia from "@/assets/areas/engenharia.jpg";
+import areaInfraestrutura from "@/assets/areas/infraestrutura.jpg";
+import areaPetroleo from "@/assets/areas/petroleo.jpg";
+import areaEnergia from "@/assets/areas/energia.jpg";
 
 const navLinks = [
   { label: "Sobre", href: "#sobre" },
@@ -30,24 +34,28 @@ const areas = [
     title: ["Engenharia &", "Obras Rodoviárias"],
     text: "Suporte e consultoria para projetos de logística, malha viária e acessos a campos de extração.",
     accent: "red",
+    photo: areaEngenharia,
   },
   {
     icon: Building2,
     title: ["Infraestrutura Operacional &", "Loteamentos"],
     text: "Estruturação de bases operacionais, alojamentos técnicos e loteamentos industriais.",
     accent: "blue",
+    photo: areaInfraestrutura,
   },
   {
     icon: Flame,
     title: ["Extração &", "Produção Petrolífera"],
     text: "Conexão e direcionamento para funções ligadas à perfuração, refino, manutenção e suporte de campo.",
     accent: "red",
+    photo: areaPetroleo,
   },
   {
     icon: Zap,
     title: ["Energia &", "Redes Elétricas"],
     text: "Projetos e contratação para suporte à rede elétrica, usinas e infraestrutura de suporte aos poços.",
     accent: "blue",
+    photo: areaEnergia,
   },
 ] as const;
 
@@ -328,15 +336,18 @@ export default function Index() {
             className="absolute -inset-16 z-0 flex"
             style={{ transform: "skewX(-9deg)" }}
           >
-            {areas.map((area) => (
-              <div
-                key={area.title.join(" ")}
-                className="flex-1"
-                style={{ backgroundImage: area.accent === "red" ? "var(--gradient-red)" : "var(--gradient-blue)" }}
-              />
-            ))}
+            {areas.map((area) => {
+              const tint = area.accent === "red" ? "oklch(0.56 0.222 26.5 / .55)" : "oklch(0.55 0.19 258 / .55)";
+              return (
+                <div
+                  key={area.title.join(" ")}
+                  className="flex-1 bg-cover bg-center"
+                  style={{ backgroundImage: `linear-gradient(${tint}, ${tint}), url(${area.photo})` }}
+                />
+              );
+            })}
           </div>
-          <div aria-hidden="true" className="absolute inset-0 z-0" style={{ background: "oklch(0.1 0 0 / .58)" }} />
+          <div aria-hidden="true" className="absolute inset-0 z-0" style={{ background: "oklch(0.08 0 0 / .5)" }} />
           <div className="relative z-10 mx-auto max-w-7xl px-5 lg:px-8">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-accent-blue">Setores</p>
             <h2 className="mt-4 max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">
