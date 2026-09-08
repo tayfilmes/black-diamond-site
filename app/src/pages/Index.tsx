@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   ArrowRight,
   Building2,
@@ -48,23 +48,28 @@ const areas = [
 const steps = [
   {
     number: "01",
-    title: "Avaliação de Perfil",
-    text: "Análise do currículo e adequação técnica às demandas vigentes dos projetos.",
+    title: "Triagem Inicial",
+    text: "Avaliamos seu currículo e conversamos com você para entender sua experiência e ver se seu perfil combina com as vagas disponíveis.",
   },
   {
     number: "02",
-    title: "Suporte Regulatório",
-    text: "Orientação sobre documentação, licenças e conformidade contratual internacional.",
+    title: "Contrato e Documentos",
+    text: "Assinamos o contrato de prestação de serviço e reunimos seus documentos pessoais para dar início ao processo.",
   },
   {
     number: "03",
-    title: "Conexão com Projetos",
-    text: "Mapeamento e apresentação do perfil diretamente às oportunidades ativas no setor.",
+    title: "Preparação da Documentação",
+    text: "Cuidamos da legalização e tradução dos documentos necessários e apresentamos seu perfil ao contratante na Venezuela.",
   },
   {
     number: "04",
-    title: "Apoio de Mobilização",
-    text: "Orientação sobre logística de deslocamento, integração e instalação.",
+    title: "Visto e Logística",
+    text: "Acompanhamos todo o processo do visto de trabalho e te damos uma orientação completa antes da viagem.",
+  },
+  {
+    number: "05",
+    title: "Embarque e Início",
+    text: "Organizamos sua viagem e chegada, e confirmamos que você está integrado ao novo projeto.",
   },
 ];
 
@@ -106,6 +111,26 @@ const fieldClass =
 
 export default function Index() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [timelineInView, setTimelineInView] = useState(false);
+  const timelineRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = timelineRef.current;
+    if (!el || !("IntersectionObserver" in window)) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setTimelineInView(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -280,7 +305,48 @@ export default function Index() {
             <h2 className="mt-4 max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">
               O fluxo da consultoria
             </h2>
-            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div
+              ref={timelineRef}
+              className="relative mx-10 mt-14 hidden h-0.5 items-center justify-between bg-border md:flex"
+            >
+              <div
+                aria-label="Brasil"
+                className="h-6 w-9 shrink-0 overflow-hidden rounded-sm"
+                style={{ boxShadow: "0 0 0 2px var(--background)" }}
+              >
+                <svg viewBox="0 0 24 16" className="block h-full w-full">
+                  <rect width="24" height="16" fill="#009739" />
+                  <polygon points="12,2 22,8 12,14 2,8" fill="#FEDD00" />
+                  <circle cx="12" cy="8" r="4" fill="#012169" />
+                </svg>
+              </div>
+              <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-accent-blue" />
+              <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-accent-blue" />
+              <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-accent-blue" />
+              <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-accent-blue" />
+              <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-accent-blue" />
+              <div
+                aria-label="Venezuela"
+                className="h-6 w-9 shrink-0 overflow-hidden rounded-sm"
+                style={{ boxShadow: "0 0 0 2px var(--background)" }}
+              >
+                <svg viewBox="0 0 24 16" className="block h-full w-full">
+                  <rect width="24" height="5.33" fill="#FFCC00" />
+                  <rect y="5.33" width="24" height="5.33" fill="#00247D" />
+                  <rect y="10.66" width="24" height="5.34" fill="#CF142B" />
+                </svg>
+              </div>
+              <div
+                aria-hidden="true"
+                className="absolute top-1/2 h-6 w-6 -translate-x-1/2 -translate-y-1/2 text-accent-blue transition-[left] duration-[2400ms] ease-in-out motion-reduce:transition-none"
+                style={{ left: timelineInView ? "100%" : "0%" }}
+              >
+                <svg viewBox="0 0 24 24" className="h-full w-full fill-current">
+                  <path d="M12 2 L14 9 L21 12 L14 12.5 L13 20 L15 22 L12 21 L9 22 L11 20 L10 12.5 L3 12 L10 9 Z" />
+                </svg>
+              </div>
+            </div>
+            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
               {steps.map((step) => (
                 <article key={step.number} className="card-industrial relative rounded-xl p-7">
                   <span className="font-display text-4xl font-extrabold text-accent-blue/25">

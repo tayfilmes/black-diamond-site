@@ -110,6 +110,19 @@
   .grid-4{margin-top:3rem;display:grid;gap:1.5rem;grid-template-columns:1fr}
   @media(min-width:640px){.grid-4{grid-template-columns:repeat(2,1fr)}}
   @media(min-width:1024px){.grid-4{grid-template-columns:repeat(4,1fr)}}
+  .grid-process{margin-top:2.5rem;display:grid;gap:1.5rem;grid-template-columns:1fr}
+  @media(min-width:640px){.grid-process{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1024px){.grid-process{grid-template-columns:repeat(5,1fr)}}
+
+  .timeline-track{position:relative;display:none;align-items:center;justify-content:space-between;height:2px;background:var(--border);margin:3.5rem 2.5rem 0}
+  @media(min-width:768px){.timeline-track{display:flex}}
+  .timeline-dot{width:.6rem;height:.6rem;border-radius:50%;background:var(--accent-blue);flex-shrink:0}
+  .timeline-flag{width:2.25rem;height:1.5rem;border-radius:.2rem;overflow:hidden;box-shadow:0 0 0 2px var(--background);flex-shrink:0}
+  .timeline-flag svg{width:100%;height:100%;display:block}
+  .timeline-plane{position:absolute;top:50%;left:0;width:1.6rem;height:1.6rem;color:var(--accent-blue);transform:translate(-50%,-50%);transition:left 2.4s cubic-bezier(.4,0,.2,1)}
+  .timeline-plane svg{width:100%;height:100%;fill:currentColor}
+  .timeline-track.in-view .timeline-plane{left:100%}
+  @media(prefers-reduced-motion:reduce){.timeline-plane{transition:none}}
   .area-card{padding:1.75rem;text-align:center}
   .area-icon{display:inline-flex;height:3rem;width:3rem;align-items:center;justify-content:center;border-radius:.375rem;background:oklch(0.55 0.19 258 / .12);color:var(--accent-blue);font-size:1.5rem}
   .area-card h3{margin-top:1.5rem;font-size:1.125rem;font-weight:700;line-height:1.4;min-height:3.25rem}
@@ -262,26 +275,47 @@
     <div class="container">
       <p class="eyebrow">Processo</p>
       <h2 class="section-title">O fluxo da consultoria</h2>
-      <div class="grid-4">
+      <div class="timeline-track">
+        <div class="timeline-flag" aria-label="Brasil">
+          <svg viewBox="0 0 24 16"><rect width="24" height="16" fill="#009739"/><polygon points="12,2 22,8 12,14 2,8" fill="#FEDD00"/><circle cx="12" cy="8" r="4" fill="#012169"/></svg>
+        </div>
+        <span class="timeline-dot"></span>
+        <span class="timeline-dot"></span>
+        <span class="timeline-dot"></span>
+        <span class="timeline-dot"></span>
+        <span class="timeline-dot"></span>
+        <div class="timeline-flag" aria-label="Venezuela">
+          <svg viewBox="0 0 24 16"><rect width="24" height="5.33" fill="#FFCC00"/><rect y="5.33" width="24" height="5.33" fill="#00247D"/><rect y="10.66" width="24" height="5.34" fill="#CF142B"/></svg>
+        </div>
+        <div class="timeline-plane" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2 L14 9 L21 12 L14 12.5 L13 20 L15 22 L12 21 L9 22 L11 20 L10 12.5 L3 12 L10 9 Z"/></svg>
+        </div>
+      </div>
+      <div class="grid-process">
         <article class="card step-card">
           <span class="step-number">01</span>
-          <h3>Avaliação de Perfil</h3>
-          <p>Análise do currículo e adequação técnica às demandas vigentes dos projetos.</p>
+          <h3>Triagem Inicial</h3>
+          <p>Avaliamos seu currículo e conversamos com você para entender sua experiência e ver se seu perfil combina com as vagas disponíveis.</p>
         </article>
         <article class="card step-card">
           <span class="step-number">02</span>
-          <h3>Suporte Regulatório</h3>
-          <p>Orientação sobre documentação, licenças e conformidade contratual internacional.</p>
+          <h3>Contrato e Documentos</h3>
+          <p>Assinamos o contrato de prestação de serviço e reunimos seus documentos pessoais para dar início ao processo.</p>
         </article>
         <article class="card step-card">
           <span class="step-number">03</span>
-          <h3>Conexão com Projetos</h3>
-          <p>Mapeamento e apresentação do perfil diretamente às oportunidades ativas no setor.</p>
+          <h3>Preparação da Documentação</h3>
+          <p>Cuidamos da legalização e tradução dos documentos necessários e apresentamos seu perfil ao contratante na Venezuela.</p>
         </article>
         <article class="card step-card">
           <span class="step-number">04</span>
-          <h3>Apoio de Mobilização</h3>
-          <p>Orientação sobre logística de deslocamento, integração e instalação.</p>
+          <h3>Visto e Logística</h3>
+          <p>Acompanhamos todo o processo do visto de trabalho e te damos uma orientação completa antes da viagem.</p>
+        </article>
+        <article class="card step-card">
+          <span class="step-number">05</span>
+          <h3>Embarque e Início</h3>
+          <p>Organizamos sua viagem e chegada, e confirmamos que você está integrado ao novo projeto.</p>
         </article>
       </div>
     </div>
@@ -416,6 +450,20 @@
 </footer>
 
 <script>
+  (function () {
+    var track = document.querySelector('.timeline-track');
+    if (!track || !('IntersectionObserver' in window)) return;
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          track.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    observer.observe(track);
+  })();
+
   document.getElementById('contatoForm').addEventListener('submit', async function (e) {
     e.preventDefault();
     var form = e.target;
