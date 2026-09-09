@@ -283,10 +283,14 @@ export default function Index() {
               </p>
             </div>
           </div>
+        </section>
 
-          <div className="mx-auto mt-16 grid max-w-7xl gap-10 px-5 lg:grid-cols-[3fr_2fr] lg:items-start lg:px-8">
+        {/* VENEZUELA */}
+        <section id="venezuela" className="py-24">
+          <div className="mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[3fr_2fr] lg:items-start lg:px-8">
             <div>
-              <h3 className="text-2xl font-bold">Conheça a Venezuela</h3>
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-accent-blue">Contexto</p>
+              <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">Conheça a Venezuela</h2>
               <p className="mt-4 text-base leading-relaxed text-muted-foreground">
                 Depois do forte terremoto que atingiu a região de Caracas em junho de 2026 e de uma
                 recente transição de governo, a Venezuela entrou em um intenso processo de
