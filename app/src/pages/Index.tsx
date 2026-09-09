@@ -365,7 +365,7 @@ export default function Index() {
               {areas.map((area) => (
                 <article
                   key={area.title.join(" ")}
-                  className="rounded-xl border p-7 text-center"
+                  className="rounded-xl border p-7 text-left"
                   style={{
                     background: "oklch(0.1 0 0 / .55)",
                     borderColor: "oklch(1 0 0 / .12)",
@@ -385,7 +385,7 @@ export default function Index() {
                       </span>
                     ))}
                   </h3>
-                  <p className="mt-3 text-left text-sm leading-relaxed text-muted-foreground">{area.text}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{area.text}</p>
                 </article>
               ))}
             </div>
@@ -594,14 +594,19 @@ export default function Index() {
       <footer className="border-t border-border bg-surface/60 py-12">
         <div className="mx-auto flex max-w-7xl flex-col gap-6 px-5 text-sm text-muted-foreground lg:flex-row lg:items-center lg:justify-between lg:px-8">
           <div>
-            <p className="flex items-center gap-2 font-display text-xs font-extrabold uppercase tracking-[0.2em] text-foreground">
-              <svg width="20" height="20" viewBox="4 6 26 23" className="shrink-0" aria-hidden="true">
-                <path d="M11 27 L19 27 L15 15 Z" fill="var(--accent-blue)" />
-                <circle cx="24" cy="11" r="3" fill="var(--accent-blue)" />
-                <line x1="6" y1="19" x2="24" y2="11" stroke="var(--accent-blue)" strokeWidth="2.2" strokeLinecap="round" />
-                <line x1="6" y1="19" x2="6" y2="25" stroke="var(--accent-blue)" strokeWidth="2" strokeLinecap="round" />
+            <p className="inline-flex items-center gap-2.5 font-display text-sm font-extrabold uppercase leading-tight tracking-[0.18em] text-foreground">
+              <svg width="24" height="24" viewBox="4 6 26 23" className="shrink-0" aria-hidden="true">
+                <path d="M11 27 L19 27 L15 15 Z" fill="#B22234" />
+                <circle cx="24" cy="11" r="3" fill="#B22234" />
+                <line x1="6" y1="19" x2="24" y2="11" stroke="#B22234" strokeWidth="2.2" strokeLinecap="round" />
+                <line x1="6" y1="19" x2="6" y2="25" stroke="#B22234" strokeWidth="2" strokeLinecap="round" />
               </svg>
-              Black Diamond <span className="text-accent-blue">Corporation</span> Services
+              <span>
+                Black Diamond <span className="text-accent-blue">Corporation</span>
+                <span className="block text-[0.65rem] font-semibold tracking-[0.4em] text-muted-foreground">
+                  Services
+                </span>
+              </span>
             </p>
             <p className="mt-3">© Black Diamond Corporation Services – Todos os direitos reservados.</p>
             <p className="mt-2 text-xs leading-relaxed text-muted-foreground/70">

@@ -52,7 +52,6 @@
   .header-inner{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding-block:1rem}
   .logo{display:inline-flex;align-items:center;gap:.6rem;font-family:Montserrat,sans-serif;font-size:.875rem;font-weight:800;text-transform:uppercase;letter-spacing:.18em;line-height:1.2;text-decoration:none}
   .logo-icon{flex-shrink:0}
-  .footer-brand{display:inline-flex;align-items:center;gap:.5rem}
   .logo .accent{color:var(--accent-blue)}
   .logo small{display:block;font-size:.65rem;font-weight:600;letter-spacing:.4em;color:var(--muted-foreground)}
   .nav-links{display:none;gap:2rem;list-style:none;margin:0;padding:0}
@@ -143,11 +142,11 @@
   .areas-photo-img{position:absolute;top:-5%;bottom:-5%;left:-30%;right:-30%;transform:skewX(9deg);background-size:cover;background-position:center}
   .areas-scrim{position:absolute;inset:0;z-index:0;background:oklch(0.08 0 0 / .5)}
   .areas-section .container{position:relative;z-index:1}
-  .area-card{padding:1.75rem;text-align:center;background:oklch(0.1 0 0 / .55);backdrop-filter:blur(6px);border-color:oklch(1 0 0 / .12)}
+  .area-card{padding:1.75rem;text-align:left;background:oklch(0.1 0 0 / .55);backdrop-filter:blur(6px);border-color:oklch(1 0 0 / .12)}
   .area-icon{display:inline-flex;height:3rem;width:3rem;align-items:center;justify-content:center;border-radius:.5rem;background:oklch(1 0 0 / .12);color:#fff}
   .area-icon .icon{width:1.5rem;height:1.5rem}
   .area-card h3{margin-top:1.25rem;font-size:1.125rem;font-weight:700;line-height:1.4;min-height:3.25rem}
-  .area-card p{margin-top:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted-foreground);text-align:left}
+  .area-card p{margin-top:.75rem;font-size:.875rem;line-height:1.6;color:var(--muted-foreground)}
 
   .step-card{position:relative;padding:1.75rem}
   .step-number{display:inline-block;font-family:Montserrat,sans-serif;font-size:2.25rem;font-weight:800;color:var(--accent-blue)}
@@ -193,7 +192,6 @@
   footer{border-top:1px solid var(--border);background:oklch(0.185 0 0 / .6);padding-block:3rem}
   .footer-wrap{display:flex;flex-direction:column;gap:1.5rem;font-size:.875rem;color:var(--muted-foreground)}
   @media(min-width:1024px){.footer-wrap{flex-direction:row;align-items:center;justify-content:space-between}}
-  .footer-brand{font-family:Montserrat,sans-serif;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.2em;color:var(--foreground)}
   .footer-copy{margin-top:.75rem}
   .footer-disclaimer{margin-top:.5rem;font-size:.75rem;line-height:1.6;color:oklch(0.72 0 0 / .7)}
   .footer-nav{display:flex;gap:1.5rem;list-style:none;margin:0;padding:0}
@@ -501,14 +499,14 @@
 <footer>
   <div class="container footer-wrap">
     <div>
-      <p class="footer-brand">
-        <svg class="logo-icon" width="20" height="20" viewBox="4 6 26 23" aria-hidden="true">
-          <path d="M11 27 L19 27 L15 15 Z" fill="var(--accent-blue)"/>
-          <circle cx="24" cy="11" r="3" fill="var(--accent-blue)"/>
-          <line x1="6" y1="19" x2="24" y2="11" stroke="var(--accent-blue)" stroke-width="2.2" stroke-linecap="round"/>
-          <line x1="6" y1="19" x2="6" y2="25" stroke="var(--accent-blue)" stroke-width="2" stroke-linecap="round"/>
+      <p class="logo">
+        <svg class="logo-icon" width="24" height="24" viewBox="4 6 26 23" aria-hidden="true">
+          <path d="M11 27 L19 27 L15 15 Z" fill="#B22234"/>
+          <circle cx="24" cy="11" r="3" fill="#B22234"/>
+          <line x1="6" y1="19" x2="24" y2="11" stroke="#B22234" stroke-width="2.2" stroke-linecap="round"/>
+          <line x1="6" y1="19" x2="6" y2="25" stroke="#B22234" stroke-width="2" stroke-linecap="round"/>
         </svg>
-        Black Diamond <span class="accent" style="color:var(--accent-blue)">Corporation</span> Services
+        <span>Black Diamond <span class="accent">Corporation</span><small>Services</small></span>
       </p>
       <p class="footer-copy">© Black Diamond Corporation Services – Todos os direitos reservados.</p>
       <p class="footer-disclaimer">Isenção de responsabilidade sobre trâmites migratórios e contratações de terceiros.</p>
