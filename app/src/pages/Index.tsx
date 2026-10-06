@@ -617,7 +617,7 @@ export default function Index() {
       </main>
 
       <footer className="border-t border-border bg-surface/60 py-7">
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 text-[0.9375rem] text-muted-foreground lg:flex-row lg:items-center lg:justify-between lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 text-sm text-muted-foreground lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:px-8">
           <div>
             <p className="inline-flex items-center gap-2.5 font-display text-[0.9375rem] font-extrabold uppercase leading-tight tracking-[0.18em] text-foreground">
               <svg width="24" height="24" viewBox="4 6 26 23" className="shrink-0" aria-hidden="true">
@@ -633,13 +633,15 @@ export default function Index() {
                 </span>
               </span>
             </p>
-            <p className="mt-2">© Black Diamond Corporation Services – Todos os direitos reservados.</p>
-            <p className="mt-1">CNPJ: 69.324.245/0001-70</p>
-            <p className="mt-1 text-[0.8125rem] leading-normal text-muted-foreground/70">
+            <p className="mt-2 flex flex-wrap gap-x-5 text-[0.8125rem]">
+              <span>© Black Diamond Corporation Services – Todos os direitos reservados.</span>
+              <span>CNPJ: 69.324.245/0001-70</span>
+            </p>
+            <p className="mt-1 text-xs leading-normal text-muted-foreground/70">
               Isenção de responsabilidade sobre trâmites migratórios e contratações de terceiros.
             </p>
           </div>
-          <nav className="flex gap-6">
+          <nav className="flex shrink-0 gap-6">
             <a href="/privacidade.html" className="transition-colors hover:text-accent-blue">
               Políticas de Privacidade
             </a>
