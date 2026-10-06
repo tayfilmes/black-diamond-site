@@ -6,11 +6,9 @@ import {
   ChevronRight,
   Flame,
   HardHat,
-  Image,
   Mail,
   MessageCircle,
   Phone,
-  PlayCircle,
   ShieldCheck,
   Zap,
 } from "lucide-react";
@@ -19,6 +17,22 @@ import areaEngenharia from "@/assets/areas/engenharia-v2.jpg";
 import areaInfraestrutura from "@/assets/areas/infraestrutura.jpg";
 import areaPetroleo from "@/assets/areas/petroleo.jpg";
 import areaEnergia from "@/assets/areas/energia.jpg";
+import logoChevron from "@/assets/partners/chevron.svg";
+import logoRepsol from "@/assets/partners/repsol.svg";
+import logoShell from "@/assets/partners/shell.svg";
+
+const oilCompanies = [
+  { name: "Chevron", logo: logoChevron, heightClass: "h-[4.5rem]" },
+  { name: "Repsol", logo: logoRepsol, heightClass: "h-12" },
+  { name: "Shell", logo: logoShell, heightClass: "h-14" },
+];
+
+const videos = [
+  { id: "LFY5eX2wEpo", title: "O que muda com a nova lei do petróleo na Venezuela?", author: "Brasil de Fato" },
+  { id: "l11IyAZvHRE", title: "Trump anuncia possível investimento de US$ 100 bilhões no petróleo venezuelano", author: "SBT News" },
+  { id: "rAgz_Y0b_0s", title: "Delcy diz que acordo com EUA preserva petróleo da Venezuela e prevê US$ 209 bilhões", author: "O POVO" },
+  { id: "oi4LEkLFfqE", title: "Após acordo, EUA poderá explorar 20% do petróleo da Venezuela e quer dobrar produção em 5 anos", author: "UOL" },
+];
 
 const navLinks = [
   { label: "Sobre", href: "#sobre" },
@@ -286,49 +300,63 @@ export default function Index() {
         </section>
 
         {/* VENEZUELA */}
-        <section id="venezuela" className="py-24">
-          <div className="mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[3fr_2fr] lg:items-start lg:px-8">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-accent-blue">Contexto</p>
-              <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">Conheça a Venezuela</h2>
-              <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-                Depois do forte terremoto que atingiu a região de Caracas em junho de 2026 e de uma
-                recente transição de governo, a Venezuela entrou em um intenso processo de
-                reconstrução. Esse novo momento tem gerado uma demanda real por infraestrutura,
-                energia e profissionais técnicos qualificados — e é exatamente aí que a Black
-                Diamond atua, conectando você a essas oportunidades com remuneração em dólar e
-                suporte completo em toda a parte legal.
-              </p>
-              <div className="mt-8 grid grid-cols-2 gap-5">
-                <div className="rounded-lg border border-border bg-card p-4">
-                  <span className="block text-xs uppercase tracking-wider text-muted-foreground">Capital</span>
-                  <span className="mt-1 block text-base font-semibold text-foreground">Caracas</span>
-                </div>
-                <div className="rounded-lg border border-border bg-card p-4">
-                  <span className="block text-xs uppercase tracking-wider text-muted-foreground">População</span>
-                  <span className="mt-1 block text-base font-semibold text-foreground">~28,6 milhões</span>
-                </div>
-                <div className="rounded-lg border border-border bg-card p-4">
-                  <span className="block text-xs uppercase tracking-wider text-muted-foreground">Fronteiras</span>
-                  <span className="mt-1 block text-base font-semibold text-foreground">Brasil, Colômbia e Guiana</span>
-                </div>
-                <div className="rounded-lg border border-border bg-card p-4">
-                  <span className="block text-xs uppercase tracking-wider text-muted-foreground">Moeda</span>
-                  <span className="mt-1 block text-base font-semibold text-foreground">Dólar americano</span>
-                </div>
-              </div>
-            </div>
-            <div className="grid gap-5">
-              <div className="flex min-h-44 flex-col items-center justify-center gap-3 rounded-xl border border-dashed border-border bg-surface p-6 text-center text-muted-foreground">
-                <Image className="h-8 w-8 opacity-60" />
-                <span className="text-xs leading-relaxed">
-                  Foto de um ponto turístico da Venezuela (a inserir)
-                </span>
-              </div>
-              <div className="flex min-h-44 flex-col items-center justify-center gap-3 rounded-xl border border-dashed border-border bg-surface p-6 text-center text-muted-foreground">
-                <PlayCircle className="h-8 w-8 opacity-60" />
-                <span className="text-xs leading-relaxed">Espaço reservado para vídeo</span>
-              </div>
+        <section id="empresas" className="py-24">
+          <div className="mx-auto max-w-5xl px-5 text-center lg:px-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-accent-blue">Mercado</p>
+            <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">Empresas que atuam na Venezuela</h2>
+            <ul className="mt-10 grid list-none gap-5 p-0 sm:grid-cols-3">
+              {oilCompanies.map((company) => (
+                <li
+                  key={company.name}
+                  className="flex h-32 items-center justify-center rounded-xl border border-border bg-white p-6"
+                >
+                  <img
+                    src={company.logo}
+                    alt={company.name}
+                    loading="lazy"
+                    className={`${company.heightClass} w-auto max-w-[85%] object-contain`}
+                  />
+                </li>
+              ))}
+            </ul>
+            <p className="mx-auto mt-6 max-w-xl text-xs leading-normal text-muted-foreground">
+              Marcas registradas pertencentes aos seus respectivos proprietários, exibidas apenas para ilustrar o
+              cenário do setor. Não indicam parceria, patrocínio ou vínculo com a Black Diamond Corporation Services.
+            </p>
+          </div>
+        </section>
+
+        {/* VÍDEOS */}
+        <section id="videos" className="border-y border-border bg-surface/40 py-24">
+          <div className="mx-auto max-w-7xl px-5 lg:px-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-accent-blue">Vídeos</p>
+            <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">A Venezuela e o petróleo em pauta</h2>
+            <p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
+              Reportagens de veículos de imprensa sobre o momento do setor de petróleo e energia na Venezuela.
+              Conteúdo dos respectivos autores, exibido pelo player oficial do YouTube.
+            </p>
+            <div className="mt-12 grid gap-6 md:grid-cols-2">
+              {videos.map((video) => (
+                <figure key={video.id} className="m-0 overflow-hidden rounded-xl border border-border bg-card shadow-[var(--shadow-elegant)]">
+                  <div className="relative aspect-video bg-black">
+                    <iframe
+                      className="absolute inset-0 h-full w-full border-0"
+                      width="560"
+                      height="315"
+                      src={`https://www.youtube.com/embed/${video.id}`}
+                      title={video.title}
+                      loading="lazy"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                    />
+                  </div>
+                  <figcaption className="px-5 pb-5 pt-4">
+                    <strong className="block text-[0.95rem] font-bold leading-snug">{video.title}</strong>
+                    <span className="mt-1.5 block text-[0.8rem] text-muted-foreground">{video.author} · YouTube</span>
+                  </figcaption>
+                </figure>
+              ))}
             </div>
           </div>
         </section>
