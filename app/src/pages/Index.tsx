@@ -616,8 +616,8 @@ export default function Index() {
         </section>
       </main>
 
-      <footer className="border-t border-border bg-surface/60 py-12">
-        <div className="mx-auto flex max-w-7xl flex-col gap-6 px-5 text-base text-muted-foreground lg:flex-row lg:items-center lg:justify-between lg:px-8">
+      <footer className="border-t border-border bg-surface/60 py-7">
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 text-[0.9375rem] text-muted-foreground lg:flex-row lg:items-center lg:justify-between lg:px-8">
           <div>
             <p className="inline-flex items-center gap-2.5 font-display text-[0.9375rem] font-extrabold uppercase leading-tight tracking-[0.18em] text-foreground">
               <svg width="24" height="24" viewBox="4 6 26 23" className="shrink-0" aria-hidden="true">
@@ -633,9 +633,9 @@ export default function Index() {
                 </span>
               </span>
             </p>
-            <p className="mt-3">© Black Diamond Corporation Services – Todos os direitos reservados.</p>
+            <p className="mt-2">© Black Diamond Corporation Services – Todos os direitos reservados.</p>
             <p className="mt-1">CNPJ: 69.324.245/0001-70</p>
-            <p className="mt-2 text-sm leading-relaxed text-muted-foreground/70">
+            <p className="mt-1 text-[0.8125rem] leading-normal text-muted-foreground/70">
               Isenção de responsabilidade sobre trâmites migratórios e contratações de terceiros.
             </p>
           </div>
