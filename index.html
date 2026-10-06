@@ -182,15 +182,15 @@
   #processo.in-view .step-card:nth-child(5) .step-number{animation:step-pulse 8s linear infinite;animation-delay:6s}
   @media(prefers-reduced-motion:reduce){.step-number{animation:none !important}}
 
-  .contato-wrap{display:grid;gap:3rem}
-  @media(min-width:1024px){.contato-wrap{grid-template-columns:1fr 1.1fr}}
+  .contato-wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:3rem}
+  @media(min-width:1024px){.contato-wrap{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr)}}
   .contato-info h2{margin-top:1rem;font-size:2.25rem;font-weight:700;line-height:1.15}
   @media(min-width:640px){.contato-info h2{font-size:3rem}}
   .contato-info p{margin-top:1.25rem;font-size:1.125rem;line-height:1.6;color:var(--muted-foreground)}
   .contato-info .eyebrow{margin-top:0;max-width:none;font-size:inherit;line-height:normal;color:var(--accent-blue)}
   .contato-list{margin-top:2rem;display:flex;flex-direction:column;gap:1.25rem;font-size:1.125rem;color:var(--muted-foreground);list-style:none;padding:0}
-  .contato-list li{display:flex;align-items:center;gap:1rem}
-  .contato-list .icon{color:var(--accent-blue);width:1.5rem;height:1.5rem}
+  .contato-list li{display:flex;align-items:center;gap:1rem;overflow-wrap:anywhere}
+  .contato-list .icon{color:var(--accent-blue);width:1.5rem;height:1.5rem;flex-shrink:0}
 
   form.contato-form{padding:1.75rem}
   @media(min-width:640px){form.contato-form{padding:2.25rem}}

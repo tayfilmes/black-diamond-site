@@ -518,7 +518,7 @@ export default function Index() {
 
         {/* FORMULÁRIO */}
         <section id="contato" className="py-24">
-          <div className="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[1fr_1.1fr] lg:px-8">
+          <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)] gap-12 px-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:px-8">
             <div>
               <p className="text-[0.9375rem] font-semibold uppercase tracking-[0.24em] sm:text-[1.0625rem] text-accent-blue">Contato</p>
               <h2 className="mt-4 text-4xl font-bold leading-[1.15] tracking-tight sm:text-5xl">
@@ -529,16 +529,16 @@ export default function Index() {
                 direcionamento adequado às oportunidades ativas no setor.
               </p>
               <ul className="mt-8 space-y-5 text-lg text-muted-foreground">
-                <li className="flex items-center gap-3">
-                  <Mail className="h-6 w-6 text-accent-blue" />
+                <li className="flex items-center gap-3 [overflow-wrap:anywhere]">
+                  <Mail className="h-6 w-6 shrink-0 text-accent-blue" />
                   contato@blackdiamondcorpservices.com
                 </li>
-                <li className="flex items-center gap-3">
-                  <Phone className="h-6 w-6 text-accent-blue" />
+                <li className="flex items-center gap-3 [overflow-wrap:anywhere]">
+                  <Phone className="h-6 w-6 shrink-0 text-accent-blue" />
                   Atendimento comercial em horário estendido
                 </li>
-                <li className="flex items-center gap-3">
-                  <ShieldCheck className="h-6 w-6 text-accent-blue" />
+                <li className="flex items-center gap-3 [overflow-wrap:anywhere]">
+                  <ShieldCheck className="h-6 w-6 shrink-0 text-accent-blue" />
                   Dados tratados com confidencialidade
                 </li>
               </ul>
