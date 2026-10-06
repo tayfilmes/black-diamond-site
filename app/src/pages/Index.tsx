@@ -641,6 +641,7 @@ export default function Index() {
               </span>
             </p>
             <p className="mt-3">© Black Diamond Corporation Services – Todos os direitos reservados.</p>
+            <p className="mt-1">CNPJ: 69.324.245/0001-70</p>
             <p className="mt-2 text-xs leading-relaxed text-muted-foreground/70">
               Isenção de responsabilidade sobre trâmites migratórios e contratações de terceiros.
             </p>
