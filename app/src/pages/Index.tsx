@@ -389,7 +389,7 @@ export default function Index() {
           </div>
           <div aria-hidden="true" className="absolute inset-0 z-0" style={{ background: "oklch(0.08 0 0 / .5)" }} />
           <div className="relative z-10 mx-auto max-w-7xl px-5 lg:px-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-accent-blue">Setores</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-foreground/90">Setores</p>
             <h2 className="mt-4 max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">
               Áreas de Atuação
             </h2>
