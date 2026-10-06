@@ -12,7 +12,7 @@ import {
   ShieldCheck,
   Zap,
 } from "lucide-react";
-import heroImage from "@/assets/hero-oilfield.jpg";
+import heroImage from "@/assets/hero-oilfield-day.jpg";
 import areaEngenharia from "@/assets/areas/engenharia-v2.jpg";
 import areaInfraestrutura from "@/assets/areas/infraestrutura.jpg";
 import areaPetroleo from "@/assets/areas/petroleo.jpg";
@@ -225,18 +225,19 @@ export default function Index() {
 
       <main id="top">
         {/* HERO */}
-        <section className="on-dark relative flex min-h-[92vh] items-center overflow-hidden pt-24">
+        <section className="relative flex min-h-[92vh] items-center overflow-hidden pt-24">
           <img
             src={heroImage}
-            alt="Campo de extração petrolífera ao anoitecer com torre de perfuração e dutos industriais"
+            alt="Bomba de petróleo em campo de extração sob céu azul"
             width={1920}
-            height={1088}
-            className="absolute inset-0 h-full w-full object-cover"
+            height={1080}
+            fetchPriority="high"
+            className="absolute inset-0 h-full w-full object-cover object-[68%_center]"
           />
           <div className="hero-overlay absolute inset-0" />
           <div className="relative mx-auto w-full max-w-7xl px-5 py-20 lg:px-8">
             <div className="max-w-3xl">
-              <span className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+              <span className="inline-flex items-center gap-2 rounded-full border border-border bg-white/85 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
                 <ShieldCheck className="h-3.5 w-3.5 text-accent-blue" />
                 Reconstrução Nacional em Curso
               </span>
@@ -244,7 +245,7 @@ export default function Index() {
                 A Venezuela Está Sendo Reconstruída.{" "}
                 <span className="text-accent-blue">Trabalhe Legalizado</span> e Ganhe em Dólar
               </h1>
-              <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+              <p className="mt-6 max-w-2xl text-base leading-relaxed text-foreground/85 sm:text-lg">
                 O país vive uma nova realidade: obras de infraestrutura, energia e petróleo avançam
                 e a demanda por profissionais qualificados nunca foi tão grande. Conectamos você a
                 essas oportunidades com consultoria completa, suporte documental e garantias em
@@ -260,7 +261,7 @@ export default function Index() {
                 </a>
                 <a
                   href="#areas"
-                  className="inline-flex items-center gap-2 rounded-md border border-border px-6 py-4 text-sm font-semibold text-foreground transition-colors hover:border-accent-blue hover:text-accent-blue"
+                  className="inline-flex items-center gap-2 rounded-md border border-black/30 bg-white/60 px-6 py-4 text-sm font-semibold text-foreground transition-colors hover:border-accent-blue hover:text-accent-blue"
                 >
                   Áreas de Atuação
                   <ArrowRight className="h-4 w-4" />
