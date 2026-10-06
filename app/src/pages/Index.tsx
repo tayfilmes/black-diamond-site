@@ -327,8 +327,8 @@ export default function Index() {
         {/* VÍDEOS */}
         <section id="videos" className="border-y border-border bg-surface/40 py-24">
           <div className="mx-auto max-w-7xl px-5 lg:px-8">
-            <h2 className="text-4xl font-bold leading-[1.15] tracking-tight text-accent-blue sm:text-5xl">A Venezuela e o petróleo em pauta</h2>
-            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+            <h2 className="text-center text-4xl font-bold leading-[1.15] tracking-tight text-accent-blue sm:text-5xl">A Venezuela e o petróleo em pauta</h2>
+            <p className="mt-4 text-center text-lg leading-relaxed text-muted-foreground">
               Reportagens de veículos de imprensa sobre o momento do setor de petróleo e energia na Venezuela.
               Conteúdo dos respectivos autores, exibido pelo player oficial do YouTube.
             </p>
@@ -386,7 +386,7 @@ export default function Index() {
           </div>
           <div aria-hidden="true" className="absolute inset-0 z-0" style={{ background: "oklch(0.08 0 0 / .5)" }} />
           <div className="relative z-10 mx-auto max-w-7xl px-5 lg:px-8">
-            <h2 className="text-4xl font-bold leading-[1.15] tracking-tight sm:text-5xl">
+            <h2 className="text-center text-4xl font-bold leading-[1.15] tracking-tight sm:text-5xl">
               Áreas de Atuação
             </h2>
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -423,7 +423,7 @@ export default function Index() {
         {/* PROCESSO */}
         <section id="processo" className="border-y border-border bg-surface/40 py-24">
           <div className="mx-auto max-w-7xl px-5 lg:px-8">
-            <h2 className="text-4xl font-bold leading-[1.15] tracking-tight text-accent-blue sm:text-5xl">
+            <h2 className="text-center text-4xl font-bold leading-[1.15] tracking-tight text-accent-blue sm:text-5xl">
               O fluxo da consultoria
             </h2>
             <div
@@ -492,7 +492,7 @@ export default function Index() {
         {/* FAQ */}
         <section id="faq" className="py-24">
           <div className="mx-auto max-w-7xl px-5 lg:px-8">
-            <h2 className="text-4xl font-bold leading-[1.15] tracking-tight text-accent-blue sm:text-5xl">
+            <h2 className="text-center text-4xl font-bold leading-[1.15] tracking-tight text-accent-blue sm:text-5xl">
               Perguntas Frequentes
             </h2>
             <div className="mt-12 space-y-4">
