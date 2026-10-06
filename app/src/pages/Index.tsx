@@ -13,6 +13,7 @@ import {
   Zap,
 } from "lucide-react";
 import heroImage from "@/assets/hero-oilfield-day.jpg";
+import logoImage from "@/assets/logo-black-diamond.jpg";
 import areaEngenharia from "@/assets/areas/engenharia-v2.jpg";
 import areaInfraestrutura from "@/assets/areas/infraestrutura.jpg";
 import areaPetroleo from "@/assets/areas/petroleo.jpg";
@@ -181,24 +182,16 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-background">
       <div className="fixed inset-x-0 top-0 z-[60] h-1 flag-stripe" />
-      <header className="fixed inset-x-0 top-1 z-50 border-b border-border bg-background/50 backdrop-blur-md">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-4 lg:px-8">
-          <a
-            href="#top"
-            className="inline-flex items-center gap-2.5 font-display text-[0.9375rem] font-extrabold uppercase leading-tight tracking-[0.18em]"
-          >
-            <svg width="30" height="30" viewBox="4 6 26 23" className="shrink-0" aria-hidden="true">
-              <path d="M11 27 L19 27 L15 15 Z" fill="#B22234" />
-              <circle cx="24" cy="11" r="3" fill="#B22234" />
-              <line x1="6" y1="19" x2="24" y2="11" stroke="#B22234" strokeWidth="2.2" strokeLinecap="round" />
-              <line x1="6" y1="19" x2="6" y2="25" stroke="#B22234" strokeWidth="2" strokeLinecap="round" />
-            </svg>
-            <span>
-              Black Diamond <span className="text-accent-blue">Corporation</span>
-              <span className="block text-[0.72rem] font-semibold tracking-[0.4em] text-muted-foreground">
-                Services
-              </span>
-            </span>
+      <header className="fixed inset-x-0 top-1 z-50 border-b border-border bg-white">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-2 lg:px-8">
+          <a href="#top" aria-label="Black Diamond Corporation Services">
+            <img
+              src={logoImage}
+              alt="Black Diamond Corporation Services"
+              width={86}
+              height={64}
+              className="block h-14 w-auto sm:h-[4.5rem]"
+            />
           </a>
 
           <nav className="hidden items-center gap-8 xl:flex">
@@ -225,7 +218,7 @@ export default function Index() {
 
       <main id="top">
         {/* HERO */}
-        <section className="relative flex min-h-[92vh] items-center overflow-hidden pt-24 lg:pt-20">
+        <section className="relative flex min-h-[92vh] items-center overflow-hidden pt-24 lg:pt-[5.5rem]">
           <img
             src={heroImage}
             alt="Bomba de petróleo em campo de extração sob céu azul"
@@ -616,23 +609,16 @@ export default function Index() {
         </section>
       </main>
 
-      <footer className="border-t border-border bg-surface/60 py-7">
+      <footer className="border-t border-border bg-white py-7">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 text-sm text-muted-foreground lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:px-8">
           <div>
-            <p className="inline-flex items-center gap-2.5 font-display text-[0.9375rem] font-extrabold uppercase leading-tight tracking-[0.18em] text-foreground">
-              <svg width="24" height="24" viewBox="4 6 26 23" className="shrink-0" aria-hidden="true">
-                <path d="M11 27 L19 27 L15 15 Z" fill="#B22234" />
-                <circle cx="24" cy="11" r="3" fill="#B22234" />
-                <line x1="6" y1="19" x2="24" y2="11" stroke="#B22234" strokeWidth="2.2" strokeLinecap="round" />
-                <line x1="6" y1="19" x2="6" y2="25" stroke="#B22234" strokeWidth="2" strokeLinecap="round" />
-              </svg>
-              <span>
-                Black Diamond <span className="text-accent-blue">Corporation</span>
-                <span className="block text-[0.72rem] font-semibold tracking-[0.4em] text-muted-foreground">
-                  Services
-                </span>
-              </span>
-            </p>
+            <img
+              src={logoImage}
+              alt="Black Diamond Corporation Services"
+              width={70}
+              height={52}
+              className="block h-[3.25rem] w-auto"
+            />
             <p className="mt-2 flex flex-wrap gap-x-5 text-[0.8125rem]">
               <span>© Black Diamond Corporation Services – Todos os direitos reservados.</span>
               <span>CNPJ: 69.324.245/0001-70</span>
