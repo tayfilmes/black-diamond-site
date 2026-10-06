@@ -288,7 +288,7 @@ export default function Index() {
               Quem somos
             </h2>
             <div className="card-industrial mt-10 rounded-xl p-8 sm:p-12">
-              <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
+              <p className="text-center text-base leading-relaxed text-muted-foreground sm:text-lg">
                 A <span className="font-semibold text-foreground">Black Diamond Corporation Services</span>{" "}
                 nasceu para atender quem realmente move essa nova fase: você, o profissional que vai
                 ajudar a reconstruir a Venezuela. Cuidamos da avaliação técnica, da documentação
