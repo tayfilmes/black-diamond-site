@@ -225,7 +225,7 @@ export default function Index() {
 
       <main id="top">
         {/* HERO */}
-        <section className="relative flex min-h-[92vh] items-center overflow-hidden pt-24">
+        <section className="on-dark relative flex min-h-[92vh] items-center overflow-hidden pt-24">
           <img
             src={heroImage}
             alt="Campo de extração petrolífera ao anoitecer com torre de perfuração e dutos industriais"
@@ -362,7 +362,7 @@ export default function Index() {
         </section>
 
         {/* ÁREAS */}
-        <section id="areas" className="relative overflow-hidden py-24">
+        <section id="areas" className="on-dark relative overflow-hidden py-24">
           <div
             aria-hidden="true"
             className="absolute -inset-16 z-0 flex"
@@ -438,7 +438,7 @@ export default function Index() {
               <div
                 aria-label="Brasil"
                 className="h-6 w-9 shrink-0 overflow-hidden rounded-sm"
-                style={{ boxShadow: "0 0 0 2px var(--background)" }}
+                style={{ boxShadow: "0 0 0 2px var(--surface)" }}
               >
                 <svg viewBox="0 0 24 16" className="block h-full w-full">
                   <rect width="24" height="16" fill="#009739" />
@@ -454,7 +454,7 @@ export default function Index() {
               <div
                 aria-label="Venezuela"
                 className="h-6 w-9 shrink-0 overflow-hidden rounded-sm"
-                style={{ boxShadow: "0 0 0 2px var(--background)" }}
+                style={{ boxShadow: "0 0 0 2px var(--surface)" }}
               >
                 <svg viewBox="0 0 24 16" className="block h-full w-full">
                   <rect width="24" height="5.33" fill="#FFCC00" />
@@ -464,10 +464,10 @@ export default function Index() {
               </div>
               <div
                 aria-hidden="true"
-                className={`timeline-plane absolute top-1/2 h-6 w-6 text-white ${timelineInView ? "is-flying" : ""}`}
+                className={`timeline-plane absolute top-1/2 h-6 w-6 text-accent-blue ${timelineInView ? "is-flying" : ""}`}
                 style={{
                   transform: "translate(-50%, -50%) rotate(90deg)",
-                  filter: "drop-shadow(0 1px 4px oklch(0 0 0 / .6))",
+                  filter: "drop-shadow(0 1px 3px oklch(0 0 0 / .25))",
                 }}
               >
                 <svg viewBox="0 0 24 24" className="h-full w-full fill-current">
@@ -613,7 +613,7 @@ export default function Index() {
                   </p>
                 )}
                 {status === "error" && (
-                  <p className="text-center text-sm font-medium text-primary" role="status">
+                  <p className="text-center text-sm font-medium text-destructive" role="status">
                     Não foi possível enviar agora. Tente novamente ou fale pelo WhatsApp/e-mail acima.
                   </p>
                 )}
