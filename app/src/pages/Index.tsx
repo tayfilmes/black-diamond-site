@@ -13,7 +13,7 @@ import {
   Zap,
 } from "lucide-react";
 import heroImage from "@/assets/hero-oilfield-day.jpg";
-import logoImage from "@/assets/logo-black-diamond.jpg";
+import logoMark from "@/assets/logo-bd.jpg";
 import areaEngenharia from "@/assets/areas/engenharia-v2.jpg";
 import areaInfraestrutura from "@/assets/areas/infraestrutura.jpg";
 import areaPetroleo from "@/assets/areas/petroleo.jpg";
@@ -183,18 +183,21 @@ export default function Index() {
     <div className="min-h-screen bg-background">
       <div className="fixed inset-x-0 top-0 z-[60] h-1 flag-stripe" />
       <header className="fixed inset-x-0 top-1 z-50 border-b border-border bg-white">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-2 lg:px-8">
-          <a href="#top" aria-label="Black Diamond Corporation Services">
-            <img
-              src={logoImage}
-              alt="Black Diamond Corporation Services"
-              width={86}
-              height={64}
-              className="block h-14 w-auto sm:h-[4.5rem]"
-            />
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-5 px-5 py-3 lg:px-8">
+          <a
+            href="#top"
+            className="inline-flex items-center gap-2.5 font-display text-[clamp(0.7rem,3.4vw,0.9375rem)] font-extrabold uppercase leading-tight tracking-[0.18em]"
+          >
+            <img src={logoMark} alt="" width={85} height={48} className="block h-[clamp(1.75rem,8vw,3rem)] w-auto shrink-0" />
+            <span>
+              Black Diamond <span className="text-accent-blue">Corporation</span>
+              <span className="block text-[0.72rem] font-semibold tracking-[0.4em] text-muted-foreground">
+                Services
+              </span>
+            </span>
           </a>
 
-          <nav className="hidden items-center gap-8 xl:flex">
+          <nav className="hidden items-center gap-6 xl:flex">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -218,7 +221,7 @@ export default function Index() {
 
       <main id="top">
         {/* HERO */}
-        <section className="relative flex min-h-[92vh] items-center overflow-hidden pt-24 lg:pt-[5.5rem]">
+        <section className="relative flex min-h-[92vh] items-center overflow-hidden pt-24 lg:pt-20">
           <img
             src={heroImage}
             alt="Bomba de petróleo em campo de extração sob céu azul"
@@ -612,13 +615,15 @@ export default function Index() {
       <footer className="border-t border-border bg-white py-7">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 text-sm text-muted-foreground lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:px-8">
           <div>
-            <img
-              src={logoImage}
-              alt="Black Diamond Corporation Services"
-              width={70}
-              height={52}
-              className="block h-[3.25rem] w-auto"
-            />
+            <p className="inline-flex items-center gap-2.5 font-display text-[0.9375rem] font-extrabold uppercase leading-tight tracking-[0.18em] text-foreground">
+              <img src={logoMark} alt="" width={57} height={32} className="block h-8 w-auto shrink-0" />
+              <span>
+                Black Diamond <span className="text-accent-blue">Corporation</span>
+                <span className="block text-[0.72rem] font-semibold tracking-[0.4em] text-muted-foreground">
+                  Services
+                </span>
+              </span>
+            </p>
             <p className="mt-2 flex flex-wrap gap-x-5 text-[0.8125rem]">
               <span>© Black Diamond Corporation Services – Todos os direitos reservados.</span>
               <span>CNPJ: 69.324.245/0001-70</span>
