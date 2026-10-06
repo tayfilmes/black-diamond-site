@@ -110,21 +110,21 @@
   .card{background:var(--card);border:1px solid var(--border);box-shadow:var(--shadow-elegant);border-radius:.75rem;transition:transform .25s,border-color .25s,box-shadow .25s}
   .card:hover{transform:translateY(-4px);border-color:oklch(0.55 0.19 258 / .5);box-shadow:var(--shadow-glow-blue)}
 
-  .sobre-wrap{max-width:64rem;margin-inline:auto;text-align:center}
+  .sobre-wrap{margin-inline:auto;text-align:center}
   .sobre-card{margin-top:2.5rem;padding:2rem;text-align:left}
   @media(min-width:640px){.sobre-card{padding:3rem}}
   .sobre-card p{font-size:1rem;line-height:1.6;color:var(--muted-foreground)}
   @media(min-width:640px){.sobre-card p{font-size:1.125rem}}
   .sobre-card strong{color:var(--foreground);font-weight:600}
 
-  .empresas-wrap{max-width:64rem;margin-inline:auto;text-align:center}
+  .empresas-wrap{margin-inline:auto;text-align:center}
   .logo-grid{margin:2.5rem 0 0;padding:0;list-style:none;display:grid;gap:1.25rem;grid-template-columns:1fr}
   @media(min-width:640px){.logo-grid{grid-template-columns:repeat(3,1fr)}}
   .logo-tile{display:flex;align-items:center;justify-content:center;height:8rem;padding:1.5rem;background:#fff;border:1px solid var(--border);border-radius:.75rem}
   .logo-tile img{height:var(--h,3.25rem);width:auto;max-width:85%;object-fit:contain}
-  .logos-note{margin:1.5rem auto 0;max-width:40rem;font-size:.75rem;line-height:1.5;color:var(--muted-foreground)}
+  .logos-note{margin:1.5rem auto 0;font-size:.75rem;line-height:1.5;color:var(--muted-foreground)}
 
-  .videos-intro{margin-top:1rem;max-width:40rem;font-size:1rem;line-height:1.6;color:var(--muted-foreground)}
+  .videos-intro{margin-top:1rem;font-size:1rem;line-height:1.6;color:var(--muted-foreground)}
   .video-grid{margin-top:3rem;display:grid;gap:1.5rem;grid-template-columns:1fr}
   @media(min-width:768px){.video-grid{grid-template-columns:repeat(2,1fr)}}
   .video-card{margin:0;overflow:hidden}
@@ -182,7 +182,7 @@
   @media(min-width:1024px){.contato-wrap{grid-template-columns:1fr 1.1fr}}
   .contato-info h2{margin-top:1rem;font-size:1.875rem;font-weight:700;line-height:1.2}
   @media(min-width:640px){.contato-info h2{font-size:2.25rem}}
-  .contato-info p{margin-top:1.25rem;max-width:32rem;font-size:1rem;line-height:1.6;color:var(--muted-foreground)}
+  .contato-info p{margin-top:1.25rem;font-size:1rem;line-height:1.6;color:var(--muted-foreground)}
   .contato-info .eyebrow{margin-top:0;max-width:none;font-size:.75rem;line-height:normal;color:var(--accent-blue)}
   .contato-list{margin-top:2rem;display:flex;flex-direction:column;gap:1rem;font-size:.875rem;color:var(--muted-foreground);list-style:none;padding:0}
   .contato-list li{display:flex;align-items:center;gap:.75rem}
@@ -422,7 +422,7 @@
   </section>
 
   <section id="faq">
-    <div class="container" style="max-width:56rem">
+    <div class="container">
       <p class="eyebrow">Dúvidas</p>
       <h2 class="section-title">Perguntas Frequentes</h2>
       <div class="faq-list">

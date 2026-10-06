@@ -280,7 +280,7 @@ export default function Index() {
 
         {/* SOBRE */}
         <section id="sobre" className="border-y border-border bg-surface/40 py-24">
-          <div className="mx-auto max-w-5xl px-5 lg:px-8">
+          <div className="mx-auto max-w-7xl px-5 lg:px-8">
             <p className="text-center text-xs font-semibold uppercase tracking-[0.3em] text-accent-blue">
               Autoridade
             </p>
@@ -302,7 +302,7 @@ export default function Index() {
 
         {/* VENEZUELA */}
         <section id="empresas" className="py-24">
-          <div className="mx-auto max-w-5xl px-5 text-center lg:px-8">
+          <div className="mx-auto max-w-7xl px-5 text-center lg:px-8">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-accent-blue">Mercado</p>
             <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">Empresas que atuam na Venezuela</h2>
             <ul className="mt-10 grid list-none gap-5 p-0 sm:grid-cols-3">
@@ -320,7 +320,7 @@ export default function Index() {
                 </li>
               ))}
             </ul>
-            <p className="mx-auto mt-6 max-w-xl text-xs leading-normal text-muted-foreground">
+            <p className="mx-auto mt-6 text-xs leading-normal text-muted-foreground">
               Marcas registradas pertencentes aos seus respectivos proprietários, exibidas apenas para ilustrar o
               cenário do setor. Não indicam parceria, patrocínio ou vínculo com a Black Diamond Corporation Services.
             </p>
@@ -332,7 +332,7 @@ export default function Index() {
           <div className="mx-auto max-w-7xl px-5 lg:px-8">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-accent-blue">Vídeos</p>
             <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">A Venezuela e o petróleo em pauta</h2>
-            <p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
               Reportagens de veículos de imprensa sobre o momento do setor de petróleo e energia na Venezuela.
               Conteúdo dos respectivos autores, exibido pelo player oficial do YouTube.
             </p>
@@ -391,7 +391,7 @@ export default function Index() {
           <div aria-hidden="true" className="absolute inset-0 z-0" style={{ background: "oklch(0.08 0 0 / .5)" }} />
           <div className="relative z-10 mx-auto max-w-7xl px-5 lg:px-8">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-foreground/90">Setores</p>
-            <h2 className="mt-4 max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">
+            <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
               Áreas de Atuação
             </h2>
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -429,7 +429,7 @@ export default function Index() {
         <section id="processo" className="border-y border-border bg-surface/40 py-24">
           <div className="mx-auto max-w-7xl px-5 lg:px-8">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-accent-blue">Processo</p>
-            <h2 className="mt-4 max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">
+            <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
               O fluxo da consultoria
             </h2>
             <div
@@ -497,7 +497,7 @@ export default function Index() {
 
         {/* FAQ */}
         <section id="faq" className="py-24">
-          <div className="mx-auto max-w-4xl px-5 lg:px-8">
+          <div className="mx-auto max-w-7xl px-5 lg:px-8">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-accent-blue">Dúvidas</p>
             <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
               Perguntas Frequentes
@@ -524,7 +524,7 @@ export default function Index() {
               <h2 className="mt-4 text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
                 Inicie seu processo de avaliação com a Black Diamond
               </h2>
-              <p className="mt-5 max-w-lg text-base leading-relaxed text-muted-foreground">
+              <p className="mt-5 text-base leading-relaxed text-muted-foreground">
                 Preencha os dados abaixo. Nossa equipe analisa o perfil técnico e retorna com o
                 direcionamento adequado às oportunidades ativas no setor.
               </p>
