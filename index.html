@@ -106,9 +106,7 @@
   /* dark-photo sections keep light-on-dark text while the rest of the page is white */
   .areas-section{--foreground:oklch(0.98 0 0);--muted-foreground:oklch(0.8 0 0);--border:oklch(1 0 0 / 14%);--input:oklch(1 0 0 / 18%);--shadow-elegant:0 24px 60px -24px oklch(0 0 0 / .85);color:var(--foreground)}
   .section-bordered{border-block:1px solid var(--border);background:var(--surface)}
-  .eyebrow{font-size:.9375rem;font-weight:600;text-transform:uppercase;letter-spacing:.24em;color:var(--accent-blue)}
-  @media(min-width:640px){.eyebrow{font-size:1.0625rem}}
-  .section-title{margin-top:1rem;font-size:2.25rem;font-weight:700;letter-spacing:-0.02em;line-height:1.15;color:var(--accent-blue)}
+  .section-title{font-size:2.25rem;font-weight:700;letter-spacing:-0.02em;line-height:1.15;color:var(--accent-blue)}
   .areas-section .section-title{color:var(--foreground)}
   @media(min-width:640px){.section-title{font-size:3rem}}
 
@@ -163,7 +161,6 @@
   .areas-photo-img{position:absolute;top:-5%;bottom:-5%;left:-30%;right:-30%;transform:skewX(9deg);background-size:cover;background-position:center}
   .areas-scrim{position:absolute;inset:0;z-index:0;background:oklch(0.08 0 0 / .5)}
   .areas-section .container{position:relative;z-index:1}
-  .areas-section .eyebrow{color:oklch(0.98 0 0 / .9)}
   .area-card{padding:1.75rem;text-align:left;background:oklch(0.1 0 0 / .55);backdrop-filter:blur(6px);border-color:oklch(1 0 0 / .12)}
   .area-icon{display:inline-flex;height:3rem;width:3rem;align-items:center;justify-content:center;border-radius:.5rem;background:oklch(1 0 0 / .12);color:#fff}
   .area-icon .icon{width:1.5rem;height:1.5rem}
@@ -185,10 +182,9 @@
 
   .contato-wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:3rem}
   @media(min-width:1024px){.contato-wrap{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr)}}
-  .contato-info h2{margin-top:1rem;font-size:2.25rem;font-weight:700;line-height:1.15;color:var(--accent-blue)}
+  .contato-info h2{font-size:2.25rem;font-weight:700;line-height:1.15;color:var(--accent-blue)}
   @media(min-width:640px){.contato-info h2{font-size:3rem}}
   .contato-info p{margin-top:1.25rem;font-size:1.125rem;line-height:1.6;color:var(--muted-foreground)}
-  .contato-info .eyebrow{margin-top:0;max-width:none;font-size:inherit;line-height:normal;color:var(--accent-blue)}
   .contato-list{margin-top:2rem;display:flex;flex-direction:column;gap:1.25rem;font-size:1.125rem;color:var(--muted-foreground);list-style:none;padding:0}
   .contato-list li{display:flex;align-items:center;gap:1rem;overflow-wrap:anywhere}
   .contato-list .icon{color:var(--accent-blue);width:1.5rem;height:1.5rem;flex-shrink:0}
@@ -285,7 +281,6 @@
 
   <section id="sobre" class="section-bordered">
     <div class="container sobre-wrap">
-      <p class="eyebrow">Autoridade</p>
       <h2 class="section-title">Quem somos</h2>
       <div class="card sobre-card">
         <p><strong>Black Diamond Corporation Services</strong> nasceu para atender quem realmente move essa nova fase: você, o profissional que vai ajudar a reconstruir a Venezuela. Cuidamos da avaliação técnica, da documentação legal e da conexão direta com projetos de óleo, gás, energia e infraestrutura — para que sua experiência no país aconteça de forma segura, totalmente legalizada e com remuneração em dólar.</p>
@@ -295,7 +290,6 @@
 
   <section id="empresas">
     <div class="container empresas-wrap">
-      <p class="eyebrow">Mercado</p>
       <h2 class="section-title">Empresas que atuam na Venezuela</h2>
       <ul class="logo-grid">
         <li class="logo-tile"><img src="assets/partners/chevron.svg" alt="Chevron" width="62" height="69" loading="lazy" style="--h:4.5rem" /></li>
@@ -308,7 +302,6 @@
 
   <section id="videos" class="section-bordered">
     <div class="container">
-      <p class="eyebrow">Vídeos</p>
       <h2 class="section-title">A Venezuela e o petróleo em pauta</h2>
       <p class="videos-intro">Reportagens de veículos de imprensa sobre o momento do setor de petróleo e energia na Venezuela. Conteúdo dos respectivos autores, exibido pelo player oficial do YouTube.</p>
       <div class="video-grid">
@@ -349,7 +342,6 @@
     </div>
     <div class="areas-scrim" aria-hidden="true"></div>
     <div class="container">
-      <p class="eyebrow">Setores</p>
       <h2 class="section-title">Áreas de Atuação</h2>
       <div class="grid-4">
         <article class="card area-card">
@@ -378,7 +370,6 @@
 
   <section id="processo" class="section-bordered">
     <div class="container">
-      <p class="eyebrow">Processo</p>
       <h2 class="section-title">O fluxo da consultoria</h2>
       <div class="timeline-track">
         <div class="timeline-flag" aria-label="Brasil">
@@ -428,7 +419,6 @@
 
   <section id="faq">
     <div class="container">
-      <p class="eyebrow">Dúvidas</p>
       <h2 class="section-title">Perguntas Frequentes</h2>
       <div class="faq-list">
         <details class="card faq-item">
@@ -474,7 +464,6 @@
   <section id="contato">
     <div class="container contato-wrap">
       <div class="contato-info">
-        <p class="eyebrow">Contato</p>
         <h2>Inicie seu processo de avaliação com a Black Diamond</h2>
         <p>Preencha os dados abaixo. Nossa equipe analisa o perfil técnico e retorna com o direcionamento adequado às oportunidades ativas no setor.</p>
         <ul class="contato-list">
