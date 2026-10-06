@@ -285,7 +285,7 @@ export default function Index() {
             <p className="text-center text-[0.9375rem] font-semibold uppercase tracking-[0.24em] sm:text-[1.0625rem] text-accent-blue">
               Autoridade
             </p>
-            <h2 className="mt-4 text-center text-4xl font-bold leading-[1.15] tracking-tight sm:text-5xl">
+            <h2 className="mt-4 text-center text-4xl font-bold leading-[1.15] tracking-tight text-accent-blue sm:text-5xl">
               Quem somos
             </h2>
             <div className="card-industrial mt-10 rounded-xl p-8 sm:p-12">
@@ -305,7 +305,7 @@ export default function Index() {
         <section id="empresas" className="py-24">
           <div className="mx-auto max-w-7xl px-5 text-center lg:px-8">
             <p className="text-[0.9375rem] font-semibold uppercase tracking-[0.24em] sm:text-[1.0625rem] text-accent-blue">Mercado</p>
-            <h2 className="mt-4 text-4xl font-bold leading-[1.15] tracking-tight sm:text-5xl">Empresas que atuam na Venezuela</h2>
+            <h2 className="mt-4 text-4xl font-bold leading-[1.15] tracking-tight text-accent-blue sm:text-5xl">Empresas que atuam na Venezuela</h2>
             <ul className="mt-10 grid list-none gap-5 p-0 sm:grid-cols-3">
               {oilCompanies.map((company) => (
                 <li
@@ -332,7 +332,7 @@ export default function Index() {
         <section id="videos" className="border-y border-border bg-surface/40 py-24">
           <div className="mx-auto max-w-7xl px-5 lg:px-8">
             <p className="text-[0.9375rem] font-semibold uppercase tracking-[0.24em] sm:text-[1.0625rem] text-accent-blue">Vídeos</p>
-            <h2 className="mt-4 text-4xl font-bold leading-[1.15] tracking-tight sm:text-5xl">A Venezuela e o petróleo em pauta</h2>
+            <h2 className="mt-4 text-4xl font-bold leading-[1.15] tracking-tight text-accent-blue sm:text-5xl">A Venezuela e o petróleo em pauta</h2>
             <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
               Reportagens de veículos de imprensa sobre o momento do setor de petróleo e energia na Venezuela.
               Conteúdo dos respectivos autores, exibido pelo player oficial do YouTube.
@@ -354,7 +354,7 @@ export default function Index() {
                     />
                   </div>
                   <figcaption className="px-5 pb-5 pt-4">
-                    <strong className="block text-[1.0625rem] font-bold leading-snug">{video.title}</strong>
+                    <strong className="block text-[1.0625rem] font-bold leading-snug text-accent-blue">{video.title}</strong>
                     <span className="mt-1.5 block text-[0.9375rem] text-muted-foreground">{video.author} · YouTube</span>
                   </figcaption>
                 </figure>
@@ -430,7 +430,7 @@ export default function Index() {
         <section id="processo" className="border-y border-border bg-surface/40 py-24">
           <div className="mx-auto max-w-7xl px-5 lg:px-8">
             <p className="text-[0.9375rem] font-semibold uppercase tracking-[0.24em] sm:text-[1.0625rem] text-accent-blue">Processo</p>
-            <h2 className="mt-4 text-4xl font-bold leading-[1.15] tracking-tight sm:text-5xl">
+            <h2 className="mt-4 text-4xl font-bold leading-[1.15] tracking-tight text-accent-blue sm:text-5xl">
               O fluxo da consultoria
             </h2>
             <div
@@ -488,7 +488,7 @@ export default function Index() {
                   >
                     {step.number}
                   </span>
-                  <h3 className="mt-4 text-xl font-bold">{step.title}</h3>
+                  <h3 className="mt-4 text-xl font-bold text-accent-blue">{step.title}</h3>
                   <p className="mt-3 text-base leading-relaxed text-muted-foreground">{step.text}</p>
                 </article>
               ))}
@@ -500,13 +500,13 @@ export default function Index() {
         <section id="faq" className="py-24">
           <div className="mx-auto max-w-7xl px-5 lg:px-8">
             <p className="text-[0.9375rem] font-semibold uppercase tracking-[0.24em] sm:text-[1.0625rem] text-accent-blue">Dúvidas</p>
-            <h2 className="mt-4 text-4xl font-bold leading-[1.15] tracking-tight sm:text-5xl">
+            <h2 className="mt-4 text-4xl font-bold leading-[1.15] tracking-tight text-accent-blue sm:text-5xl">
               Perguntas Frequentes
             </h2>
             <div className="mt-12 space-y-4">
               {faqs.map((faq) => (
                 <details key={faq.question} className="card-industrial group rounded-xl p-6 sm:p-7">
-                  <summary className="flex cursor-pointer items-center justify-between gap-4 text-xl font-bold">
+                  <summary className="flex cursor-pointer items-center justify-between gap-4 text-xl font-bold text-accent-blue">
                     {faq.question}
                     <ChevronDown className="h-5 w-5 shrink-0 text-accent-blue transition-transform duration-200 group-open:rotate-180" />
                   </summary>
@@ -522,7 +522,7 @@ export default function Index() {
           <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)] gap-12 px-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:px-8">
             <div>
               <p className="text-[0.9375rem] font-semibold uppercase tracking-[0.24em] sm:text-[1.0625rem] text-accent-blue">Contato</p>
-              <h2 className="mt-4 text-4xl font-bold leading-[1.15] tracking-tight sm:text-5xl">
+              <h2 className="mt-4 text-4xl font-bold leading-[1.15] tracking-tight text-accent-blue sm:text-5xl">
                 Inicie seu processo de avaliação com a Black Diamond
               </h2>
               <p className="mt-5 text-lg leading-relaxed text-muted-foreground">

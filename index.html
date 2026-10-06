@@ -108,7 +108,8 @@
   .section-bordered{border-block:1px solid var(--border);background:var(--surface)}
   .eyebrow{font-size:.9375rem;font-weight:600;text-transform:uppercase;letter-spacing:.24em;color:var(--accent-blue)}
   @media(min-width:640px){.eyebrow{font-size:1.0625rem}}
-  .section-title{margin-top:1rem;font-size:2.25rem;font-weight:700;letter-spacing:-0.02em;line-height:1.15}
+  .section-title{margin-top:1rem;font-size:2.25rem;font-weight:700;letter-spacing:-0.02em;line-height:1.15;color:var(--accent-blue)}
+  .areas-section .section-title{color:var(--foreground)}
   @media(min-width:640px){.section-title{font-size:3rem}}
 
   .card{background:var(--card);border:1px solid var(--border);box-shadow:var(--shadow-elegant);border-radius:.75rem;transition:transform .25s,border-color .25s,box-shadow .25s}
@@ -136,7 +137,7 @@
   .video-frame{position:relative;aspect-ratio:16/9;background:#000}
   .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
   .video-card figcaption{padding:1rem 1.25rem 1.25rem}
-  .video-card figcaption strong{display:block;font-size:1.0625rem;line-height:1.4;font-weight:700}
+  .video-card figcaption strong{display:block;font-size:1.0625rem;line-height:1.4;font-weight:700;color:var(--accent-blue)}
   .video-card figcaption span{display:block;margin-top:.35rem;font-size:.9375rem;color:var(--muted-foreground)}
 
   .grid-4{margin-top:3rem;display:grid;gap:1.5rem;grid-template-columns:1fr}
@@ -171,7 +172,7 @@
 
   .step-card{position:relative;padding:1.75rem}
   .step-number{display:inline-block;font-family:Montserrat,sans-serif;font-size:2.25rem;font-weight:800;color:var(--accent-blue)}
-  .step-card h3{margin-top:1rem;font-size:1.25rem;font-weight:700}
+  .step-card h3{margin-top:1rem;font-size:1.25rem;font-weight:700;color:var(--accent-blue)}
   .step-card p{margin-top:.75rem;font-size:1rem;line-height:1.6;color:var(--muted-foreground)}
 
   @keyframes step-pulse{0%,10%,100%{transform:scale(1);text-shadow:none}4%{transform:scale(1.2);text-shadow:0 0 16px oklch(0.55 0.19 258 / .9)}}
@@ -184,7 +185,7 @@
 
   .contato-wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:3rem}
   @media(min-width:1024px){.contato-wrap{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr)}}
-  .contato-info h2{margin-top:1rem;font-size:2.25rem;font-weight:700;line-height:1.15}
+  .contato-info h2{margin-top:1rem;font-size:2.25rem;font-weight:700;line-height:1.15;color:var(--accent-blue)}
   @media(min-width:640px){.contato-info h2{font-size:3rem}}
   .contato-info p{margin-top:1.25rem;font-size:1.125rem;line-height:1.6;color:var(--muted-foreground)}
   .contato-info .eyebrow{margin-top:0;max-width:none;font-size:inherit;line-height:normal;color:var(--accent-blue)}
@@ -205,7 +206,7 @@
 
   .faq-list{margin-top:3rem;display:flex;flex-direction:column;gap:1rem}
   .faq-item{padding:1.5rem 1.75rem}
-  .faq-item summary{display:flex;list-style:none;cursor:pointer;align-items:center;justify-content:space-between;gap:1rem;font-weight:700;font-size:1.25rem}
+  .faq-item summary{display:flex;list-style:none;cursor:pointer;align-items:center;justify-content:space-between;gap:1rem;font-weight:700;font-size:1.25rem;color:var(--accent-blue)}
   .faq-item summary::-webkit-details-marker{display:none}
   .faq-chevron{color:var(--accent-blue);transition:transform .2s ease}
   .faq-item[open] .faq-chevron{transform:rotate(90deg)}
