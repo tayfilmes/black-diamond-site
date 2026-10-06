@@ -181,7 +181,7 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-background">
       <div className="fixed inset-x-0 top-0 z-[60] h-1 flag-stripe" />
-      <header className="fixed inset-x-0 top-1 z-50 border-b border-border bg-background/85 backdrop-blur-md">
+      <header className="fixed inset-x-0 top-1 z-50 border-b border-border bg-background/50 backdrop-blur-md">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-4 lg:px-8">
           <a
             href="#top"
