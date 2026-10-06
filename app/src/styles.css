@@ -78,14 +78,14 @@
   --card-foreground: oklch(0.2 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.2 0 0);
-  --primary: oklch(0.84 0.17 88);
-  --primary-foreground: oklch(0.2 0 0);
+  --primary: oklch(0.56 0.222 26.5);
+  --primary-foreground: oklch(0.99 0 0);
   --secondary: oklch(0.96 0 0);
   --secondary-foreground: oklch(0.2 0 0);
   --muted: oklch(0.96 0 0);
   --muted-foreground: oklch(0.44 0 0);
-  --accent: oklch(0.84 0.17 88);
-  --accent-foreground: oklch(0.2 0 0);
+  --accent: oklch(0.56 0.222 26.5);
+  --accent-foreground: oklch(0.99 0 0);
   --accent-blue: oklch(0.55 0.19 258);
   --accent-blue-foreground: oklch(0.99 0 0);
   --destructive: oklch(0.577 0.245 27.325);
@@ -97,12 +97,12 @@
     120deg,
     oklch(0.12 0 0 / 0.96) 0%,
     oklch(0.14 0 0 / 0.86) 45%,
-    oklch(0.24 0.06 85 / 0.7) 100%
+    oklch(0.2 0.06 25 / 0.7) 100%
   );
-  --gradient-primary: linear-gradient(135deg, oklch(0.84 0.17 88), oklch(0.74 0.16 80));
+  --gradient-red: linear-gradient(135deg, oklch(0.56 0.222 26.5), oklch(0.44 0.19 24));
   --gradient-blue: linear-gradient(135deg, oklch(0.55 0.19 258), oklch(0.42 0.16 258));
   --shadow-elegant: 0 12px 32px -14px oklch(0 0 0 / 0.22);
-  --shadow-glow: 0 0 0 1px oklch(0.84 0.17 88 / 0.35), 0 18px 40px -18px oklch(0.84 0.17 88 / 0.55);
+  --shadow-glow: 0 0 0 1px oklch(0.56 0.222 26.5 / 0.35), 0 18px 40px -18px oklch(0.56 0.222 26.5 / 0.55);
   --shadow-glow-blue: 0 0 0 1px oklch(0.55 0.19 258 / 0.35), 0 18px 40px -18px oklch(0.55 0.19 258 / 0.55);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
@@ -111,12 +111,12 @@
   --chart-5: oklch(0.769 0.188 70.08);
   --sidebar: oklch(0.975 0 0);
   --sidebar-foreground: oklch(0.2 0 0);
-  --sidebar-primary: oklch(0.84 0.17 88);
-  --sidebar-primary-foreground: oklch(0.2 0 0);
+  --sidebar-primary: oklch(0.56 0.222 26.5);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
   --sidebar-accent: oklch(0.26 0 0);
   --sidebar-accent-foreground: oklch(0.98 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.84 0.17 88);
+  --sidebar-ring: oklch(0.56 0.222 26.5);
 }
 
 @utility hero-overlay {
@@ -136,7 +136,7 @@
 }
 
 @utility btn-ruby {
-  background-image: var(--gradient-primary);
+  background-image: var(--gradient-red);
   color: var(--primary-foreground);
   box-shadow: var(--shadow-glow);
   transition: transform 0.2s ease, filter 0.2s ease;

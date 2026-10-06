@@ -24,19 +24,19 @@
     --foreground: oklch(0.2 0 0);
     --surface: oklch(0.975 0 0);
     --card: oklch(1 0 0);
-    --primary: oklch(0.84 0.17 88);
-    --primary-foreground: oklch(0.2 0 0);
+    --primary: oklch(0.56 0.222 26.5);
+    --primary-foreground: oklch(0.99 0 0);
     --accent-blue: oklch(0.55 0.19 258);
     --accent-blue-foreground: oklch(0.99 0 0);
     --muted-foreground: oklch(0.44 0 0);
     --danger: oklch(0.55 0.22 27);
     --border: oklch(0 0 0 / 11%);
     --input: oklch(0 0 0 / 18%);
-    --gradient-hero: linear-gradient(120deg, oklch(0.12 0 0 / 0.96) 0%, oklch(0.14 0 0 / 0.86) 45%, oklch(0.24 0.06 85 / 0.7) 100%);
-    --gradient-primary: linear-gradient(135deg, oklch(0.84 0.17 88), oklch(0.74 0.16 80));
+    --gradient-hero: linear-gradient(120deg, oklch(0.12 0 0 / 0.96) 0%, oklch(0.14 0 0 / 0.86) 45%, oklch(0.2 0.06 25 / 0.7) 100%);
+    --gradient-red: linear-gradient(135deg, oklch(0.56 0.222 26.5), oklch(0.44 0.19 24));
     --gradient-blue: linear-gradient(135deg, oklch(0.55 0.19 258), oklch(0.42 0.16 258));
     --shadow-elegant: 0 12px 32px -14px oklch(0 0 0 / 0.22);
-    --shadow-glow: 0 0 0 1px oklch(0.84 0.17 88 / 0.35), 0 18px 40px -18px oklch(0.84 0.17 88 / 0.55);
+    --shadow-glow: 0 0 0 1px oklch(0.56 0.222 26.5 / 0.35), 0 18px 40px -18px oklch(0.56 0.222 26.5 / 0.55);
     --shadow-glow-blue: 0 0 0 1px oklch(0.55 0.19 258 / 0.35), 0 18px 40px -18px oklch(0.55 0.19 258 / 0.55);
   }
   *{box-sizing:border-box}
@@ -57,7 +57,7 @@
   header.site-header{position:fixed;inset-inline:0;top:4px;z-index:50;border-bottom:1px solid var(--border);background:oklch(1 0 0 / 0.97);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
   .header-inner{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding-block:1rem}
   .logo{display:inline-flex;align-items:center;gap:.6rem;font-family:Montserrat,sans-serif;font-size:.875rem;font-weight:800;text-transform:uppercase;letter-spacing:.18em;line-height:1.2;text-decoration:none}
-  .logo-icon{flex-shrink:0;color:var(--primary)}
+  .logo-icon{flex-shrink:0}
   .logo .accent{color:var(--accent-blue)}
   .logo small{display:block;font-size:.65rem;font-weight:600;letter-spacing:.4em;color:var(--muted-foreground)}
   .nav-links{display:none;gap:2rem;list-style:none;margin:0;padding:0}
@@ -66,7 +66,7 @@
   .nav-links a:hover{color:var(--foreground)}
 
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border-radius:.375rem;font-weight:700;text-decoration:none;cursor:pointer;border:none;font-family:inherit}
-  .btn-ruby{background-image:var(--gradient-primary);color:var(--primary-foreground);box-shadow:var(--shadow-glow);transition:transform .2s ease, filter .2s ease}
+  .btn-ruby{background-image:var(--gradient-red);color:var(--primary-foreground);box-shadow:var(--shadow-glow);transition:transform .2s ease, filter .2s ease}
   .btn-ruby:hover{filter:brightness(1.12);transform:translateY(-2px)}
   .btn-blue{background-image:var(--gradient-blue);color:var(--accent-blue-foreground);box-shadow:var(--shadow-glow-blue);transition:transform .2s ease, filter .2s ease}
   .btn-blue:hover{filter:brightness(1.12);transform:translateY(-2px)}
@@ -155,7 +155,6 @@
   .areas-photo-img{position:absolute;top:-5%;bottom:-5%;left:-30%;right:-30%;transform:skewX(9deg);background-size:cover;background-position:center}
   .areas-scrim{position:absolute;inset:0;z-index:0;background:oklch(0.08 0 0 / .5)}
   .areas-section .container{position:relative;z-index:1}
-  .areas-section .eyebrow{color:oklch(0.98 0 0 / .9)}
   .area-card{padding:1.75rem;text-align:left;background:oklch(0.1 0 0 / .55);backdrop-filter:blur(6px);border-color:oklch(1 0 0 / .12)}
   .area-icon{display:inline-flex;height:3rem;width:3rem;align-items:center;justify-content:center;border-radius:.5rem;background:oklch(1 0 0 / .12);color:#fff}
   .area-icon .icon{width:1.5rem;height:1.5rem}
@@ -235,10 +234,10 @@
   <div class="container header-inner">
     <a href="#top" class="logo">
       <svg class="logo-icon" width="30" height="30" viewBox="4 6 26 23" aria-hidden="true">
-        <path d="M11 27 L19 27 L15 15 Z" fill="currentColor"/>
-        <circle cx="24" cy="11" r="3" fill="currentColor"/>
-        <line x1="6" y1="19" x2="24" y2="11" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-        <line x1="6" y1="19" x2="6" y2="25" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M11 27 L19 27 L15 15 Z" fill="#B22234"/>
+        <circle cx="24" cy="11" r="3" fill="#B22234"/>
+        <line x1="6" y1="19" x2="24" y2="11" stroke="#B22234" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="6" y1="19" x2="6" y2="25" stroke="#B22234" stroke-width="2" stroke-linecap="round"/>
       </svg>
       <span>Black Diamond <span class="accent">Corporation</span><small>Services</small></span>
     </a>
@@ -334,9 +333,9 @@
 
   <section id="areas" class="areas-section">
     <div class="areas-photos" aria-hidden="true">
-      <div class="areas-photo"><div class="areas-photo-img" style="background-image:linear-gradient(oklch(0.84 0.17 88 / .5),oklch(0.84 0.17 88 / .5)),url('assets/areas/engenharia-v2.jpg')"></div></div>
+      <div class="areas-photo"><div class="areas-photo-img" style="background-image:linear-gradient(oklch(0.56 0.222 26.5 / .55),oklch(0.56 0.222 26.5 / .55)),url('assets/areas/engenharia-v2.jpg')"></div></div>
       <div class="areas-photo"><div class="areas-photo-img" style="background-image:linear-gradient(oklch(0.55 0.19 258 / .55),oklch(0.55 0.19 258 / .55)),url('assets/areas/infraestrutura.jpg')"></div></div>
-      <div class="areas-photo"><div class="areas-photo-img" style="background-image:linear-gradient(oklch(0.84 0.17 88 / .5),oklch(0.84 0.17 88 / .5)),url('assets/areas/petroleo.jpg')"></div></div>
+      <div class="areas-photo"><div class="areas-photo-img" style="background-image:linear-gradient(oklch(0.56 0.222 26.5 / .55),oklch(0.56 0.222 26.5 / .55)),url('assets/areas/petroleo.jpg')"></div></div>
       <div class="areas-photo"><div class="areas-photo-img" style="background-image:linear-gradient(oklch(0.55 0.19 258 / .55),oklch(0.55 0.19 258 / .55)),url('assets/areas/energia.jpg')"></div></div>
     </div>
     <div class="areas-scrim" aria-hidden="true"></div>
@@ -529,10 +528,10 @@
     <div>
       <p class="logo">
         <svg class="logo-icon" width="24" height="24" viewBox="4 6 26 23" aria-hidden="true">
-          <path d="M11 27 L19 27 L15 15 Z" fill="currentColor"/>
-          <circle cx="24" cy="11" r="3" fill="currentColor"/>
-          <line x1="6" y1="19" x2="24" y2="11" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-          <line x1="6" y1="19" x2="6" y2="25" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M11 27 L19 27 L15 15 Z" fill="#B22234"/>
+          <circle cx="24" cy="11" r="3" fill="#B22234"/>
+          <line x1="6" y1="19" x2="24" y2="11" stroke="#B22234" stroke-width="2.2" stroke-linecap="round"/>
+          <line x1="6" y1="19" x2="6" y2="25" stroke="#B22234" stroke-width="2" stroke-linecap="round"/>
         </svg>
         <span>Black Diamond <span class="accent">Corporation</span><small>Services</small></span>
       </p>

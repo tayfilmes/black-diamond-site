@@ -47,7 +47,7 @@ const areas = [
     icon: HardHat,
     title: ["Engenharia &", "Obras Rodoviárias"],
     text: "Suporte e consultoria para projetos de logística, malha viária e acessos a campos de extração.",
-    accent: "primary",
+    accent: "red",
     photo: areaEngenharia,
   },
   {
@@ -61,7 +61,7 @@ const areas = [
     icon: Flame,
     title: ["Extração &", "Produção Petrolífera"],
     text: "Conexão e direcionamento para funções ligadas à perfuração, refino, manutenção e suporte de campo.",
-    accent: "primary",
+    accent: "red",
     photo: areaPetroleo,
   },
   {
@@ -187,11 +187,11 @@ export default function Index() {
             href="#top"
             className="inline-flex items-center gap-2.5 font-display text-sm font-extrabold uppercase leading-tight tracking-[0.18em]"
           >
-            <svg width="30" height="30" viewBox="4 6 26 23" className="shrink-0 text-primary" aria-hidden="true">
-              <path d="M11 27 L19 27 L15 15 Z" fill="currentColor" />
-              <circle cx="24" cy="11" r="3" fill="currentColor" />
-              <line x1="6" y1="19" x2="24" y2="11" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
-              <line x1="6" y1="19" x2="6" y2="25" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            <svg width="30" height="30" viewBox="4 6 26 23" className="shrink-0" aria-hidden="true">
+              <path d="M11 27 L19 27 L15 15 Z" fill="#B22234" />
+              <circle cx="24" cy="11" r="3" fill="#B22234" />
+              <line x1="6" y1="19" x2="24" y2="11" stroke="#B22234" strokeWidth="2.2" strokeLinecap="round" />
+              <line x1="6" y1="19" x2="6" y2="25" stroke="#B22234" strokeWidth="2" strokeLinecap="round" />
             </svg>
             <span>
               Black Diamond <span className="text-accent-blue">Corporation</span>
@@ -369,7 +369,7 @@ export default function Index() {
             style={{ transform: "skewX(-9deg)" }}
           >
             {areas.map((area) => {
-              const tint = area.accent === "primary" ? "oklch(0.84 0.17 88 / .5)" : "oklch(0.55 0.19 258 / .55)";
+              const tint = area.accent === "red" ? "oklch(0.56 0.222 26.5 / .55)" : "oklch(0.55 0.19 258 / .55)";
               return (
                 <div key={area.title.join(" ")} className="relative flex-1 overflow-hidden">
                   <div
@@ -389,7 +389,7 @@ export default function Index() {
           </div>
           <div aria-hidden="true" className="absolute inset-0 z-0" style={{ background: "oklch(0.08 0 0 / .5)" }} />
           <div className="relative z-10 mx-auto max-w-7xl px-5 lg:px-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-foreground/90">Setores</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-accent-blue">Setores</p>
             <h2 className="mt-4 max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">
               Áreas de Atuação
             </h2>
@@ -627,11 +627,11 @@ export default function Index() {
         <div className="mx-auto flex max-w-7xl flex-col gap-6 px-5 text-sm text-muted-foreground lg:flex-row lg:items-center lg:justify-between lg:px-8">
           <div>
             <p className="inline-flex items-center gap-2.5 font-display text-sm font-extrabold uppercase leading-tight tracking-[0.18em] text-foreground">
-              <svg width="24" height="24" viewBox="4 6 26 23" className="shrink-0 text-primary" aria-hidden="true">
-                <path d="M11 27 L19 27 L15 15 Z" fill="currentColor" />
-                <circle cx="24" cy="11" r="3" fill="currentColor" />
-                <line x1="6" y1="19" x2="24" y2="11" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
-                <line x1="6" y1="19" x2="6" y2="25" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              <svg width="24" height="24" viewBox="4 6 26 23" className="shrink-0" aria-hidden="true">
+                <path d="M11 27 L19 27 L15 15 Z" fill="#B22234" />
+                <circle cx="24" cy="11" r="3" fill="#B22234" />
+                <line x1="6" y1="19" x2="24" y2="11" stroke="#B22234" strokeWidth="2.2" strokeLinecap="round" />
+                <line x1="6" y1="19" x2="6" y2="25" stroke="#B22234" strokeWidth="2" strokeLinecap="round" />
               </svg>
               <span>
                 Black Diamond <span className="text-accent-blue">Corporation</span>
