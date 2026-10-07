@@ -30,7 +30,6 @@ const oilCompanies = [
 
 const videos = [
   { id: "LFY5eX2wEpo", title: "O que muda com a nova lei do petróleo na Venezuela?", author: "Brasil de Fato" },
-  { id: "l11IyAZvHRE", title: "Trump anuncia possível investimento de US$ 100 bilhões no petróleo venezuelano", author: "SBT News" },
   { id: "rAgz_Y0b_0s", title: "Delcy diz que acordo com EUA preserva petróleo da Venezuela e prevê US$ 209 bilhões", author: "O POVO" },
   { id: "oi4LEkLFfqE", title: "Após acordo, EUA poderá explorar 20% do petróleo da Venezuela e quer dobrar produção em 5 anos", author: "UOL" },
 ];
@@ -328,7 +327,7 @@ export default function Index() {
               Reportagens de veículos de imprensa sobre o momento do setor de petróleo e energia na Venezuela.
               Conteúdo dos respectivos autores, exibido pelo player oficial do YouTube.
             </p>
-            <div className="mt-12 grid gap-6 md:grid-cols-2">
+            <div className="mt-12 grid gap-6 lg:grid-cols-3">
               {videos.map((video) => (
                 <figure key={video.id} className="m-0 overflow-hidden rounded-xl border border-border bg-card shadow-[var(--shadow-elegant)]">
                   <div className="relative aspect-video bg-black">
