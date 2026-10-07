@@ -30,7 +30,7 @@ const oilCompanies = [
 
 const videos = [
   { id: "LFY5eX2wEpo", title: "O que muda com a nova lei do petróleo na Venezuela?", author: "Brasil de Fato" },
-  { id: "fFM4C0-GXHc", title: "Análise: Venezuela tem a maior reserva de petróleo do mundo", author: "CNN Brasil" },
+  { id: "iY8yhTtVBFE", title: "EUA vão controlar 65 bilhões de barris de petróleo da Venezuela, diz Trump", author: "UOL" },
   { id: "rAgz_Y0b_0s", title: "Delcy diz que acordo com EUA preserva petróleo da Venezuela e prevê US$ 209 bilhões", author: "O POVO" },
   { id: "oi4LEkLFfqE", title: "Após acordo, EUA poderá explorar 20% do petróleo da Venezuela e quer dobrar produção em 5 anos", author: "UOL" },
 ];
