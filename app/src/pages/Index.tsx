@@ -265,7 +265,7 @@ export default function Index() {
                 <span className="text-accent-blue">Trabalhe legalizado</span> e ganhe em{" "}
                 <span className="text-accent-blue">dólar.</span>
               </h1>
-              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-foreground/85 sm:text-xl lg:mt-5 lg:text-lg">
+              <p className="mt-6 max-w-3xl text-[1.1875rem] leading-relaxed text-foreground/85 sm:text-[1.375rem] lg:mt-5">
                 O país vive uma nova realidade: obras de infraestrutura, energia e petróleo avançam
                 e a demanda por profissionais qualificados nunca foi tão grande. Conectamos você a
                 essas oportunidades com consultoria completa, suporte documental e garantias em
@@ -305,7 +305,7 @@ export default function Index() {
               Quem somos
             </h2>
             <div className="card-industrial mt-10 rounded-xl p-8 sm:p-12">
-              <p className="text-center text-base leading-relaxed text-muted-foreground sm:text-lg">
+              <p className="text-center text-[1.1875rem] leading-relaxed text-muted-foreground sm:text-[1.375rem]">
                 A <span className="font-semibold text-foreground">Black Diamond Corporation Services</span>{" "}
                 nasceu para atender quem realmente move essa nova fase: você, o profissional que vai
                 ajudar a reconstruir a Venezuela. Cuidamos da avaliação técnica, da documentação
@@ -336,7 +336,7 @@ export default function Index() {
                 </li>
               ))}
             </ul>
-            <p className="mx-auto mt-6 text-sm leading-normal text-muted-foreground">
+            <p className="mx-auto mt-6 text-base leading-normal text-muted-foreground">
               Marcas registradas pertencentes aos seus respectivos proprietários, exibidas apenas para ilustrar o
               cenário do setor. Não indicam parceria, patrocínio ou vínculo com a Black Diamond Corporation Services.
             </p>
@@ -347,7 +347,7 @@ export default function Index() {
         <section id="videos" className="border-y border-border bg-surface/40 py-24">
           <div className="mx-auto max-w-7xl px-5 lg:px-8">
             <h2 className="text-center text-4xl font-bold leading-[1.15] tracking-tight text-accent-blue sm:text-5xl">A Venezuela e o petróleo em pauta</h2>
-            <p className="mt-4 text-center text-lg leading-relaxed text-muted-foreground">
+            <p className="mt-4 text-center text-[1.1875rem] leading-relaxed text-muted-foreground sm:text-[1.375rem]">
               Reportagens de veículos de imprensa sobre o momento do setor de petróleo e energia na Venezuela.
               Conteúdo dos respectivos autores, exibido pelo player oficial do YouTube.
             </p>
@@ -368,8 +368,8 @@ export default function Index() {
                     />
                   </div>
                   <figcaption className="px-5 pb-5 pt-4">
-                    <strong className="block text-[1.0625rem] font-bold leading-snug text-accent-blue">{video.title}</strong>
-                    <span className="mt-1.5 block text-[0.9375rem] text-muted-foreground">{video.author} · YouTube</span>
+                    <strong className="block text-[1.25rem] font-bold leading-snug text-accent-blue">{video.title}</strong>
+                    <span className="mt-1.5 block text-[1.0625rem] text-muted-foreground">{video.author} · YouTube</span>
                   </figcaption>
                 </figure>
               ))}
@@ -425,14 +425,14 @@ export default function Index() {
                   >
                     <area.icon className="h-6 w-6" />
                   </div>
-                  <h3 className="mt-5 min-h-[3.25rem] text-xl font-bold leading-snug">
+                  <h3 className="mt-5 min-h-[3.85rem] font-sans text-[1.375rem] font-bold leading-snug">
                     {area.title.map((line) => (
                       <span key={line} className="block">
                         {line}
                       </span>
                     ))}
                   </h3>
-                  <p className="mt-3 text-base leading-relaxed text-muted-foreground">{area.text}</p>
+                  <p className="mt-3 text-[1.1875rem] leading-relaxed text-muted-foreground">{area.text}</p>
                 </article>
               ))}
             </div>
@@ -491,7 +491,7 @@ export default function Index() {
             </div>
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
               {steps.map((step, i) => (
-                <article key={step.number} className="card-industrial relative rounded-xl p-7">
+                <article key={step.number} className="card-industrial relative rounded-xl p-6">
                   <span
                     className={`font-display inline-block text-4xl font-extrabold text-accent-blue ${
                       timelineInView ? "step-pulse" : ""
@@ -500,8 +500,8 @@ export default function Index() {
                   >
                     {step.number}
                   </span>
-                  <h3 className="mt-4 text-xl font-bold text-accent-blue">{step.title}</h3>
-                  <p className="mt-3 text-base leading-relaxed text-muted-foreground">{step.text}</p>
+                  <h3 className="mt-4 font-sans text-[1.375rem] font-bold text-accent-blue">{step.title}</h3>
+                  <p className="mt-3 text-[1.1875rem] leading-relaxed text-muted-foreground">{step.text}</p>
                 </article>
               ))}
             </div>
@@ -517,11 +517,11 @@ export default function Index() {
             <div className="mt-12 space-y-4">
               {faqs.map((faq) => (
                 <details key={faq.question} className="card-industrial group rounded-xl p-6 sm:p-7">
-                  <summary className="flex cursor-pointer items-center justify-between gap-4 text-xl font-bold text-accent-blue">
+                  <summary className="flex cursor-pointer items-center justify-between gap-4 text-[1.375rem] font-bold text-accent-blue">
                     {faq.question}
                     <ChevronDown className="h-5 w-5 shrink-0 text-accent-blue transition-transform duration-200 group-open:rotate-180" />
                   </summary>
-                  <p className="mt-4 text-lg leading-relaxed text-muted-foreground">{faq.answer}</p>
+                  <p className="mt-4 text-[1.1875rem] leading-relaxed text-muted-foreground">{faq.answer}</p>
                 </details>
               ))}
             </div>
@@ -535,11 +535,11 @@ export default function Index() {
               <h2 className="text-4xl font-bold leading-[1.15] tracking-tight text-accent-blue sm:text-5xl">
                 Inicie seu processo de avaliação com a Black Diamond
               </h2>
-              <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
+              <p className="mt-5 text-xl leading-relaxed text-muted-foreground">
                 Preencha os dados abaixo. Nossa equipe analisa o perfil técnico e retorna com o
                 direcionamento adequado às oportunidades ativas no setor.
               </p>
-              <ul className="mt-8 space-y-5 text-lg text-muted-foreground">
+              <ul className="mt-8 space-y-5 text-xl text-muted-foreground">
                 <li className="flex items-center gap-3 [overflow-wrap:anywhere]">
                   <Mail className="h-6 w-6 shrink-0 text-accent-blue" />
                   contato@blackdiamondcorpservices.com
@@ -565,25 +565,25 @@ export default function Index() {
                   <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
                 </div>
                 <div>
-                  <label htmlFor="nome" className="mb-2 block text-base font-medium">
+                  <label htmlFor="nome" className="mb-2 block text-[1.0625rem] font-medium">
                     Nome completo
                   </label>
                   <input id="nome" name="nome" type="text" required placeholder="Seu nome completo" className={fieldClass} />
                 </div>
                 <div>
-                  <label htmlFor="email" className="mb-2 block text-base font-medium">
+                  <label htmlFor="email" className="mb-2 block text-[1.0625rem] font-medium">
                     E-mail profissional
                   </label>
                   <input id="email" name="email" type="email" required placeholder="nome@empresa.com" className={fieldClass} />
                 </div>
                 <div>
-                  <label htmlFor="telefone" className="mb-2 block text-base font-medium">
+                  <label htmlFor="telefone" className="mb-2 block text-[1.0625rem] font-medium">
                     WhatsApp / telefone
                   </label>
                   <input id="telefone" name="telefone" type="tel" required placeholder="+55 (00) 00000-0000" className={fieldClass} />
                 </div>
                 <div>
-                  <label htmlFor="area" className="mb-2 block text-base font-medium">
+                  <label htmlFor="area" className="mb-2 block text-[1.0625rem] font-medium">
                     Área de atuação
                   </label>
                   <select id="area" name="area" required defaultValue="" className={fieldClass}>
@@ -598,7 +598,7 @@ export default function Index() {
                   </select>
                 </div>
                 <div>
-                  <label htmlFor="experiencia" className="mb-2 block text-base font-medium">
+                  <label htmlFor="experiencia" className="mb-2 block text-[1.0625rem] font-medium">
                     Anos de experiência
                   </label>
                   <select id="experiencia" name="experiencia" required defaultValue="" className={fieldClass}>
