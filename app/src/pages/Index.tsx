@@ -13,7 +13,7 @@ import {
   Zap,
 } from "lucide-react";
 import heroImage from "@/assets/hero-oilfield-day.jpg";
-import logoMark from "@/assets/logo-bd-gold.jpg";
+import logoMark from "@/assets/logo-bd.svg";
 import areaEngenharia from "@/assets/areas/engenharia-v2.jpg";
 import areaInfraestrutura from "@/assets/areas/infraestrutura.jpg";
 import areaPetroleo from "@/assets/areas/petroleo.jpg";
@@ -188,7 +188,7 @@ export default function Index() {
             href="#top"
             className="inline-flex items-center gap-2.5 font-display text-[clamp(0.7rem,3.4vw,0.9375rem)] font-extrabold uppercase leading-tight tracking-[0.18em] text-white"
           >
-            <img src={logoMark} alt="" width={85} height={48} className="block h-[clamp(1.75rem,8vw,3rem)] w-auto shrink-0" />
+            <img src={logoMark} alt="" width={84} height={48} className="block h-[clamp(1.75rem,8vw,3rem)] w-auto shrink-0" />
             <span>
               Black Diamond <span className="text-primary">Corporation</span>
               <span className="block text-[0.72rem] font-semibold tracking-[0.4em] text-white/70">
@@ -616,7 +616,7 @@ export default function Index() {
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 text-sm text-white/70 lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:px-8">
           <div>
             <p className="inline-flex items-center gap-2.5 font-display text-[0.9375rem] font-extrabold uppercase leading-tight tracking-[0.18em] text-white">
-              <img src={logoMark} alt="" width={57} height={32} className="block h-8 w-auto shrink-0" />
+              <img src={logoMark} alt="" width={56} height={32} className="block h-8 w-auto shrink-0" />
               <span>
                 Black Diamond <span className="text-primary">Corporation</span>
                 <span className="block text-[0.72rem] font-semibold tracking-[0.4em] text-white/70">
