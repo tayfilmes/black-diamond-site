@@ -233,8 +233,8 @@ export default function Index() {
           <div className="hero-overlay absolute inset-0" />
           <div className="relative mx-auto w-full max-w-7xl px-5 py-20 lg:px-8 lg:pb-[6.5rem] lg:pt-8 lg:[@media(max-height:780px)]:pb-[5.5rem] lg:[@media(max-height:780px)]:pt-5">
             <div className="max-w-3xl">
-              <span className="inline-flex items-center gap-2 rounded-full border border-border bg-white/85 px-4 py-1.5 text-[0.8125rem] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-                <ShieldCheck className="h-3.5 w-3.5 text-accent-blue" />
+              <span className="inline-flex items-center gap-2 rounded-full border border-[oklch(0.55_0.1_77.5)] bg-[linear-gradient(135deg,oklch(0.7_0.106_78.5),oklch(0.58_0.1_77.5))] px-[1.1rem] py-[0.4rem] text-sm font-bold uppercase tracking-[0.2em] text-white shadow-[0_8px_20px_-8px_oklch(0.62_0.104_77.8/0.7)] [text-shadow:0_1px_1px_rgb(0_0_0/0.35)]">
+                <ShieldCheck className="h-3.5 w-3.5 text-white" />
                 Reconstrução Nacional em Curso
               </span>
               <h1 className="mt-6 text-4xl font-extrabold leading-[1.08] tracking-tight sm:text-5xl lg:mt-5 lg:text-6xl lg:[@media(max-height:780px)]:text-5xl">
