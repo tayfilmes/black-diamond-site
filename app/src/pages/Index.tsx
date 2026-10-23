@@ -13,7 +13,7 @@ import {
   Zap,
 } from "lucide-react";
 import heroImage from "@/assets/hero-oilfield-day.jpg";
-import logoMark from "@/assets/logo-bd.jpg";
+import logoMark from "@/assets/logo-bd-gold.jpg";
 import areaEngenharia from "@/assets/areas/engenharia-v2.jpg";
 import areaInfraestrutura from "@/assets/areas/infraestrutura.jpg";
 import areaPetroleo from "@/assets/areas/petroleo.jpg";
@@ -181,17 +181,17 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="fixed inset-x-0 top-0 z-[60] h-1 flag-stripe" />
-      <header className="fixed inset-x-0 top-1 z-50 border-b border-border bg-white">
+      <div className="fixed inset-x-0 top-0 z-[60] h-1 gold-stripe" />
+      <header className="fixed inset-x-0 top-1 z-50 border-b border-white/10 bg-black">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-5 px-5 py-3 lg:px-8">
           <a
             href="#top"
-            className="inline-flex items-center gap-2.5 font-display text-[clamp(0.7rem,3.4vw,0.9375rem)] font-extrabold uppercase leading-tight tracking-[0.18em]"
+            className="inline-flex items-center gap-2.5 font-display text-[clamp(0.7rem,3.4vw,0.9375rem)] font-extrabold uppercase leading-tight tracking-[0.18em] text-white"
           >
             <img src={logoMark} alt="" width={85} height={48} className="block h-[clamp(1.75rem,8vw,3rem)] w-auto shrink-0" />
             <span>
-              Black Diamond <span className="text-accent-blue">Corporation</span>
-              <span className="block text-[0.72rem] font-semibold tracking-[0.4em] text-muted-foreground">
+              Black Diamond <span className="text-primary">Corporation</span>
+              <span className="block text-[0.72rem] font-semibold tracking-[0.4em] text-white/70">
                 Services
               </span>
             </span>
@@ -202,7 +202,7 @@ export default function Index() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-[0.9375rem] font-medium text-foreground/90 transition-colors hover:text-accent-blue"
+                className="text-[0.9375rem] font-medium text-white/90 transition-colors hover:text-primary"
               >
                 {link.label}
               </a>
@@ -362,7 +362,7 @@ export default function Index() {
             style={{ transform: "skewX(-9deg)" }}
           >
             {areas.map((area) => {
-              const tint = area.accent === "red" ? "oklch(0.56 0.222 26.5 / .55)" : "oklch(0.55 0.19 258 / .55)";
+              const tint = area.accent === "red" ? "oklch(0.62 0.104 77.8 / .6)" : "oklch(0.55 0.19 258 / .55)";
               return (
                 <div key={area.title.join(" ")} className="relative flex-1 overflow-hidden">
                   <div
@@ -612,14 +612,14 @@ export default function Index() {
         </section>
       </main>
 
-      <footer className="border-t border-border bg-white py-7">
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 text-sm text-muted-foreground lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:px-8">
+      <footer className="border-t border-white/10 bg-black py-7">
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 text-sm text-white/70 lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:px-8">
           <div>
-            <p className="inline-flex items-center gap-2.5 font-display text-[0.9375rem] font-extrabold uppercase leading-tight tracking-[0.18em] text-foreground">
+            <p className="inline-flex items-center gap-2.5 font-display text-[0.9375rem] font-extrabold uppercase leading-tight tracking-[0.18em] text-white">
               <img src={logoMark} alt="" width={57} height={32} className="block h-8 w-auto shrink-0" />
               <span>
-                Black Diamond <span className="text-accent-blue">Corporation</span>
-                <span className="block text-[0.72rem] font-semibold tracking-[0.4em] text-muted-foreground">
+                Black Diamond <span className="text-primary">Corporation</span>
+                <span className="block text-[0.72rem] font-semibold tracking-[0.4em] text-white/70">
                   Services
                 </span>
               </span>
@@ -628,15 +628,15 @@ export default function Index() {
               <span>© Black Diamond Corporation Services – Todos os direitos reservados.</span>
               <span>CNPJ: 69.324.245/0001-70</span>
             </p>
-            <p className="mt-1 text-xs leading-normal text-muted-foreground/70">
+            <p className="mt-1 text-xs leading-normal text-white/50">
               Isenção de responsabilidade sobre trâmites migratórios e contratações de terceiros.
             </p>
           </div>
           <nav className="flex shrink-0 gap-6">
-            <a href="/privacidade.html" className="transition-colors hover:text-accent-blue">
+            <a href="/privacidade.html" className="transition-colors hover:text-primary">
               Políticas de Privacidade
             </a>
-            <a href="/termos.html" className="transition-colors hover:text-accent-blue">
+            <a href="/termos.html" className="transition-colors hover:text-primary">
               Termos de Uso
             </a>
           </nav>
