@@ -37,8 +37,8 @@ const videos = [
 
 const navLinks = [
   { label: "Sobre", href: "#sobre" },
-  { label: "Áreas de Atuação", href: "#areas" },
-  { label: "Como Funciona", href: "#processo" },
+  { label: "Áreas de atuação", href: "#areas" },
+  { label: "Como funciona", href: "#processo" },
   { label: "FAQ", href: "#faq" },
   { label: "Contato", href: "#contato" },
 ];
@@ -46,28 +46,28 @@ const navLinks = [
 const areas = [
   {
     icon: HardHat,
-    title: ["Engenharia &", "Obras Rodoviárias"],
+    title: ["Engenharia &", "obras rodoviárias"],
     text: "Suporte e consultoria para projetos de logística, malha viária e acessos a campos de extração.",
     accent: "red",
     photo: areaEngenharia,
   },
   {
     icon: Building2,
-    title: ["Infraestrutura Operacional &", "Loteamentos"],
+    title: ["Infraestrutura operacional &", "loteamentos"],
     text: "Estruturação de bases operacionais, alojamentos técnicos e loteamentos industriais.",
     accent: "blue",
     photo: areaInfraestrutura,
   },
   {
     icon: Flame,
-    title: ["Extração &", "Produção Petrolífera"],
+    title: ["Extração &", "produção petrolífera"],
     text: "Conexão e direcionamento para funções ligadas à perfuração, refino, manutenção e suporte de campo.",
     accent: "red",
     photo: areaPetroleo,
   },
   {
     icon: Zap,
-    title: ["Energia &", "Redes Elétricas"],
+    title: ["Energia &", "redes elétricas"],
     text: "Projetos e contratação para suporte à rede elétrica, usinas e infraestrutura de suporte aos poços.",
     accent: "blue",
     photo: areaEnergia,
@@ -77,27 +77,27 @@ const areas = [
 const steps = [
   {
     number: "01",
-    title: "Triagem Inicial",
+    title: "Triagem inicial",
     text: "Avaliamos seu currículo e conversamos com você para entender sua experiência e ver se seu perfil combina com as vagas disponíveis.",
   },
   {
     number: "02",
-    title: "Contrato e Documentos",
+    title: "Contrato e documentos",
     text: "Assinamos o contrato de prestação de serviço e reunimos seus documentos pessoais para dar início ao processo.",
   },
   {
     number: "03",
-    title: "Preparação da Documentação",
+    title: "Preparação da documentação",
     text: "Cuidamos da legalização e tradução dos documentos necessários e apresentamos seu perfil ao contratante na Venezuela.",
   },
   {
     number: "04",
-    title: "Visto e Logística",
+    title: "Visto e logística",
     text: "Acompanhamos todo o processo do visto de trabalho e te damos uma orientação completa antes da viagem.",
   },
   {
     number: "05",
-    title: "Embarque e Início",
+    title: "Embarque e início",
     text: "Organizamos sua viagem e chegada, e confirmamos que você está integrado ao novo projeto.",
   },
 ];
@@ -235,12 +235,12 @@ export default function Index() {
             <div className="max-w-3xl">
               <span className="inline-flex items-center gap-2 rounded-full border border-[oklch(0.66_0.104_78)] bg-[oklch(0.748_0.098_78.7)] px-[1.1rem] py-[0.4rem] text-sm font-bold uppercase tracking-[0.2em] text-[oklch(0.15_0_0)] shadow-[0_8px_20px_-8px_oklch(0.62_0.104_77.8/0.7)]">
                 <ShieldCheck className="h-3.5 w-3.5 text-[oklch(0.15_0_0)]" />
-                Reconstrução Nacional em Curso
+                Reconstrução nacional em curso
               </span>
               <h1 className="mt-6 text-4xl font-extrabold leading-[1.08] tracking-tight sm:text-5xl lg:mt-5 lg:text-6xl lg:[@media(max-height:780px)]:text-5xl">
-                A Venezuela Está Sendo Reconstruída.{" "}
-                <span className="text-accent-blue">Trabalhe Legalizado</span> e Ganhe em{" "}
-                <span className="text-accent-blue">Dólar.</span>
+                A Venezuela está sendo reconstruída.{" "}
+                <span className="text-accent-blue">Trabalhe legalizado</span> e ganhe em{" "}
+                <span className="text-accent-blue">dólar.</span>
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-foreground/85 sm:text-xl lg:mt-5 lg:text-lg">
                 O país vive uma nova realidade: obras de infraestrutura, energia e petróleo avançam
@@ -260,7 +260,7 @@ export default function Index() {
                   href="#areas"
                   className="inline-flex items-center gap-2 rounded-md border border-black/30 bg-white/60 px-6 py-4 text-base font-semibold text-foreground transition-colors hover:border-accent-blue hover:text-accent-blue"
                 >
-                  Áreas de Atuação
+                  Áreas de atuação
                   <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
@@ -383,7 +383,7 @@ export default function Index() {
           <div aria-hidden="true" className="absolute inset-0 z-0" style={{ background: "oklch(0.08 0 0 / .5)" }} />
           <div className="relative z-10 mx-auto max-w-7xl px-5 lg:px-8">
             <h2 className="text-center text-4xl font-bold leading-[1.15] tracking-tight sm:text-5xl">
-              Áreas de Atuação
+              Áreas de atuação
             </h2>
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {areas.map((area) => (
@@ -489,7 +489,7 @@ export default function Index() {
         <section id="faq" className="py-24">
           <div className="mx-auto max-w-7xl px-5 lg:px-8">
             <h2 className="text-center text-4xl font-bold leading-[1.15] tracking-tight text-accent-blue sm:text-5xl">
-              Perguntas Frequentes
+              Perguntas frequentes
             </h2>
             <div className="mt-12 space-y-4">
               {faqs.map((faq) => (
@@ -543,40 +543,40 @@ export default function Index() {
                 </div>
                 <div>
                   <label htmlFor="nome" className="mb-2 block text-base font-medium">
-                    Nome Completo
+                    Nome completo
                   </label>
                   <input id="nome" name="nome" type="text" required placeholder="Seu nome completo" className={fieldClass} />
                 </div>
                 <div>
                   <label htmlFor="email" className="mb-2 block text-base font-medium">
-                    E-mail Profissional
+                    E-mail profissional
                   </label>
                   <input id="email" name="email" type="email" required placeholder="nome@empresa.com" className={fieldClass} />
                 </div>
                 <div>
                   <label htmlFor="telefone" className="mb-2 block text-base font-medium">
-                    WhatsApp / Telefone
+                    WhatsApp / telefone
                   </label>
                   <input id="telefone" name="telefone" type="tel" required placeholder="+55 (00) 00000-0000" className={fieldClass} />
                 </div>
                 <div>
                   <label htmlFor="area" className="mb-2 block text-base font-medium">
-                    Área de Atuação
+                    Área de atuação
                   </label>
                   <select id="area" name="area" required defaultValue="" className={fieldClass}>
                     <option value="" disabled>
                       Selecione uma área
                     </option>
                     <option>Engenharia</option>
-                    <option>Extração/Petróleo</option>
-                    <option>Infraestrutura/Obras</option>
+                    <option>Extração/petróleo</option>
+                    <option>Infraestrutura/obras</option>
                     <option>Energia</option>
                     <option>Outros</option>
                   </select>
                 </div>
                 <div>
                   <label htmlFor="experiencia" className="mb-2 block text-base font-medium">
-                    Anos de Experiência
+                    Anos de experiência
                   </label>
                   <select id="experiencia" name="experiencia" required defaultValue="" className={fieldClass}>
                     <option value="" disabled>
@@ -593,7 +593,7 @@ export default function Index() {
                   disabled={status === "sending"}
                   className="btn-blue mt-2 inline-flex w-full items-center justify-center gap-2 rounded-md px-6 py-4 text-base font-bold uppercase tracking-wide disabled:opacity-60"
                 >
-                  {status === "sending" ? "Enviando..." : "Solicitar Avaliação de Perfil"}
+                  {status === "sending" ? "Enviando..." : "Solicitar avaliação de perfil"}
                   <ArrowRight className="h-4 w-4" />
                 </button>
                 {status === "sent" && (
@@ -634,10 +634,10 @@ export default function Index() {
           </div>
           <nav className="flex shrink-0 gap-6">
             <a href="/privacidade.html" className="transition-colors hover:text-primary">
-              Políticas de Privacidade
+              Políticas de privacidade
             </a>
             <a href="/termos.html" className="transition-colors hover:text-primary">
-              Termos de Uso
+              Termos de uso
             </a>
           </nav>
         </div>
