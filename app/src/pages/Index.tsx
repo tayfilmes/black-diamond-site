@@ -142,6 +142,9 @@ export default function Index() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [timelineInView, setTimelineInView] = useState(false);
   const timelineRef = useRef<HTMLDivElement>(null);
+  // Plane crosses the line in 7.2s of its 8s loop and the number pulse peaks 0.32s into its loop,
+  // so delay_i = dot position (0..1) * 7.2 - 0.32 makes each number peak as the plane passes its dot.
+  const [pulseDelays, setPulseDelays] = useState([1.05, 2.16, 3.28, 4.4, 5.51]);
 
   useEffect(() => {
     const el = timelineRef.current;
@@ -160,6 +163,26 @@ export default function Index() {
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    if (!timelineInView) return;
+    const line = timelineRef.current;
+    if (!line) return;
+    const measure = () => {
+      const box = line.getBoundingClientRect();
+      const dots = line.querySelectorAll<HTMLElement>("[data-timeline-dot]");
+      if (!box.width || dots.length !== 5) return;
+      setPulseDelays(
+        Array.from(dots, (dot) => {
+          const r = dot.getBoundingClientRect();
+          return Math.max(0, Number((((r.left + r.width / 2 - box.left) / box.width) * 7.2 - 0.32).toFixed(2)));
+        })
+      );
+    };
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, [timelineInView]);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -437,11 +460,11 @@ export default function Index() {
                   <circle cx="12" cy="8" r="4" fill="#012169" />
                 </svg>
               </div>
-              <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-accent-blue" />
-              <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-accent-blue" />
-              <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-accent-blue" />
-              <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-accent-blue" />
-              <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-accent-blue" />
+              <span data-timeline-dot className="h-2.5 w-2.5 shrink-0 rounded-full bg-accent-blue" />
+              <span data-timeline-dot className="h-2.5 w-2.5 shrink-0 rounded-full bg-accent-blue" />
+              <span data-timeline-dot className="h-2.5 w-2.5 shrink-0 rounded-full bg-accent-blue" />
+              <span data-timeline-dot className="h-2.5 w-2.5 shrink-0 rounded-full bg-accent-blue" />
+              <span data-timeline-dot className="h-2.5 w-2.5 shrink-0 rounded-full bg-accent-blue" />
               <div
                 aria-label="Venezuela"
                 className="h-6 w-9 shrink-0 overflow-hidden rounded-sm"
@@ -473,7 +496,7 @@ export default function Index() {
                     className={`font-display inline-block text-4xl font-extrabold text-accent-blue ${
                       timelineInView ? "step-pulse" : ""
                     }`}
-                    style={timelineInView ? { animationDelay: `${(i + 1) * 1.2}s` } : undefined}
+                    style={timelineInView ? { animationDelay: `${pulseDelays[i]}s` } : undefined}
                   >
                     {step.number}
                   </span>

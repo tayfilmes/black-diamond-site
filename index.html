@@ -177,11 +177,11 @@
   .step-card p{margin-top:.75rem;font-size:1rem;line-height:1.6;color:var(--muted-foreground)}
 
   @keyframes step-pulse{0%,10%,100%{transform:scale(1);text-shadow:none}4%{transform:scale(1.2);text-shadow:0 0 16px oklch(0.55 0.19 258 / .9)}}
-  #processo.in-view .step-card:nth-child(1) .step-number{animation:step-pulse 8s linear infinite;animation-delay:1.2s}
-  #processo.in-view .step-card:nth-child(2) .step-number{animation:step-pulse 8s linear infinite;animation-delay:2.4s}
-  #processo.in-view .step-card:nth-child(3) .step-number{animation:step-pulse 8s linear infinite;animation-delay:3.6s}
-  #processo.in-view .step-card:nth-child(4) .step-number{animation:step-pulse 8s linear infinite;animation-delay:4.8s}
-  #processo.in-view .step-card:nth-child(5) .step-number{animation:step-pulse 8s linear infinite;animation-delay:6s}
+  #processo.in-view .step-card:nth-child(1) .step-number{animation:step-pulse 8s linear infinite;animation-delay:var(--pulse-1,1.05s)}
+  #processo.in-view .step-card:nth-child(2) .step-number{animation:step-pulse 8s linear infinite;animation-delay:var(--pulse-2,2.16s)}
+  #processo.in-view .step-card:nth-child(3) .step-number{animation:step-pulse 8s linear infinite;animation-delay:var(--pulse-3,3.28s)}
+  #processo.in-view .step-card:nth-child(4) .step-number{animation:step-pulse 8s linear infinite;animation-delay:var(--pulse-4,4.4s)}
+  #processo.in-view .step-card:nth-child(5) .step-number{animation:step-pulse 8s linear infinite;animation-delay:var(--pulse-5,5.51s)}
   @media(prefers-reduced-motion:reduce){.step-number{animation:none !important}}
 
   .contato-wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:3rem}
@@ -540,9 +540,25 @@
   (function () {
     var track = document.getElementById('processo');
     if (!track || !('IntersectionObserver' in window)) return;
+    // Plane flies 0 -> 100% of the line in 90% of an 8s loop (7.2s); the number pulse peaks 0.32s into its loop.
+    // Delay each number so its peak lands exactly when the plane is over the matching dot.
+    function syncPulses() {
+      var line = track.querySelector('.timeline-track');
+      var dots = track.querySelectorAll('.timeline-dot');
+      if (!line || dots.length !== 5) return;
+      var box = line.getBoundingClientRect();
+      if (!box.width) return;
+      for (var i = 0; i < 5; i++) {
+        var r = dots[i].getBoundingClientRect();
+        var t = ((r.left + r.width / 2 - box.left) / box.width) * 7.2 - 0.32;
+        track.style.setProperty('--pulse-' + (i + 1), Math.max(0, t).toFixed(2) + 's');
+      }
+    }
+    window.addEventListener('resize', syncPulses);
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
+          syncPulses();
           track.classList.add('in-view');
           observer.unobserve(entry.target);
         }
