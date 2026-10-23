@@ -183,7 +183,7 @@ export default function Index() {
     <div className="min-h-screen bg-background">
       <div className="fixed inset-x-0 top-0 z-[60] h-1 gold-stripe" />
       <header className="fixed inset-x-0 top-1 z-50 border-b border-white/10 bg-black">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-5 px-5 py-3 lg:px-8">
+        <div className="flex w-full items-center justify-between gap-5 px-[clamp(1.25rem,3vw,3.5rem)] py-3 min-[1440px]:gap-8">
           <a
             href="#top"
             className="inline-flex items-center gap-2.5 font-display text-[clamp(0.7rem,3.4vw,0.9375rem)] font-extrabold uppercase leading-tight tracking-[0.18em] text-white"
@@ -197,7 +197,7 @@ export default function Index() {
             </span>
           </a>
 
-          <nav className="hidden items-center gap-6 xl:flex">
+          <nav className="ml-auto hidden items-center gap-6 xl:flex 2xl:gap-9">
             {navLinks.map((link) => (
               <a
                 key={link.href}

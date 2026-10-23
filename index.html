@@ -56,6 +56,9 @@
 
   header.site-header{position:fixed;inset-inline:0;top:4px;z-index:50;border-bottom:1px solid oklch(1 0 0 / 12%);background:#000}
   .header-inner{display:flex;align-items:center;justify-content:space-between;gap:1.25rem;padding-block:.75rem}
+  header.site-header .header-inner{max-width:none;padding-inline:clamp(1.25rem,3vw,3.5rem)}
+  .header-inner nav{margin-left:auto}
+  @media(min-width:1440px){.header-inner{gap:2rem}}
   .logo{display:inline-flex;align-items:center;gap:.6rem;font-family:Montserrat,sans-serif;font-size:clamp(.7rem,3.4vw,.9375rem);font-weight:800;text-transform:uppercase;letter-spacing:.18em;line-height:1.2;text-decoration:none;color:#fff}
   .logo-mark{display:block;flex-shrink:0;height:clamp(1.75rem,8vw,3rem);width:auto}
   .footer-mark{height:2rem}
@@ -63,6 +66,7 @@
   .logo small{display:block;font-size:.72rem;font-weight:600;letter-spacing:.4em;color:oklch(0.72 0 0)}
   .nav-links{display:none;gap:1.5rem;list-style:none;margin:0;padding:0}
   @media(min-width:1280px){.nav-links{display:flex}}
+  @media(min-width:1536px){.nav-links{gap:2.25rem}}
   .nav-links a{white-space:nowrap;font-size:.9375rem;font-weight:500;color:oklch(0.92 0 0);text-decoration:none;transition:color .2s}
   .nav-links a:hover{color:var(--primary)}
 
