@@ -269,9 +269,9 @@ export default function Index() {
           <a
             href="#sobre"
             aria-label="Rolar para ver mais"
-            className="scroll-hint absolute inset-x-0 bottom-5 mx-auto w-fit text-[oklch(0.66_0.108_78)] transition-colors hover:text-[oklch(0.58_0.1_77.5)]"
+            className="scroll-hint absolute inset-x-0 bottom-5 mx-auto w-fit text-accent-blue transition-colors hover:text-accent-blue/80"
           >
-            <ChevronDown className="h-16 w-16 [filter:drop-shadow(0_1px_2px_rgba(0,0,0,0.4))]" strokeWidth={3} />
+            <ChevronDown className="h-16 w-16 [filter:drop-shadow(0_1px_4px_rgba(255,255,255,0.9))]" strokeWidth={3} />
           </a>
         </section>
 
