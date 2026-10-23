@@ -12,7 +12,7 @@ import {
   ShieldCheck,
   Zap,
 } from "lucide-react";
-import heroImage from "@/assets/hero-oilfield-day.jpg";
+import heroImage from "@/assets/hero-sunset-pumpjack.jpg";
 import logoMark from "@/assets/logo-bd.svg";
 import areaEngenharia from "@/assets/areas/engenharia-v2.jpg";
 import areaInfraestrutura from "@/assets/areas/infraestrutura.jpg";
@@ -247,9 +247,9 @@ export default function Index() {
         <section className="relative flex min-h-[92vh] items-center overflow-hidden pt-24 lg:pt-20">
           <img
             src={heroImage}
-            alt="Bomba de petróleo em campo de extração sob céu azul"
+            alt="Torre de bombeamento de petróleo em silhueta contra um pôr do sol dourado"
             width={1920}
-            height={1080}
+            height={1255}
             fetchPriority="high"
             className="absolute inset-0 h-full w-full object-cover object-[68%_center]"
           />
