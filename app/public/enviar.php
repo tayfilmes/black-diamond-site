@@ -74,6 +74,8 @@ if ($whatsappUrl !== '') {
 
 // HTML version of the message. If the template file is missing, the plain text above is sent on its own.
 $html = '';
+$logoPath = __DIR__ . '/lib/email-logo.png';
+$embedLogo = false;
 $templatePath = __DIR__ . '/lib/email-template.html';
 $template = is_readable($templatePath) ? file_get_contents($templatePath) : false;
 if ($template !== false && $template !== '') {
@@ -86,6 +88,11 @@ if ($template !== false && $template !== '') {
     $botaoHtml = $whatsappUrl !== ''
         ? '<tr><td style="padding:8px 24px 4px 24px;"><a href="' . $esc($whatsappUrl) . '" style="display:inline-block;background:#cfa663;color:#111111;text-decoration:none;font-weight:bold;font-size:15px;padding:12px 20px;border-radius:8px;">Chamar no WhatsApp</a></td></tr>'
         : '';
+    // Logo is embedded in the message (cid) so it shows without the client asking to download images.
+    $embedLogo = is_readable($logoPath);
+    $logoBloco = $embedLogo
+        ? '<td style="vertical-align:middle;padding-right:14px;"><img src="cid:logo" width="84" height="48" alt="" style="display:block;border:0;"></td>'
+        : '';
     $html = strtr($template, [
         '{{ASSUNTO}}' => $esc($subject),
         '{{NOME}}' => $esc($nome),
@@ -94,6 +101,7 @@ if ($template !== false && $template !== '') {
         '{{AREA}}' => $esc($area),
         '{{EXPERIENCIA}}' => $esc($experiencia),
         '{{BOTAO_WHATSAPP}}' => $botaoHtml,
+        '{{LOGO_BLOCO}}' => $logoBloco,
     ]);
 }
 
@@ -118,6 +126,9 @@ try {
         $mail->isHTML(true);
         $mail->Body = $html;
         $mail->AltBody = $body;
+        if ($embedLogo) {
+            $mail->addEmbeddedImage($logoPath, 'logo', 'logo.png', 'base64', 'image/png');
+        }
     } else {
         $mail->isHTML(false);
         $mail->Body = $body;
