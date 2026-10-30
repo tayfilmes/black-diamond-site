@@ -61,6 +61,42 @@ $body = "Nova solicitação de avaliação de perfil recebida pelo site:\n\n"
       . "Área de atuação: {$area}\n"
       . "Anos de experiência: {$experiencia}\n";
 
+// WhatsApp link: digits only. Brazilian numbers typed without the country code get 55.
+$digits = preg_replace('/\D+/', '', $telefone);
+if (strlen($digits) === 10 || strlen($digits) === 11) {
+    $digits = '55' . $digits;
+}
+$whatsappUrl = (strlen($digits) >= 12 && strlen($digits) <= 15) ? 'https://wa.me/' . $digits : '';
+
+if ($whatsappUrl !== '') {
+    $body .= "\nAbrir conversa no WhatsApp: {$whatsappUrl}\n";
+}
+
+// HTML version of the message. If the template file is missing, the plain text above is sent on its own.
+$html = '';
+$templatePath = __DIR__ . '/lib/email-template.html';
+$template = is_readable($templatePath) ? file_get_contents($templatePath) : false;
+if ($template !== false && $template !== '') {
+    $esc = function ($value) {
+        return htmlspecialchars((string) $value, ENT_QUOTES, 'UTF-8');
+    };
+    $telefoneHtml = $whatsappUrl !== ''
+        ? '<a href="' . $esc($whatsappUrl) . '" style="color:#111111;text-decoration:none;">' . $esc($telefone) . '</a>'
+        : $esc($telefone);
+    $botaoHtml = $whatsappUrl !== ''
+        ? '<tr><td style="padding:8px 24px 4px 24px;"><a href="' . $esc($whatsappUrl) . '" style="display:inline-block;background:#cfa663;color:#111111;text-decoration:none;font-weight:bold;font-size:15px;padding:12px 20px;border-radius:8px;">Chamar no WhatsApp</a></td></tr>'
+        : '';
+    $html = strtr($template, [
+        '{{ASSUNTO}}' => $esc($subject),
+        '{{NOME}}' => $esc($nome),
+        '{{EMAIL}}' => $esc($email),
+        '{{TELEFONE}}' => $telefoneHtml,
+        '{{AREA}}' => $esc($area),
+        '{{EXPERIENCIA}}' => $esc($experiencia),
+        '{{BOTAO_WHATSAPP}}' => $botaoHtml,
+    ]);
+}
+
 $mail = new PHPMailer(true);
 
 try {
@@ -78,8 +114,17 @@ try {
     $mail->addReplyTo($email, $nome);
 
     $mail->Subject = $subject;
-    $mail->Body = $body;
-    $mail->isHTML(false);
+    if ($html !== '') {
+        $mail->isHTML(true);
+        $mail->Body = $html;
+        $mail->AltBody = $body;
+    } else {
+        $mail->isHTML(false);
+        $mail->Body = $body;
+    }
+    // No PHPMailer signature header; Message-ID on our own domain.
+    $mail->XMailer = ' ';
+    $mail->MessageID = '<' . md5(uniqid((string) mt_rand(), true)) . '@blackdiamondcorpservices.com>';
 
     $mail->send();
     echo json_encode(['ok' => true]);
